@@ -4094,7 +4094,7 @@ Vous pouvez changer plus tard ces paramètres dans le menu Options de QCad.</tra
     </message>
     <message>
         <source>Auto backup</source>
-        <translation type="unfinished"></translation>
+        <translation>Sauvegarde automatique</translation>
     </message>
     <message>
         <source>Template:</source>
@@ -5899,6 +5899,30 @@ The contents of a Construction Layer should not appear in printout.</source>
     <message>
         <source>- Unchanged -</source>
         <translation>- Inchangé -</translation>
+    </message>
+    <message>
+        <source>Dot (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dash (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dash Dot (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Divide (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Border (tiny)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -11004,7 +11028,7 @@ Voulez-vous le remplacer ?</translation>
     <message>
         <source>a</source>
         <comment>angle</comment>
-        <translation>a</translation>
+        <translation type="obsolete">a</translation>
     </message>
     <message>
         <source>fact</source>
@@ -11024,7 +11048,7 @@ Voulez-vous le remplacer ?</translation>
     <message>
         <source>c</source>
         <comment>columns</comment>
-        <translation>c</translation>
+        <translation type="obsolete">c</translation>
     </message>
     <message>
         <source>r</source>
@@ -11068,7 +11092,7 @@ Voulez-vous le remplacer ?</translation>
     <message>
         <source>c</source>
         <comment>center</comment>
-        <translation>c</translation>
+        <translation type="obsolete">c</translation>
     </message>
     <message>
         <source>reversed</source>
@@ -11221,7 +11245,7 @@ Voulez-vous le remplacer ?</translation>
     <message>
         <source>r</source>
         <comment>radius</comment>
-        <translation>r</translation>
+        <translation type="obsolete">r</translation>
     </message>
     <message>
         <source>t</source>
@@ -11235,12 +11259,12 @@ Voulez-vous le remplacer ?</translation>
     <message>
         <source>length</source>
         <comment>chord length</comment>
-        <translation>longueur</translation>
+        <translation type="obsolete">longueur</translation>
     </message>
     <message>
         <source>l</source>
         <comment>chord length</comment>
-        <translation>l</translation>
+        <translation type="obsolete">l</translation>
     </message>
     <message>
         <source>Command: %1</source>
@@ -11776,20 +11800,6 @@ Voulez-vous le remplacer ?</translation>
     </message>
     <message>
         <source>r</source>
-        <comment>reversed</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>row</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>r</source>
-        <comment>row</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>r</source>
         <comment>redo</comment>
         <translation type="unfinished"></translation>
     </message>
@@ -11893,6 +11903,46 @@ Voulez-vous le remplacer ?</translation>
     <message>
         <source>cut</source>
         <comment>modify - divide</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>an</source>
+        <comment>angle</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ce</source>
+        <comment>center</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>cl</source>
+        <comment>chord length</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>co</source>
+        <comment>columns</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ra</source>
+        <comment>radius</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>row</source>
+        <comment>row</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>cal</source>
+        <comment>command to trigger cli calculator</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>calculate</source>
+        <comment>command to trigger cli calculator</comment>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -72,7 +72,7 @@ distance between points=%2 is larger than diameter=%3</source>
     <name>LC_ActionDrawSplinePoints</name>
     <message>
         <source>&amp;Spline through points</source>
-        <translation type="unfinished"></translation>
+        <translation>Καμπύλη μέσω σημείων</translation>
     </message>
     <message>
         <source>Specify first control point</source>
@@ -627,15 +627,15 @@ Auto-save disabled.</source>
     </message>
     <message>
         <source>Draft Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Κατάσταση λειτουργίας προσχεδίου</translation>
     </message>
     <message>
         <source>Export as PDF</source>
-        <translation type="unfinished"></translation>
+        <translation>Εξαγωγή ως PDF</translation>
     </message>
     <message>
         <source>&amp;Text</source>
-        <translation type="unfinished">&amp;Κείμενο</translation>
+        <translation>&amp;Κείμενο</translation>
     </message>
 </context>
 <context>
@@ -2155,7 +2155,7 @@ Auto-save disabled.</source>
     </message>
     <message>
         <source>Export as PDF</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Εξαγωγή ως PDF</translation>
     </message>
     <message>
         <source>&amp;Block</source>
@@ -7260,6 +7260,30 @@ The contents of a Construction Layer should not appear in printout.</source>
     <message>
         <source>- Unchanged -</source>
         <translation>- Αμετάβλητο -</translation>
+    </message>
+    <message>
+        <source>Dot (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dash (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dash Dot (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Divide (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Border (tiny)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -12430,7 +12454,7 @@ Do you want to replace it?</source>
     <message>
         <source>a</source>
         <comment>angle</comment>
-        <translation>γ</translation>
+        <translation type="obsolete">γ</translation>
     </message>
     <message>
         <source>fact</source>
@@ -12450,7 +12474,7 @@ Do you want to replace it?</source>
     <message>
         <source>c</source>
         <comment>columns</comment>
-        <translation>στ</translation>
+        <translation type="obsolete">στ</translation>
     </message>
     <message>
         <source>r</source>
@@ -12494,7 +12518,7 @@ Do you want to replace it?</source>
     <message>
         <source>c</source>
         <comment>center</comment>
-        <translation>κ</translation>
+        <translation type="obsolete">κ</translation>
     </message>
     <message>
         <source>reversed</source>
@@ -12647,7 +12671,7 @@ Do you want to replace it?</source>
     <message>
         <source>r</source>
         <comment>radius</comment>
-        <translation>ακ</translation>
+        <translation type="obsolete">ακ</translation>
     </message>
     <message>
         <source>t</source>
@@ -12661,12 +12685,12 @@ Do you want to replace it?</source>
     <message>
         <source>length</source>
         <comment>chord length</comment>
-        <translation>μήκος</translation>
+        <translation type="obsolete">μήκος</translation>
     </message>
     <message>
         <source>l</source>
         <comment>chord length</comment>
-        <translation>μηκχορδ</translation>
+        <translation type="obsolete">μηκχορδ</translation>
     </message>
     <message>
         <source>Command: %1</source>
@@ -13226,16 +13250,16 @@ Do you want to replace it?</source>
     <message>
         <source>r</source>
         <comment>reversed</comment>
-        <translation>α</translation>
+        <translation type="obsolete">α</translation>
     </message>
     <message>
         <source>row</source>
-        <translation>σειρά</translation>
+        <translation type="obsolete">σειρά</translation>
     </message>
     <message>
         <source>r</source>
         <comment>row</comment>
-        <translation>σ</translation>
+        <translation type="obsolete">σ</translation>
     </message>
     <message>
         <source>Command not found: %1</source>
@@ -13338,6 +13362,46 @@ Do you want to replace it?</source>
     <message>
         <source>cut</source>
         <comment>modify - divide</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>an</source>
+        <comment>angle</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ce</source>
+        <comment>center</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>cl</source>
+        <comment>chord length</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>co</source>
+        <comment>columns</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ra</source>
+        <comment>radius</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>row</source>
+        <comment>row</comment>
+        <translation type="unfinished">σειρά</translation>
+    </message>
+    <message>
+        <source>cal</source>
+        <comment>command to trigger cli calculator</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>calculate</source>
+        <comment>command to trigger cli calculator</comment>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -32,7 +32,8 @@ namespace DRW {
          STYLE,
          DIMSTYLE,
          VPORT,
-         BLOCK_RECORD
+         BLOCK_RECORD,
+         APPID
      };
 
 
@@ -49,11 +50,24 @@ public:
     DRW_TableEntry() {
         tType = DRW::UNKNOWNT;
         flags = 0;
+        curr = NULL;
     }
-    virtual~DRW_TableEntry() {}
+
+    virtual~DRW_TableEntry() {
+        for (std::vector<DRW_Variant*>::iterator it=extData.begin(); it!=extData.end(); ++it)
+            delete *it;
+
+        extData.clear();
+    }
 
 protected:
     void parseCode(int code, dxfReader *reader);
+    void reset(){
+        flags =0;
+        for (std::vector<DRW_Variant*>::iterator it=extData.begin(); it!=extData.end(); ++it)
+            delete *it;
+        extData.clear();
+    }
 
 public:
     enum DRW::TTYPE tType;     /*!< enum: entity type, code 0 */
@@ -61,6 +75,10 @@ public:
     int handleBlock;           /*!< Soft-pointer ID/handle to owner BLOCK_RECORD object, code 330 */
     UTF8STRING name;           /*!< entry name, code 2 */
     int flags;                 /*!< Flags relevant to entry, code 70 */
+    std::vector<DRW_Variant*> extData; /*!< FIFO list of extended data, codes 1000 to 1071*/
+
+private:
+    DRW_Variant* curr;
 };
 
 
@@ -95,6 +113,7 @@ public:
         dimfit = dimatfit = 3;
         dimdsep = '.';
         dimlwd = dimlwe = -2;
+        DRW_TableEntry::reset();
     }
 
     void parseCode(int code, dxfReader *reader);
@@ -187,6 +206,7 @@ public:
         size = 0;
         length = 0.0;
         pathIdx = 0;
+        DRW_TableEntry::reset();
     }
 
     void parseCode(int code, dxfReader *reader);
@@ -220,6 +240,7 @@ public:
         plotF = true; // default TRUE (plot yes)
         lWeight = DRW_LW_Conv::widthDefault; // default BYDEFAULT (dxf -3, dwg 31)
         color24 = -1; //default -1 not set
+        DRW_TableEntry::reset();
     }
 
     void parseCode(int code, dxfReader *reader);
@@ -250,6 +271,7 @@ public:
         font="txt";
         genFlag = 0; //2= X mirror, 4= Y mirror
         fontFamily = 0;
+        DRW_TableEntry::reset();
     }
 
     void parseCode(int code, dxfReader *reader);
@@ -290,6 +312,7 @@ public:
         circleZoom = 100;
         ucsIcon = 3;
         gridBehavior = 7;
+        DRW_TableEntry::reset();
     }
 
     void parseCode(int code, dxfReader *reader);
@@ -396,6 +419,24 @@ private:
     std::string name;
     DRW_Variant* curr;
     int version; //to use on read
+};
+
+//! Class to handle AppId entries
+/*!
+*  Class to handle AppId symbol table entries
+*  @author Rallaz
+*/
+class DRW_AppId : public DRW_TableEntry {
+public:
+    DRW_AppId() { reset();}
+
+    void reset(){
+        tType = DRW::APPID;
+        flags = 0;
+        name = "";
+    }
+
+    void parseCode(int code, dxfReader *reader){DRW_TableEntry::parseCode(code, reader);}
 };
 
 namespace DRW {

@@ -701,7 +701,9 @@ void RS_EntityContainer::updateDimensions(bool autoText) {
         if (RS_Information::isDimension(e->rtti())) {
             // update and reposition label:
             ((RS_Dimension*)e)->updateDim(autoText);
-        } else if (e->isContainer()) {
+        } else if(e->rtti()==RS2::EntityDimLeader)
+            e->update();
+        else if (e->isContainer()) {
             ((RS_EntityContainer*)e)->updateDimensions(autoText);
         }
     }
@@ -1223,7 +1225,7 @@ RS_Vector RS_EntityContainer::getNearestEndpoint(const RS_Vector& coord,
                 closestPoint = point;
                 minDist = curDist;
                 if (dist!=NULL) {
-                    *dist = curDist;
+                    *dist = minDist;
                 }
             }
         }
@@ -1276,7 +1278,7 @@ RS_Vector RS_EntityContainer::getNearestEndpoint(const RS_Vector& coord,
                 closestPoint = point;
                 minDist = curDist;
                 if (dist!=NULL) {
-                    *dist = curDist;
+                    *dist = minDist;
                 }
                 if(pEntity!=NULL){
                     *pEntity=en;
@@ -1355,7 +1357,7 @@ RS_Vector RS_EntityContainer::getNearestCenter(const RS_Vector& coord,
         }
     }
     if (dist!=NULL) {
-        *dist = curDist;
+        *dist = minDist;
     }
 
     return closestPoint;
@@ -1395,7 +1397,7 @@ RS_Vector RS_EntityContainer::getNearestMiddle(const RS_Vector& coord,
         }
     }
     if (dist!=NULL) {
-        *dist = curDist;
+        *dist = minDist;
     }
 
     return closestPoint;
@@ -1470,7 +1472,7 @@ RS_Vector RS_EntityContainer::getNearestIntersection(const RS_Vector& coord,
         }
     }
     if(dist!=NULL && closestPoint.valid) {
-        *dist=minDist;
+        *dist = minDist;
     }
 
     return closestPoint;
@@ -1496,7 +1498,7 @@ RS_Vector RS_EntityContainer::getNearestRef(const RS_Vector& coord,
                 closestPoint = point;
                 minDist = curDist;
                 if (dist!=NULL) {
-                    *dist = curDist;
+                    *dist = minDist;
                 }
             }
         }
@@ -1524,7 +1526,7 @@ RS_Vector RS_EntityContainer::getNearestSelectedRef(const RS_Vector& coord,
                 closestPoint = point;
                 minDist = curDist;
                 if (dist!=NULL) {
-                    *dist = curDist;
+                    *dist = minDist;
                 }
             }
         }

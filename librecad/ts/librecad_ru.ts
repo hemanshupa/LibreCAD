@@ -638,7 +638,7 @@ Auto-save disabled.</source>
     </message>
     <message>
         <source>&amp;Text</source>
-        <translation type="unfinished">&amp;Текст</translation>
+        <translation>&amp;Текст</translation>
     </message>
 </context>
 <context>
@@ -2170,7 +2170,7 @@ Auto-save disabled.</source>
     </message>
     <message>
         <source>&amp;Block</source>
-        <translation type="unfinished">&amp;Блок</translation>
+        <translation>&amp;Блок</translation>
     </message>
 </context>
 <context>
@@ -2991,7 +2991,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fillet, rounding of an interior or exterior corner&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Скругление внутреннего или внешнего угла&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Скругление внутреннего или внешнего угла&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -5719,7 +5719,7 @@ You can changes these settings later in the Options Dialog of QCad.</source>
     </message>
     <message>
         <source>Scale by the same factor at both x- and y- directions</source>
-        <translation>Одинаковый коэффициент масштабирования в направлении x и y</translation>
+        <translation>Одинаковый коэффициент масштабирования по X и Y</translation>
     </message>
     <message>
         <source>Isotropic Scaling</source>
@@ -6961,7 +6961,7 @@ The contents of a Construction Layer should not appear in printout.</source>
     </message>
     <message>
         <source>Directories</source>
-        <translation>Папки</translation>
+        <translation>Каталоги</translation>
     </message>
     <message>
         <source>Insert</source>
@@ -7245,6 +7245,30 @@ The contents of a Construction Layer should not appear in printout.</source>
     <message>
         <source>- Unchanged -</source>
         <translation>- Без изменений -</translation>
+    </message>
+    <message>
+        <source>Dot (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dash (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dash Dot (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Divide (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Border (tiny)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -7676,7 +7700,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Distance. Negative values for trimming, positive values for extending.</source>
-        <translation>Расстояние. Отрицательные значения для отсекания, положительные для вытягивания.</translation>
+        <translation>Расстояние. Отрицательные значения для обрезки, положительные для удлинения.</translation>
     </message>
     <message>
         <source>Amount:</source>
@@ -9004,7 +9028,7 @@ Do you want to replace it?</source>
     </message>
     <message>
         <source>Tangential, 2 P&amp;oints</source>
-        <translation type="unfinished"></translation>
+        <translation>Ка&amp;сательная, 2 точки</translation>
     </message>
 </context>
 <context>
@@ -9036,7 +9060,7 @@ Do you want to replace it?</source>
     <message>
         <source>Tangential 2 Circles, Radius</source>
         <comment>circle tangential to two give circles and with radius</comment>
-        <translation type="unfinished"></translation>
+        <translation>Касательная к 2 окружностям, ра&amp;диус</translation>
     </message>
 </context>
 <context>
@@ -9071,7 +9095,7 @@ Do you want to replace it?</source>
     </message>
     <message>
         <source>Tangential 2 Circles, 1 Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Касательная к 2 окружностям, 1 точка</translation>
     </message>
 </context>
 <context>
@@ -9106,7 +9130,7 @@ Do you want to replace it?</source>
     </message>
     <message>
         <source>Tangential &amp;3 Circles</source>
-        <translation type="unfinished"></translation>
+        <translation>Касательная к &amp;3 окружностям</translation>
     </message>
 </context>
 <context>
@@ -12352,7 +12376,7 @@ Do you want to replace it?</source>
     </message>
     <message>
         <source>rowspacing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">рядинтервал</translation>
     </message>
     <message>
         <source>ang</source>
@@ -12362,7 +12386,7 @@ Do you want to replace it?</source>
     <message>
         <source>a</source>
         <comment>angle</comment>
-        <translation>у</translation>
+        <translation type="obsolete">у</translation>
     </message>
     <message>
         <source>fact</source>
@@ -12382,7 +12406,7 @@ Do you want to replace it?</source>
     <message>
         <source>c</source>
         <comment>columns</comment>
-        <translation>с</translation>
+        <translation type="obsolete">с</translation>
     </message>
     <message>
         <source>columnspacing</source>
@@ -12392,22 +12416,22 @@ Do you want to replace it?</source>
     <message>
         <source>colspacing</source>
         <comment>columnspacing for inserts</comment>
-        <translation type="unfinished"></translation>
+        <translation>столбинтервал</translation>
     </message>
     <message>
         <source>cs</source>
         <comment>columnspacing for inserts</comment>
-        <translation type="unfinished"></translation>
+        <translation>си</translation>
     </message>
     <message>
         <source>rowspacing</source>
         <comment>rowspacing for inserts</comment>
-        <translation type="unfinished"></translation>
+        <translation>рядинтервал</translation>
     </message>
     <message>
         <source>rs</source>
         <comment>rowspacing for inserts</comment>
-        <translation type="unfinished"></translation>
+        <translation>ри</translation>
     </message>
     <message>
         <source>center</source>
@@ -12421,7 +12445,7 @@ Do you want to replace it?</source>
     <message>
         <source>c</source>
         <comment>center</comment>
-        <translation>ц</translation>
+        <translation type="obsolete">ц</translation>
     </message>
     <message>
         <source>point</source>
@@ -12549,7 +12573,7 @@ Do you want to replace it?</source>
     <message>
         <source>r</source>
         <comment>radius</comment>
-        <translation>р</translation>
+        <translation type="obsolete">р</translation>
     </message>
     <message>
         <source>t</source>
@@ -12563,12 +12587,12 @@ Do you want to replace it?</source>
     <message>
         <source>length</source>
         <comment>chord length</comment>
-        <translation>длина</translation>
+        <translation type="obsolete">длина</translation>
     </message>
     <message>
         <source>l</source>
         <comment>chord length</comment>
-        <translation>д</translation>
+        <translation type="obsolete">д</translation>
     </message>
     <message>
         <source>Command: %1</source>
@@ -12759,7 +12783,7 @@ Do you want to replace it?</source>
     <message>
         <source>rec</source>
         <translatorcomment>прямоугольник</translatorcomment>
-        <translation>прям</translation>
+        <translation>пря</translation>
     </message>
     <message>
         <source>rectang</source>
@@ -12826,7 +12850,8 @@ Do you want to replace it?</source>
     </message>
     <message>
         <source>ld</source>
-        <translation type="unfinished">пв</translation>
+        <translatorcomment>полка-выноска</translatorcomment>
+        <translation>пв</translation>
     </message>
     <message>
         <source>tm</source>
@@ -12834,51 +12859,63 @@ Do you want to replace it?</source>
     </message>
     <message>
         <source>xt</source>
-        <translation type="unfinished">иу</translation>
+        <translatorcomment>изменить -- удлинить</translatorcomment>
+        <translation>иу</translation>
     </message>
     <message>
         <source>rm</source>
-        <translation type="unfinished">ип</translation>
+        <translatorcomment>изменить -- подогнать</translatorcomment>
+        <translation>ип</translation>
     </message>
     <message>
         <source>mv</source>
-        <translation type="unfinished">сд</translation>
+        <translatorcomment>сдвиг</translatorcomment>
+        <translation>сд</translation>
     </message>
     <message>
         <source>ch</source>
-        <translation type="unfinished">иф</translation>
+        <translatorcomment>изменить фаску</translatorcomment>
+        <translation>иф</translation>
     </message>
     <message>
         <source>mi</source>
-        <translation type="unfinished">от</translation>
+        <translatorcomment>отразить</translatorcomment>
+        <translation>от</translation>
     </message>
     <message>
         <source>ro</source>
-        <translation type="unfinished">по</translation>
+        <translatorcomment>поворот</translatorcomment>
+        <translation>по</translation>
     </message>
     <message>
         <source>sz</source>
-        <translation type="unfinished">ма</translation>
+        <translatorcomment>масштаб</translatorcomment>
+        <translation>ма</translation>
     </message>
     <message>
         <source>ss</source>
-        <translation type="unfinished">вы</translation>
+        <translatorcomment>вытянуть</translatorcomment>
+        <translation>вы</translation>
     </message>
     <message>
         <source>er</source>
-        <translation type="unfinished">уд</translation>
+        <translatorcomment>erase, удалить</translatorcomment>
+        <translation>уд</translation>
     </message>
     <message>
         <source>oo</source>
-        <translation type="unfinished">от</translation>
+        <translatorcomment>oops (undo), отменить</translatorcomment>
+        <translation>от</translation>
     </message>
     <message>
         <source>uu</source>
-        <translation type="unfinished">по</translation>
+        <translatorcomment>modify - redo, повторить</translatorcomment>
+        <translation>по</translation>
     </message>
     <message>
         <source>xp</source>
-        <translation type="unfinished">ра</translation>
+        <translatorcomment>modify - explode, разрушить</translatorcomment>
+        <translation>ра</translation>
     </message>
     <message>
         <source>os</source>
@@ -12886,34 +12923,38 @@ Do you want to replace it?</source>
     </message>
     <message>
         <source>sg</source>
-        <translatorcomment>snap - grid</translatorcomment>
+        <translatorcomment>snap - grid, привязка по сетке</translatorcomment>
         <translation>пс</translation>
     </message>
     <message>
         <source>se</source>
-        <translatorcomment>snap - end</translatorcomment>
+        <translatorcomment>snap - end, привязка к концу</translatorcomment>
         <translation>пк</translation>
     </message>
     <message>
         <source>si</source>
-        <translatorcomment>snap - intersection</translatorcomment>
+        <translatorcomment>snap - intersection, привязка к пересечению</translatorcomment>
         <translation>пп</translation>
     </message>
     <message>
         <source>sn</source>
-        <translation type="unfinished">пб</translation>
+        <translatorcomment>snap - nearest, привязка к ближнему</translatorcomment>
+        <translation>пб</translation>
     </message>
     <message>
         <source>sm</source>
-        <translation type="unfinished">пс</translation>
+        <translatorcomment>snap - middle, привязка к середине</translatorcomment>
+        <translation>пс</translation>
     </message>
     <message>
         <source>np</source>
-        <translation type="unfinished">пт</translation>
+        <translatorcomment>snap - nearest point, привязка к ближайшей точке</translatorcomment>
+        <translation>пт</translation>
     </message>
     <message>
         <source>tn</source>
-        <translation type="unfinished">ов</translation>
+        <translatorcomment>Deselect all, отменить выбор</translatorcomment>
+        <translation>ов</translation>
     </message>
     <message>
         <source>kill</source>
@@ -12921,52 +12962,62 @@ Do you want to replace it?</source>
     </message>
     <message>
         <source>k</source>
+        <translatorcomment>kill</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>back</source>
-        <translation type="unfinished"></translation>
+        <translation>назад</translation>
     </message>
     <message>
         <source>b</source>
         <comment>back</comment>
-        <translation type="unfinished"></translation>
+        <translatorcomment>back, назад</translatorcomment>
+        <translation>н</translation>
     </message>
     <message>
         <source>li</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>line, линия</translatorcomment>
+        <translation>ли</translation>
     </message>
     <message>
         <source>pl</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>polyline, ломаная</translatorcomment>
+        <translation>ло</translation>
     </message>
     <message>
         <source>pa</source>
-        <translation type="unfinished">па</translation>
+        <translatorcomment>parallel, параллельно</translatorcomment>
+        <translation>па</translation>
     </message>
     <message>
         <source>ar</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>arc, дуга</translatorcomment>
+        <translation>ду</translation>
     </message>
     <message>
         <source>rect</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>rectangle, прямоугольник</translatorcomment>
+        <translation>прям</translation>
     </message>
     <message>
         <source>redraw</source>
-        <translation type="unfinished"></translation>
+        <translation>обновить</translation>
     </message>
     <message>
         <source>zr</source>
+        <translatorcomment>zoom - redraw, увеличить - обновить</translatorcomment>
         <translation type="unfinished">уо</translation>
     </message>
     <message>
         <source>zw</source>
+        <translatorcomment>zoom - window, увеличить окно</translatorcomment>
         <translation type="unfinished">уо</translation>
     </message>
     <message>
         <source>za</source>
-        <translation type="unfinished">уа</translation>
+        <translatorcomment>zoom - auto, увеличить - авто</translatorcomment>
+        <translation>уа</translation>
     </message>
     <message>
         <source>zp</source>
@@ -12987,21 +13038,25 @@ Do you want to replace it?</source>
     </message>
     <message>
         <source>sc</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>snap - center, привязка - центр</translatorcomment>
+        <translation>пц</translation>
     </message>
     <message>
         <source>sc</source>
         <comment>snap - center</comment>
-        <translation type="unfinished"></translation>
+        <translatorcomment>snap - center, привязка - центр</translatorcomment>
+        <translation>пц</translation>
     </message>
     <message>
         <source>sd</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>snap - distance, привязка - на расстоянии</translatorcomment>
+        <translation>пр</translation>
     </message>
     <message>
         <source>sd</source>
         <comment>snap - distance</comment>
-        <translation type="unfinished"></translation>
+        <translatorcomment>snap - distance, привязка - на расстоянии</translatorcomment>
+        <translation>пр</translation>
     </message>
     <message>
         <source>sf</source>
@@ -13034,20 +13089,6 @@ Do you want to replace it?</source>
     <message>
         <source>rev</source>
         <comment>reversed</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>r</source>
-        <comment>reversed</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>row</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>r</source>
-        <comment>row</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -13155,6 +13196,46 @@ Do you want to replace it?</source>
     <message>
         <source>cut</source>
         <comment>modify - divide</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>an</source>
+        <comment>angle</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ce</source>
+        <comment>center</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>cl</source>
+        <comment>chord length</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>co</source>
+        <comment>columns</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ra</source>
+        <comment>radius</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>row</source>
+        <comment>row</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>cal</source>
+        <comment>command to trigger cli calculator</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>calculate</source>
+        <comment>command to trigger cli calculator</comment>
         <translation type="unfinished"></translation>
     </message>
 </context>

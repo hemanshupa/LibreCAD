@@ -2,6 +2,7 @@
 **
 ** This file is part of the LibreCAD project, a 2D CAD program
 **
+** Copyright (C) 2015 A. Stebich (librecad@mail.lordofbikes.de)
 ** Copyright (C) 2010 R. van Twisk (librecad@rvt.dds.nl)
 ** Copyright (C) 2001-2003 RibbonSoft. All rights reserved.
 **
@@ -157,7 +158,7 @@ public:
     bool createInscribe(const RS_Vector& coord, const QVector<RS_Line*>& lines);
     virtual QVector<RS_Entity* > offsetTwoSides(const double& distance) const;
     RS_VectorSolutions createTan1_2P(const RS_AtomicEntity* circle, const QVector<RS_Vector> points);
-    RS_VectorSolutions createTan2(const QVector<RS_AtomicEntity*>& circles, const double& r);
+	static RS_VectorSolutions createTan2(const QVector<RS_AtomicEntity*>& circles, const double& r);
     /** solve one of the eight Appollonius Equations
 | Cx - Ci|^2=(Rx+Ri)^2
 with Cx the center of the common tangent circle, Rx the radius. Ci and Ri are the Center and radius of the i-th existing circle
@@ -168,15 +169,14 @@ with Cx the center of the common tangent circle, Rx the radius. Ci and Ri are th
     bool testTan3(const QVector<RS_AtomicEntity*>& circles);
     virtual RS_Vector getMiddlePoint(void)const;
     virtual RS_Vector getNearestEndpoint(const RS_Vector& coord,
-                                         double* dist = NULL)const;
+                                         double* dist = nullptr) const;
     virtual RS_Vector getNearestPointOnEntity(const RS_Vector& coord,
                                               bool onEntity = true, double* dist = NULL, RS_Entity** entity=NULL)const;
     virtual RS_Vector getNearestCenter(const RS_Vector& coord,
                                        double* dist = NULL);
     virtual RS_Vector getNearestMiddle(const RS_Vector& coord,
-                                       double* dist = NULL,
-                                       int middlePoints = 1
-            )const;
+                                       double* dist = nullptr,
+                                       int middlePoints = 1 ) const;
     virtual RS_Vector getNearestDist(double distance,
                                      const RS_Vector& coord,
                                      double* dist = NULL);
@@ -208,6 +208,14 @@ for linear:
 m0 x + m1 y + m2 =0
 **/
     virtual LC_Quadratic getQuadratic() const;
+    
+/**
+* @brief Returns area of full circle
+* Note: Circular arcs are handled separately by RS_Arc (areaLIneIntegral) 
+* However, full ellipses and ellipse arcs are handled by RS_Ellipse
+* @return \pi r^2
+*/
+    virtual double areaLineIntegral() const;
 
     friend std::ostream& operator << (std::ostream& os, const RS_Circle& a);
 

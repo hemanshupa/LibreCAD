@@ -785,7 +785,7 @@
     <message>
         <location filename="../plotequation/plot.cpp" line="27"/>
         <source>Draw</source>
-        <translation type="unfinished"></translation>
+        <translation>Σχεδίαση</translation>
     </message>
 </context>
 <context>
@@ -807,32 +807,32 @@ Use t or x in your equation as a variable/parameter.
     <message>
         <location filename="../plotequation/plotdialog.cpp" line="13"/>
         <source>Equation 1:</source>
-        <translation type="unfinished"></translation>
+        <translation>Εξίσωση 1:</translation>
     </message>
     <message>
         <location filename="../plotequation/plotdialog.cpp" line="14"/>
         <source>Equation 2:</source>
-        <translation type="unfinished"></translation>
+        <translation>Εξίσωση 2:</translation>
     </message>
     <message>
         <location filename="../plotequation/plotdialog.cpp" line="17"/>
         <source>start value:</source>
-        <translation type="unfinished"></translation>
+        <translation>αρχική τιμή:</translation>
     </message>
     <message>
         <location filename="../plotequation/plotdialog.cpp" line="18"/>
         <source>end value:</source>
-        <translation type="unfinished"></translation>
+        <translation>τελική τιμή:</translation>
     </message>
     <message>
         <location filename="../plotequation/plotdialog.cpp" line="19"/>
         <source>step size:</source>
-        <translation type="unfinished"></translation>
+        <translation>μέγεθος βήματος:</translation>
     </message>
     <message>
         <location filename="../plotequation/plotdialog.cpp" line="23"/>
         <source>Draw</source>
-        <translation type="unfinished"></translation>
+        <translation>Σχεδίαση</translation>
     </message>
     <message>
         <location filename="../plotequation/plotdialog.cpp" line="24"/>

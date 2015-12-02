@@ -2,6 +2,7 @@
 **
 ** This file is part of the LibreCAD project, a 2D CAD program
 **
+** Copyright (C) 2015 A. Stebich (librecad@mail.lordofbikes.de)
 ** Copyright (C) 2010 R. van Twisk (librecad@rvt.dds.nl)
 ** Copyright (C) 2001-2003 RibbonSoft. All rights reserved.
 **
@@ -110,9 +111,6 @@ QC_ApplicationWindow* QC_ApplicationWindow::appWindow = NULL;
 #endif
 #ifndef QC_ABOUT_ICON
 # define QC_ABOUT_ICON ":/main/intro_librecad.png"
-#endif
-#ifndef QC_APP_ICON16
-# define QC_APP_ICON16 ":/main/librecad16.png"
 #endif
 
 #include <QSplashScreen>
@@ -243,7 +241,7 @@ QMenu *QC_ApplicationWindow::findMenu(const QString &searchMenu, const QObjectLi
                 return foundMenu;
             }
         }
-        i++;
+        ++i;
     }
     return 0;
 }
@@ -567,7 +565,7 @@ void QC_ApplicationWindow::initMDI() {
     RS_DEBUG->print("QC_ApplicationWindow::initMDI() begin");
 
     QFrame *vb = new QFrame(this);
-    vb->setSizePolicy(QSizePolicy::Maximum,QSizePolicy::Maximum);
+    vb->setSizePolicy(QSizePolicy::MinimumExpanding,QSizePolicy::MinimumExpanding);
     QVBoxLayout *layout = new QVBoxLayout;
     vb->setFrameStyle(QFrame::StyledPanel | QFrame::Sunken);
     layout->setContentsMargins ( 0, 0, 0, 0 );
@@ -579,7 +577,7 @@ void QC_ApplicationWindow::initMDI() {
     mdiAreaCAD->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
     mdiAreaCAD->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
     mdiAreaCAD->setFocusPolicy(Qt::ClickFocus);
-    mdiAreaCAD->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+    mdiAreaCAD->setSizePolicy(QSizePolicy::MinimumExpanding,QSizePolicy::MinimumExpanding);
 #if QT_VERSION >= 0x040800
     mdiAreaCAD->setTabsClosable(true);
 #endif
@@ -588,8 +586,12 @@ void QC_ApplicationWindow::initMDI() {
     connect(mdiAreaCAD, SIGNAL(subWindowActivated(QMdiSubWindow*)),
             this, SLOT(slotWindowActivated(QMdiSubWindow*)));
 
+    //this event filter allows sending key events to the command widget, therefore, no
+    // need to activate the command widget before typing commands.
+    // Since this nice feature causes a bug of lost key events when the command widget is on
+    // a screen different from the main window, disabled for the time being
     //send key events for mdiAreaCAD to command widget by default
-    mdiAreaCAD->installEventFilter(commandWidget);
+//    mdiAreaCAD->installEventFilter(commandWidget);
 
     RS_DEBUG->print("QC_ApplicationWindow::initMDI() end");
 
@@ -640,7 +642,7 @@ void QC_ApplicationWindow::initActions(void)
                                                    ,RS2::ActionFileSaveAs
                                                    ,RS2::ActionFileExport});
 
-    subMenu = menu->addMenu(tr("Import"));
+    subMenu = menu->addMenu( QIcon(":/actions/fileimport.png"), tr("Import"));
     subMenu->setObjectName("Import");
 
     //insert images
@@ -939,8 +941,7 @@ void QC_ApplicationWindow::initActions(void)
     menu = menuBar()->addMenu(tr("&Snap"));
     menu->setObjectName("Snap");
     if(snapToolBar!=NULL) {
-        auto&& actions = snapToolBar->getActions();
-        foreach(QAction* a, actions){
+        for(QAction* a : snapToolBar->getActions()){
             menu->addAction(a);
 //            connect(this, SIGNAL(windowsChanged(bool)), a, SLOT(setEnabled(bool)));
         }
@@ -968,7 +969,9 @@ void QC_ApplicationWindow::initActions(void)
                                                ,RS2::ActionLayersRemove
                                                ,RS2::ActionLayersEdit
                                                ,RS2::ActionLayersToggleLock
-                                               ,RS2::ActionLayersToggleView});
+                                               ,RS2::ActionLayersToggleView
+                                               ,RS2::ActionLayersTogglePrint
+                                               ,RS2::ActionLayersToggleConstruction});
 
     // Block actions:
     //
@@ -1010,19 +1013,15 @@ void QC_ApplicationWindow::initActions(void)
 
     // Help menu:
     //
-    /*RVT_PORThelpAboutApp = new QAction(tr("About"),
-                                                           QC_APP_ICON16), tr("&About %1").arg(QC_APPNAME), 0, this); */
-    helpAboutApp = new QAction(QIcon(QC_APP_ICON16), tr("About"), this);
+    helpAboutApp = new QAction( QIcon(QC_APP_ICON), tr("About"), this);
 
     //helpAboutApp->zetStatusTip(tr("About the application"));
     //helpAboutApp->setWhatsThis(tr("About\n\nAbout the application"));
     connect(helpAboutApp, SIGNAL(triggered()),
             this, SLOT(slotHelpAbout()));
 
-    helpManual = new QAction(QIcon(":/main/contents.png"), tr("&Manual"), this);
-    //helpManual->zetStatusTip(tr("Launch the online manual"));
-    connect(helpManual, SIGNAL(triggered()),
-            this, SLOT(slotHelpManual()));
+    helpManual = new QAction( QIcon(":/main/manual.png"), tr("&Manual"), this);
+    connect( helpManual, SIGNAL(triggered()), this, SLOT(slotHelpManual()));
 
 /* RVT_PORT    testDumpEntities = new QAction("Dump Entities",
                                    "Dump &Entities", 0, this); */
@@ -1309,9 +1308,7 @@ void QC_ApplicationWindow::initSettings() {
     for (int i=0; i<recentFiles->getNumber(); ++i) {
         QString filename = RS_SETTINGS->readEntry(QString("/File") +
                            QString::number(i+1));
-        if (!filename.isEmpty()) {
-            recentFiles->add(filename);
-        }
+        if (QFileInfo(filename).exists()) recentFiles->add(filename);
     }
     RS_SETTINGS->endGroup();
 //    QList <QAction*> recentFilesAction;
@@ -1401,6 +1398,7 @@ void QC_ApplicationWindow::initView() {
 
     RS_DEBUG->print("  layer widget..");
     dw = new QDockWidget( "Layer", this);
+    dw->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);
         dw->setObjectName ( "LayerDW" );
     layerWidget = new QG_LayerWidget(actionHandler, dw, "Layer");
     layerWidget->setFocusPolicy(Qt::NoFocus);
@@ -1534,7 +1532,8 @@ void QC_ApplicationWindow::updateRecentFilesMenu() {
         //oldest on top
 //        QString text = tr("&%1 %2").arg(i + 1).arg(recentFiles->get(i));
         //newest on top
-        QString text = tr("&%1 %2").arg(i + 1).arg(recentFiles->get(numRecentFiles-i-1));
+        QString&& text = tr("&%1 %2").arg(i + 1).arg(recentFiles->get(numRecentFiles-i-1));
+
         recentFilesAction[i]->setText(text);
         //newest on top
         recentFilesAction[i]->setData(recentFiles->get(numRecentFiles-i-1));
@@ -1619,9 +1618,10 @@ void QC_ApplicationWindow::slotEnter() {
  * Sets the keyboard focus on the command line.
  */
 void QC_ApplicationWindow::slotFocusCommandLine() {
-    if (commandWidget->isVisible()) {
+//    if (commandWidget->isVisible()) {
+        commandWidget->show();
         commandWidget->setFocus();
-    }
+//    }
 }
 
 
@@ -2412,7 +2412,7 @@ void QC_ApplicationWindow::
 
     QApplication::setOverrideCursor( QCursor(Qt::WaitCursor) );
 
-    if (!fileName.isEmpty())
+    if ( QFileInfo(fileName).exists())
          {
         RS_DEBUG->print("QC_ApplicationWindow::slotFileOpen: creating new doc window");
         if (openedFiles.indexOf(fileName) >=0) {
@@ -2446,11 +2446,14 @@ void QC_ApplicationWindow::
         qApp->processEvents(QEventLoop::AllEvents, 1000);
 
         // open the file in the new view:
-        if (w->slotFileOpen(fileName, type)==false) {
+        bool success=false;
+        if(QFileInfo(fileName).exists())
+            success=w->slotFileOpen(fileName, type);
+        if (!success) {
                // error
                QApplication::restoreOverrideCursor();
                QString msg=tr("Cannot open the file\n%1\nPlease "
-                              "check the permissions.")
+                              "check its existence and permissions.")
                        .arg(fileName);
                commandWidget->appendHistory(msg);
                QMessageBox::information(this, QMessageBox::tr("Warning"),
@@ -2519,6 +2522,7 @@ void QC_ApplicationWindow::
     }
          else
          {
+        QG_DIALOGFACTORY->commandMessage(tr("File '%1' does not exist. Opening aborted").arg(fileName));
         statusBar()->showMessage(tr("Opening aborted"), 2000);
     }
 
@@ -2972,14 +2976,15 @@ void QC_ApplicationWindow::slotFilePrint(bool printPDF) {
     emu_qt44_QPrinter_setPaperSize(printer, RS2::rsToQtPaperFormat(graphic->getPaperFormat(&landscape)));
 #else
     QPrinter::PageSize paperSize=RS2::rsToQtPaperFormat(graphic->getPaperFormat(&landscape));
-    printer.setPaperSize(paperSize);
 #endif // QT_VERSION 0x040400
     if(paperSize==QPrinter::Custom){
-        RS_Vector&& s=graphic->getPaperSize()*RS_Units::getFactorToMM(graphic->getUnit());
+        RS_Vector&& s=graphic->getPaperSize();
         if(landscape) s=s.flipXY();
         printer.setPaperSize(QSizeF(s.x,s.y),QPrinter::Millimeter);
 //        RS_DEBUG->print(RS_Debug::D_ERROR, "set paper size to (%g, %g)\n", s.x,s.y);
-    }
+    }else
+        printer.setPaperSize(paperSize);
+//    qDebug()<<"paper size=("<<printer.paperSize(QPrinter::Millimeter).width()<<", "<<printer.paperSize(QPrinter::Millimeter).height()<<")";
     if (landscape) {
         printer.setOrientation(QPrinter::Landscape);
     } else {
@@ -3013,6 +3018,7 @@ void QC_ApplicationWindow::slotFilePrint(bool printPDF) {
         fileDlg.setFileMode(QFileDialog::AnyFile);
         fileDlg.selectNameFilter(defFilter);
         fileDlg.setAcceptMode(QFileDialog::AcceptSave);
+        fileDlg.setDefaultSuffix("pdf");
         fileDlg.setDirectory(infDefaultFile.dir().path());
         strPdfFileName = infDefaultFile.baseName();
         if( strPdfFileName.isEmpty())
@@ -3032,6 +3038,7 @@ void QC_ApplicationWindow::slotFilePrint(bool printPDF) {
 
         QPrintDialog printDialog(&printer, this);
         printDialog.setOption(QAbstractPrintDialog::PrintToFile);
+        printDialog.setOption(QAbstractPrintDialog::PrintShowPageSize);
         bStartPrinting = (QDialog::Accepted == printDialog.exec());
     }
 

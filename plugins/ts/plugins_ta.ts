@@ -83,7 +83,7 @@
     <message>
         <location filename="../list/list.cpp" line="75"/>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>நிறம்</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="76"/>
@@ -103,7 +103,7 @@
     <message>
         <location filename="../list/list.cpp" line="84"/>
         <source>POINT</source>
-        <translation type="unfinished"></translation>
+        <translation>புள்ளி</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="85"/>
@@ -130,7 +130,7 @@
         <location filename="../list/list.cpp" line="103"/>
         <location filename="../list/list.cpp" line="127"/>
         <source>length</source>
-        <translation type="unfinished"></translation>
+        <translation>நீளம்</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="108"/>
@@ -159,17 +159,17 @@
         <location filename="../list/list.cpp" line="135"/>
         <location filename="../list/list.cpp" line="199"/>
         <source>radius</source>
-        <translation type="unfinished"></translation>
+        <translation>ஆரம்</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="122"/>
         <source>initial angle</source>
-        <translation type="unfinished"></translation>
+        <translation>ஆரம்ப கோணம்</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="123"/>
         <source>final angle</source>
-        <translation type="unfinished"></translation>
+        <translation>இறுதி கோணம்</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="130"/>
@@ -179,7 +179,7 @@
     <message>
         <location filename="../list/list.cpp" line="136"/>
         <source>circumference</source>
-        <translation type="unfinished"></translation>
+        <translation>சுற்றளவு</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="137"/>
@@ -229,7 +229,7 @@
     <message>
         <location filename="../list/list.cpp" line="181"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>பெயர்</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="182"/>
@@ -249,22 +249,22 @@
     <message>
         <location filename="../list/list.cpp" line="189"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation>இல்லை</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="189"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>ஆம்</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="190"/>
         <source>Vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>கோண உச்சிகள்</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="204"/>
         <source>IMAGE</source>
-        <translation type="unfinished"></translation>
+        <translation>படம்</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="207"/>
@@ -440,17 +440,17 @@
     <message>
         <location filename="../asciifile/asciifile.cpp" line="278"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>ஏற்கவும்</translation>
     </message>
     <message>
         <location filename="../asciifile/asciifile.cpp" line="283"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>ரத்து</translation>
     </message>
     <message>
         <location filename="../asciifile/asciifile.cpp" line="313"/>
         <source>Select file</source>
-        <translation type="unfinished"></translation>
+        <translation>கோப்பைத் தேர்ந்தெடு</translation>
     </message>
     <message>
         <location filename="../asciifile/asciifile.cpp" line="320"/>
@@ -565,7 +565,7 @@
     <message>
         <location filename="../importshp/importshp.cpp" line="88"/>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>நிறம்</translation>
     </message>
     <message>
         <location filename="../importshp/importshp.cpp" line="101"/>
@@ -575,13 +575,13 @@
     <message>
         <location filename="../importshp/importshp.cpp" line="114"/>
         <source>Width</source>
-        <translation type="unfinished"></translation>
+        <translation>அகலம்</translation>
     </message>
     <message>
         <location filename="../importshp/importshp.cpp" line="127"/>
         <location filename="../importshp/importshp.cpp" line="213"/>
         <source>Point</source>
-        <translation type="unfinished"></translation>
+        <translation>புள்ளி</translation>
     </message>
     <message>
         <location filename="../importshp/importshp.cpp" line="128"/>
@@ -596,17 +596,17 @@
     <message>
         <location filename="../importshp/importshp.cpp" line="141"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>ஏற்கவும்</translation>
     </message>
     <message>
         <location filename="../importshp/importshp.cpp" line="142"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>ரத்து</translation>
     </message>
     <message>
         <location filename="../importshp/importshp.cpp" line="167"/>
         <source>Select file</source>
-        <translation type="unfinished"></translation>
+        <translation>கோப்பைத் தேர்ந்தெடு</translation>
     </message>
     <message>
         <location filename="../importshp/importshp.cpp" line="217"/>
@@ -651,7 +651,7 @@
     <message>
         <location filename="../importshp/importshp.cpp" line="249"/>
         <source>Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>பலகோணம்</translation>
     </message>
     <message>
         <location filename="../importshp/importshp.cpp" line="253"/>
@@ -717,12 +717,12 @@
     <message>
         <location filename="../sample/sample.cpp" line="86"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ஏற்கவும்</translation>
     </message>
     <message>
         <location filename="../sample/sample.cpp" line="91"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ரத்து</translation>
     </message>
     <message>
         <location filename="../sample/sample.cpp" line="107"/>
@@ -813,7 +813,7 @@ Use t or x in your equation as a variable/parameter.
     <message>
         <location filename="../plotequation/plotdialog.cpp" line="24"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ரத்து</translation>
     </message>
 </context>
 <context>

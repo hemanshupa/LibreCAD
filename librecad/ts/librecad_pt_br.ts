@@ -584,7 +584,7 @@ Salvamento automático desabilitado.</translation>
     </message>
     <message>
         <source>&amp;Text</source>
-        <translation type="unfinished">&amp;Texto</translation>
+        <translation>&amp;Texto</translation>
     </message>
 </context>
 <context>
@@ -723,7 +723,7 @@ Salvamento automático desabilitado.</translation>
     </message>
     <message>
         <source>&amp;Block</source>
-        <translation type="unfinished">&amp;Bloco</translation>
+        <translation>&amp;Bloco</translation>
     </message>
 </context>
 <context>
@@ -731,7 +731,7 @@ Salvamento automático desabilitado.</translation>
     <message>
         <source>escape</source>
         <comment>escape, go back from action steps</comment>
-        <translation type="unfinished"></translation>
+        <translation>abortar</translation>
     </message>
 </context>
 <context>
@@ -1835,7 +1835,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>escape</source>
         <comment>escape, go back from action steps</comment>
-        <translation type="unfinished"></translation>
+        <translation>abortar</translation>
     </message>
 </context>
 <context>
@@ -7045,6 +7045,30 @@ The contents of a Construction Layer should not appear in printout.</source>
         <source>Dot (small)</source>
         <translation>Ponto (pequeno)</translation>
     </message>
+    <message>
+        <source>Dot (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dash (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dash Dot (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Divide (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Border (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QG_MTextOptions</name>
@@ -9724,7 +9748,7 @@ Deseja substituí-lo?</translation>
     </message>
     <message>
         <source>Tangential, 2 P&amp;oints</source>
-        <translation type="unfinished"></translation>
+        <translation>Tangencial, 2 P&amp;ontos</translation>
     </message>
 </context>
 <context>
@@ -9756,7 +9780,7 @@ Deseja substituí-lo?</translation>
     <message>
         <source>Tangential 2 Circles, Radius</source>
         <comment>circle tangential to two give circles and with radius</comment>
-        <translation type="unfinished"></translation>
+        <translation>Tangencial 2 Círculos, Raio</translation>
     </message>
 </context>
 <context>
@@ -9791,7 +9815,7 @@ Deseja substituí-lo?</translation>
     </message>
     <message>
         <source>Tangential 2 Circles, 1 Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Tangencial 2 Círculos, 1 Ponto</translation>
     </message>
 </context>
 <context>
@@ -9826,7 +9850,7 @@ Deseja substituí-lo?</translation>
     </message>
     <message>
         <source>Tangential &amp;3 Circles</source>
-        <translation type="unfinished"></translation>
+        <translation>Tangencial &amp;3 Círculos</translation>
     </message>
 </context>
 <context>
@@ -13553,7 +13577,7 @@ não são exibidas para melhorar a performance de exibição.</translation>
     <message>
         <source>a</source>
         <comment>angle</comment>
-        <translation>a</translation>
+        <translation type="obsolete">a</translation>
     </message>
     <message>
         <source>fact</source>
@@ -13573,7 +13597,7 @@ não são exibidas para melhorar a performance de exibição.</translation>
     <message>
         <source>c</source>
         <comment>columns</comment>
-        <translation>c</translation>
+        <translation type="obsolete">c</translation>
     </message>
     <message>
         <source>columnspacing</source>
@@ -13612,7 +13636,7 @@ não são exibidas para melhorar a performance de exibição.</translation>
     <message>
         <source>c</source>
         <comment>center</comment>
-        <translation>c</translation>
+        <translation type="obsolete">c</translation>
     </message>
     <message>
         <source>point</source>
@@ -13740,7 +13764,7 @@ não são exibidas para melhorar a performance de exibição.</translation>
     <message>
         <source>r</source>
         <comment>radius</comment>
-        <translation>r</translation>
+        <translation type="obsolete">r</translation>
     </message>
     <message>
         <source>t</source>
@@ -13754,12 +13778,12 @@ não são exibidas para melhorar a performance de exibição.</translation>
     <message>
         <source>length</source>
         <comment>chord length</comment>
-        <translation>length</translation>
+        <translation type="obsolete">length</translation>
     </message>
     <message>
         <source>l</source>
         <comment>chord length</comment>
-        <translation>l</translation>
+        <translation type="obsolete">l</translation>
     </message>
     <message>
         <source>Command: %1</source>
@@ -14197,16 +14221,16 @@ não são exibidas para melhorar a performance de exibição.</translation>
     <message>
         <source>r</source>
         <comment>reversed</comment>
-        <translation>r</translation>
+        <translation type="obsolete">r</translation>
     </message>
     <message>
         <source>row</source>
-        <translation>row</translation>
+        <translation type="obsolete">row</translation>
     </message>
     <message>
         <source>r</source>
         <comment>row</comment>
-        <translation>r</translation>
+        <translation type="obsolete">r</translation>
     </message>
     <message>
         <source>r</source>
@@ -14298,21 +14322,61 @@ não são exibidas para melhorar a performance de exibição.</translation>
     <message>
         <source>fillet</source>
         <comment>modify - fillet</comment>
-        <translation type="unfinished"></translation>
+        <translation>fillet</translation>
     </message>
     <message>
         <source>divide</source>
         <comment>modify - divide</comment>
-        <translation type="unfinished"></translation>
+        <translation>divide</translation>
     </message>
     <message>
         <source>div</source>
         <comment>modify - divide</comment>
-        <translation type="unfinished"></translation>
+        <translation>div</translation>
     </message>
     <message>
         <source>cut</source>
         <comment>modify - divide</comment>
+        <translation>cut</translation>
+    </message>
+    <message>
+        <source>an</source>
+        <comment>angle</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ce</source>
+        <comment>center</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>cl</source>
+        <comment>chord length</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>co</source>
+        <comment>columns</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ra</source>
+        <comment>radius</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>row</source>
+        <comment>row</comment>
+        <translation type="unfinished">row</translation>
+    </message>
+    <message>
+        <source>cal</source>
+        <comment>command to trigger cli calculator</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>calculate</source>
+        <comment>command to trigger cli calculator</comment>
         <translation type="unfinished"></translation>
     </message>
 </context>

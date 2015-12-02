@@ -675,7 +675,7 @@ Automatisches speichern wurde deaktiviert.</translation>
     </message>
     <message>
         <source>&amp;Text</source>
-        <translation type="unfinished">&amp;Text</translation>
+        <translation>&amp;Text</translation>
     </message>
 </context>
 <context>
@@ -2376,7 +2376,7 @@ wirklich schließen?</translation>
     </message>
     <message>
         <source>&amp;Block</source>
-        <translation type="unfinished">B&amp;lock</translation>
+        <translation>B&amp;lock</translation>
     </message>
 </context>
 <context>
@@ -2384,7 +2384,7 @@ wirklich schließen?</translation>
     <message>
         <source>escape</source>
         <comment>escape, go back from action steps</comment>
-        <translation type="unfinished"></translation>
+        <translation>escape</translation>
     </message>
 </context>
 <context>
@@ -3556,7 +3556,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>escape</source>
         <comment>escape, go back from action steps</comment>
-        <translation type="unfinished"></translation>
+        <translation>escape</translation>
     </message>
 </context>
 <context>
@@ -7660,6 +7660,30 @@ Der Inhalt von Entwurfsebenen wird nicht ausgedruckt.</translation>
         <source>- Unchanged -</source>
         <translation>- Unverändert -</translation>
     </message>
+    <message>
+        <source>Dot (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dash (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dash Dot (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Divide (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Border (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QG_MTextOptions</name>
@@ -9512,7 +9536,7 @@ Wollen Sie die Datei überschreiben?</translation>
     </message>
     <message>
         <source>Tangential, 2 P&amp;oints</source>
-        <translation type="unfinished"></translation>
+        <translation>Tangential, 2 P&amp;unkte</translation>
     </message>
 </context>
 <context>
@@ -9544,7 +9568,7 @@ Wollen Sie die Datei überschreiben?</translation>
     <message>
         <source>Tangential 2 Circles, Radius</source>
         <comment>circle tangential to two give circles and with radius</comment>
-        <translation type="unfinished"></translation>
+        <translation>Tangential 2 Kreise, Radius</translation>
     </message>
 </context>
 <context>
@@ -9579,7 +9603,7 @@ Wollen Sie die Datei überschreiben?</translation>
     </message>
     <message>
         <source>Tangential 2 Circles, 1 Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Tangential 2 Kreise, 1 Punkt</translation>
     </message>
 </context>
 <context>
@@ -9626,7 +9650,7 @@ Wollen Sie die Datei überschreiben?</translation>
     </message>
     <message>
         <source>Tangential &amp;3 Circles</source>
-        <translation type="unfinished"></translation>
+        <translation>Tangential &amp;3 Kreise</translation>
     </message>
 </context>
 <context>
@@ -13162,7 +13186,7 @@ Wollen Sie die Datei überschreiben?</translation>
     <message>
         <source>a</source>
         <comment>angle</comment>
-        <translation>w</translation>
+        <translation type="obsolete">w</translation>
     </message>
     <message>
         <source>fact</source>
@@ -13182,7 +13206,7 @@ Wollen Sie die Datei überschreiben?</translation>
     <message>
         <source>c</source>
         <comment>columns</comment>
-        <translation>sp</translation>
+        <translation type="obsolete">sp</translation>
     </message>
     <message>
         <source>r</source>
@@ -13226,7 +13250,7 @@ Wollen Sie die Datei überschreiben?</translation>
     <message>
         <source>c</source>
         <comment>center</comment>
-        <translation>z</translation>
+        <translation type="obsolete">z</translation>
     </message>
     <message>
         <source>reversed</source>
@@ -13393,7 +13417,7 @@ Wollen Sie die Datei überschreiben?</translation>
     <message>
         <source>r</source>
         <comment>radius</comment>
-        <translation>ra</translation>
+        <translation type="obsolete">ra</translation>
     </message>
     <message>
         <source>t</source>
@@ -13407,12 +13431,12 @@ Wollen Sie die Datei überschreiben?</translation>
     <message>
         <source>length</source>
         <comment>chord length</comment>
-        <translation>sehne</translation>
+        <translation type="obsolete">sehne</translation>
     </message>
     <message>
         <source>l</source>
         <comment>chord length</comment>
-        <translation>sl</translation>
+        <translation type="obsolete">sl</translation>
     </message>
     <message>
         <source>Command: %1</source>
@@ -13866,16 +13890,16 @@ Wollen Sie die Datei überschreiben?</translation>
     <message>
         <source>r</source>
         <comment>reversed</comment>
-        <translation>u</translation>
+        <translation type="obsolete">u</translation>
     </message>
     <message>
         <source>row</source>
-        <translation>reihe</translation>
+        <translation type="obsolete">reihe</translation>
     </message>
     <message>
         <source>r</source>
         <comment>row</comment>
-        <translation>r</translation>
+        <translation type="obsolete">r</translation>
     </message>
     <message>
         <source>Command not found: %1</source>
@@ -13962,21 +13986,61 @@ Wollen Sie die Datei überschreiben?</translation>
     <message>
         <source>fillet</source>
         <comment>modify - fillet</comment>
-        <translation type="unfinished"></translation>
+        <translation>abrunden</translation>
     </message>
     <message>
         <source>divide</source>
         <comment>modify - divide</comment>
-        <translation type="unfinished"></translation>
+        <translation>trennen</translation>
     </message>
     <message>
         <source>div</source>
         <comment>modify - divide</comment>
-        <translation type="unfinished"></translation>
+        <translation>tre</translation>
     </message>
     <message>
         <source>cut</source>
         <comment>modify - divide</comment>
+        <translation>trennen</translation>
+    </message>
+    <message>
+        <source>an</source>
+        <comment>angle</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ce</source>
+        <comment>center</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>cl</source>
+        <comment>chord length</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>co</source>
+        <comment>columns</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ra</source>
+        <comment>radius</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>row</source>
+        <comment>row</comment>
+        <translation type="unfinished">reihe</translation>
+    </message>
+    <message>
+        <source>cal</source>
+        <comment>command to trigger cli calculator</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>calculate</source>
+        <comment>command to trigger cli calculator</comment>
         <translation type="unfinished"></translation>
     </message>
 </context>

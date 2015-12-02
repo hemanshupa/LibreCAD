@@ -5,71 +5,72 @@
     <name>LC_ActionDrawCircle2PR</name>
     <message>
         <source>2 Points, Radius</source>
-        <translation type="unfinished"></translation>
+        <translation>2 punkti, rādiuss</translation>
     </message>
     <message>
         <source>radius=%1 is too small for points selected
 distance between points=%2 is larger than diameter=%3</source>
-        <translation type="unfinished"></translation>
+        <translation>rādiuss=%1 ir pārāk mazs izvēlētajiem punktiem
+attālums starp punktiem=%2 ir lielāks nekā diametrs=%3</translation>
     </message>
     <message>
         <source>Select from two possible circle centers</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvēlieties no diviem iespējamajiem apļa centriem</translation>
     </message>
     <message>
         <source>Specify first point</source>
-        <translation type="unfinished">Norādiet pirmo punktu</translation>
+        <translation>Norādiet pirmo punktu</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Atcelt</translation>
+        <translation>Atcelt</translation>
     </message>
     <message>
         <source>Specify second point</source>
-        <translation type="unfinished">Norādiet otro punktu</translation>
+        <translation>Norādiet otro punktu</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Atpakaļ</translation>
+        <translation>Atpakaļ</translation>
     </message>
     <message>
         <source>Select circle center</source>
-        <translation type="unfinished"></translation>
+        <translation>Norādiet apļa centru</translation>
     </message>
 </context>
 <context>
     <name>LC_ActionDrawSplinePoints</name>
     <message>
         <source>&amp;Spline through points</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Splains cauri punktiem</translation>
     </message>
     <message>
         <source>Specify first control point</source>
-        <translation type="unfinished">Norādiet pirmo vadības punktu</translation>
+        <translation>Norādiet pirmo vadības punktu</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Atcelt</translation>
+        <translation>Atcelt</translation>
     </message>
     <message>
         <source>Specify next control point or [%1]</source>
-        <translation type="unfinished">Norādiet nākamo vadības punktu vai [%1]</translation>
+        <translation>Norādiet nākamo vadības punktu vai [%1]</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Atpakaļ</translation>
+        <translation>Atpakaļ</translation>
     </message>
     <message>
         <source>Specify next control point</source>
-        <translation type="unfinished">Norādiet nākamo vadības punktu</translation>
+        <translation>Norādiet nākamo vadības punktu</translation>
     </message>
     <message>
         <source>Cannot undo: Not enough entities defined yet.</source>
-        <translation type="unfinished">Nevar atsaukt — vēl nav pietiekami daudz definētu objektu.</translation>
+        <translation>Nevar atsaukt — vēl nav pietiekami daudz definētu objektu.</translation>
     </message>
     <message>
         <source>Cannot undo: Nothing could be redone.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nevar atsaukt — neko nevar atatsaukt.</translation>
     </message>
 </context>
 <context>
@@ -503,19 +504,19 @@ Automātiskā saglabāšana ir deaktivēta.</translation>
     </message>
     <message>
         <source>&amp;Spline</source>
-        <translation type="unfinished">&amp;Splains</translation>
+        <translation>&amp;Splains</translation>
     </message>
     <message>
         <source>Draft Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Melnraksta režīms</translation>
     </message>
     <message>
         <source>Export as PDF</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksportēt kā PDF</translation>
     </message>
     <message>
         <source>&amp;Text</source>
-        <translation type="unfinished">&amp;Teksts</translation>
+        <translation>&amp;Teksts</translation>
     </message>
 </context>
 <context>
@@ -591,11 +592,11 @@ Automātiskā saglabāšana ir deaktivēta.</translation>
     </message>
     <message>
         <source>Export as PDF</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksportēt kā PDF</translation>
     </message>
     <message>
         <source>&amp;Block</source>
-        <translation type="unfinished">&amp;Bloks</translation>
+        <translation>&amp;Bloks</translation>
     </message>
 </context>
 <context>
@@ -603,22 +604,22 @@ Automātiskā saglabāšana ir deaktivēta.</translation>
     <message>
         <source>escape</source>
         <comment>escape, go back from action steps</comment>
-        <translation type="unfinished"></translation>
+        <translation>atsolis</translation>
     </message>
 </context>
 <context>
     <name>QG_ActiveLayerName</name>
     <message>
         <source>Selection</source>
-        <translation type="unfinished">Izvēle</translation>
+        <translation>Izvēle</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Current Layer</source>
-        <translation type="unfinished"></translation>
+        <translation>Pašreizējais slānis</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -626,7 +627,11 @@ Automātiskā saglabāšana ir deaktivēta.</translation>
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Helvetica&apos;; font-size:7pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Name of Current Active Layer&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Helvetica&apos;; font-size:7pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Pašlaik aktīvā slāņa nosaukums&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -930,7 +935,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Circle with 2 Points and Radius&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Aplis ar 2 punktiem un rādiuss&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1300,11 +1305,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Lengthen</source>
-        <translation type="unfinished"></translation>
+        <translation>Pagarināt</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fillet, rounding of an interior or exterior corner&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Lente, iekšējā vai ārējā stūra noapaļošana&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1440,7 +1445,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Interpolation Spline</source>
-        <translation type="unfinished"></translation>
+        <translation>Interpolācijas splains</translation>
     </message>
 </context>
 <context>
@@ -1591,16 +1596,16 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;Copy</source>
-        <translation type="unfinished">&amp;Kopēt</translation>
+        <translation>&amp;Kopēt</translation>
     </message>
     <message>
         <source>select&amp;All</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvēlēties &amp;visu</translation>
     </message>
     <message>
         <source>escape</source>
         <comment>escape, go back from action steps</comment>
-        <translation type="unfinished"></translation>
+        <translation>atsolis</translation>
     </message>
 </context>
 <context>
@@ -1661,11 +1666,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message utf8="true">
         <source>⌀</source>
-        <translation type="unfinished"></translation>
+        <translation>⌀</translation>
     </message>
     <message utf8="true">
         <source>π</source>
-        <translation type="unfinished"></translation>
+        <translation>π</translation>
     </message>
 </context>
 <context>
@@ -1712,11 +1717,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message utf8="true">
         <source>⌀ (Diameter)</source>
-        <translation type="unfinished"></translation>
+        <translation>⌀ (Diametrs)</translation>
     </message>
     <message utf8="true">
         <source>π (Pi)</source>
-        <translation type="unfinished"></translation>
+        <translation>π (Pī)</translation>
     </message>
 </context>
 <context>
@@ -2676,7 +2681,7 @@ Lūdzu, izvēlieties mērvienības, kuras izmantot jauniem zīmējumiem, kā ar�
     </message>
     <message utf8="true">
         <source>Diameter (⌀)</source>
-        <translation type="unfinished"></translation>
+        <translation>Diametrs (⌀)</translation>
     </message>
 </context>
 <context>
@@ -3431,11 +3436,11 @@ Lūdzu, izvēlieties mērvienības, kuras izmantot jauniem zīmējumiem, kā ar�
     </message>
     <message>
         <source>Splash Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Uzplaiksnījuma logs</translation>
     </message>
     <message>
         <source>Display Splash</source>
-        <translation type="unfinished"></translation>
+        <translation>Attēlot uzplaiksnījumu</translation>
     </message>
 </context>
 <context>
@@ -4304,7 +4309,7 @@ Lūdzu, izvēlieties mērvienības, kuras izmantot jauniem zīmējumiem, kā ar�
     </message>
     <message utf8="true">
         <source>Diameter (⌀)</source>
-        <translation type="unfinished"></translation>
+        <translation>Diametrs (⌀)</translation>
     </message>
 </context>
 <context>
@@ -4642,11 +4647,12 @@ Palīgslāņa saturam nevajadzētu parādīties izdrukā.</translation>
     <message>
         <source>A Construction Layer has entities of infinite straight lines intended to be used for geometric construction.
 The contents of a Construction Layer should not appear in printout.</source>
-        <translation type="unfinished"></translation>
+        <translation>Konstruēšanas slānī vienumiem ir bezgalīgi garas līnijas, kuras ir paredzētas ģeometrisku figūru konstruēšanai.
+Konstruēšanas slāņa saturam nevajadzētu parādīties izdrukā.</translation>
     </message>
     <message>
         <source>Construction Layer</source>
-        <translation type="unfinished"></translation>
+        <translation>Konstruēšanas slānis</translation>
     </message>
 </context>
 <context>
@@ -5015,6 +5021,30 @@ The contents of a Construction Layer should not appear in printout.</source>
     <message>
         <source>- Unchanged -</source>
         <translation>- Nemainīta -</translation>
+    </message>
+    <message>
+        <source>Dot (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dash (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dash Dot (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Divide (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Border (tiny)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5932,7 +5962,7 @@ Vai vēlaties to aizvietot?</translation>
     </message>
     <message>
         <source>Hatch failed due to a gap=%1 between (%2, %3) and (%4, %5)</source>
-        <translation type="unfinished"></translation>
+        <translation>Svītrojums neizdevās, jo atstarpe=%1 ir starp (%2, %3) un (%4, %5)</translation>
     </message>
 </context>
 <context>
@@ -6476,7 +6506,7 @@ Vai vēlaties to aizvietot?</translation>
     </message>
     <message>
         <source>radius=%1 is invalid</source>
-        <translation type="unfinished"></translation>
+        <translation>rādiuss=%1 nav derīgs</translation>
     </message>
 </context>
 <context>
@@ -6538,7 +6568,7 @@ Vai vēlaties to aizvietot?</translation>
     </message>
     <message>
         <source>Tangential, 2 P&amp;oints</source>
-        <translation type="unfinished"></translation>
+        <translation>Pieskare, 2 p&amp;unkti</translation>
     </message>
 </context>
 <context>
@@ -6570,7 +6600,7 @@ Vai vēlaties to aizvietot?</translation>
     <message>
         <source>Tangential 2 Circles, Radius</source>
         <comment>circle tangential to two give circles and with radius</comment>
-        <translation type="unfinished"></translation>
+        <translation>Pieskaras 2 apļiem, rādiuss</translation>
     </message>
 </context>
 <context>
@@ -6605,7 +6635,7 @@ Vai vēlaties to aizvietot?</translation>
     </message>
     <message>
         <source>Tangential 2 Circles, 1 Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Pieskaras 2 apļiem, 1 punkts</translation>
     </message>
 </context>
 <context>
@@ -6640,7 +6670,7 @@ Vai vēlaties to aizvietot?</translation>
     </message>
     <message>
         <source>Tangential &amp;3 Circles</source>
-        <translation type="unfinished"></translation>
+        <translation>Pieskaras &amp;3 apļiem</translation>
     </message>
 </context>
 <context>
@@ -6815,7 +6845,7 @@ Vai vēlaties to aizvietot?</translation>
     </message>
     <message>
         <source>Can not determine uniquely an ellipse</source>
-        <translation type="unfinished">Never unikāli noteikt elipsi. </translation>
+        <translation>Never unikāli noteikt elipsi. </translation>
     </message>
 </context>
 <context>
@@ -6854,7 +6884,7 @@ Vai vēlaties to aizvietot?</translation>
     </message>
     <message>
         <source>Total hatch area = %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopējais svītrojuma laukums = %1</translation>
     </message>
 </context>
 <context>
@@ -7003,7 +7033,7 @@ Vai vēlaties to aizvietot?</translation>
     <message>
         <source>Number sector lines not in range: </source>
         <comment>number of bisector to create must be in [1, 200]</comment>
-        <translation type="unfinished"></translation>
+        <translation>Sektora līniju skaits, kas nav diapazonā: </translation>
     </message>
 </context>
 <context>
@@ -7853,7 +7883,7 @@ Vai vēlaties to aizvietot?</translation>
     </message>
     <message>
         <source>Entity must be a line, arc, circle, ellipse or interpolation spline.</source>
-        <translation type="unfinished"></translation>
+        <translation>Objektam ir jābūt līnijai, arkai, aplim, elipsei vai interpolācijas splainam.</translation>
     </message>
 </context>
 <context>
@@ -8132,7 +8162,7 @@ Vai vēlaties to aizvietot?</translation>
     </message>
     <message>
         <source>&amp;Fillet</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Lente</translation>
     </message>
 </context>
 <context>
@@ -8606,31 +8636,31 @@ Vai vēlaties to aizvietot?</translation>
     </message>
     <message>
         <source>Printout offset in paper coordinates by (%1, %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Izdrukas nobīde papīra koordinātās par (%1, %2)</translation>
     </message>
     <message>
         <source>Printout offset in graph coordinates by (%1, %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Izdrukas nobīde grafika koordinātās par (%1, %2)</translation>
     </message>
     <message>
         <source>Printout offset in graph coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Izdrukas nobīde grafika koordinātās</translation>
     </message>
     <message>
         <source>Printout offset in paper coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Izdrukas nobīde papīra koordinātās</translation>
     </message>
     <message>
         <source>: select printout offset coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>: izvēlieties izdrukas nobīdes koordinātas</translation>
     </message>
     <message>
         <source>type in offset from command line to offset printout</source>
-        <translation type="unfinished"></translation>
+        <translation>komandrindā ievadiet nobīdi, lai nobīdītu izdruku</translation>
     </message>
     <message>
         <source>Printout offset ignores relative zero. Ignoring &apos;@&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Izdrukas nobīdes ignorē relatīvo nulli. Ignorē “@”</translation>
     </message>
 </context>
 <context>
@@ -9003,7 +9033,7 @@ Vai vēlaties to aizvietot?</translation>
     <message>
         <source>a</source>
         <comment>angle</comment>
-        <translation>l</translation>
+        <translation type="obsolete">l</translation>
     </message>
     <message>
         <source>fact</source>
@@ -9023,7 +9053,7 @@ Vai vēlaties to aizvietot?</translation>
     <message>
         <source>c</source>
         <comment>columns</comment>
-        <translation>k</translation>
+        <translation type="obsolete">k</translation>
     </message>
     <message>
         <source>columnspacing</source>
@@ -9062,7 +9092,7 @@ Vai vēlaties to aizvietot?</translation>
     <message>
         <source>c</source>
         <comment>center</comment>
-        <translation>c</translation>
+        <translation type="obsolete">c</translation>
     </message>
     <message>
         <source>point</source>
@@ -9190,7 +9220,7 @@ Vai vēlaties to aizvietot?</translation>
     <message>
         <source>r</source>
         <comment>radius</comment>
-        <translation>r</translation>
+        <translation type="obsolete">r</translation>
     </message>
     <message>
         <source>t</source>
@@ -9204,12 +9234,12 @@ Vai vēlaties to aizvietot?</translation>
     <message>
         <source>length</source>
         <comment>chord length</comment>
-        <translation>garums</translation>
+        <translation type="obsolete">garums</translation>
     </message>
     <message>
         <source>l</source>
         <comment>chord length</comment>
-        <translation>g</translation>
+        <translation type="obsolete">g</translation>
     </message>
     <message>
         <source>Command: %1</source>
@@ -9647,16 +9677,16 @@ Vai vēlaties to aizvietot?</translation>
     <message>
         <source>r</source>
         <comment>reversed</comment>
-        <translation>a</translation>
+        <translation type="obsolete">a</translation>
     </message>
     <message>
         <source>row</source>
-        <translation>rinda</translation>
+        <translation type="obsolete">rinda</translation>
     </message>
     <message>
         <source>r</source>
         <comment>row</comment>
-        <translation>r</translation>
+        <translation type="obsolete">r</translation>
     </message>
     <message>
         <source>r</source>
@@ -9691,78 +9721,118 @@ Vai vēlaties to aizvietot?</translation>
     <message>
         <source>rn</source>
         <comment>restrict - nothing</comment>
-        <translation type="unfinished"></translation>
+        <translation>in</translation>
     </message>
     <message>
         <source>rn</source>
-        <translation type="unfinished"></translation>
+        <translation>in</translation>
     </message>
     <message>
         <source>rr</source>
         <comment>restrict - orthogonal</comment>
-        <translation type="unfinished"></translation>
+        <translation>io</translation>
     </message>
     <message>
         <source>rr</source>
-        <translation type="unfinished"></translation>
+        <translation>io</translation>
     </message>
     <message>
         <source>rh</source>
         <comment>restrict - horizontal</comment>
-        <translation type="unfinished"></translation>
+        <translation>ih</translation>
     </message>
     <message>
         <source>rh</source>
-        <translation type="unfinished"></translation>
+        <translation>ih</translation>
     </message>
     <message>
         <source>rv</source>
         <comment>restrict - vertical</comment>
-        <translation type="unfinished"></translation>
+        <translation>iv</translation>
     </message>
     <message>
         <source>rv</source>
-        <translation type="unfinished"></translation>
+        <translation>iv</translation>
     </message>
     <message>
         <source>setrelativezero</source>
-        <translation type="unfinished"></translation>
+        <translation>iestatītrelatīvonulli</translation>
     </message>
     <message>
         <source>setrelativezero</source>
         <comment>snap - set relative zero position</comment>
-        <translation type="unfinished"></translation>
+        <translation>iestatītrelatīvonulli</translation>
     </message>
     <message>
         <source>rz</source>
-        <translation type="unfinished"></translation>
+        <translation>rz</translation>
     </message>
     <message>
         <source>paperoffset</source>
-        <translation type="unfinished"></translation>
+        <translation>papīranobīde</translation>
     </message>
     <message>
         <source>graphoffset</source>
-        <translation type="unfinished"></translation>
+        <translation>grafikanobīde</translation>
     </message>
     <message>
         <source>fillet</source>
         <comment>modify - fillet</comment>
-        <translation type="unfinished"></translation>
+        <translation>lenta</translation>
     </message>
     <message>
         <source>divide</source>
         <comment>modify - divide</comment>
-        <translation type="unfinished"></translation>
+        <translation>dalīt</translation>
     </message>
     <message>
         <source>div</source>
         <comment>modify - divide</comment>
-        <translation type="unfinished"></translation>
+        <translation>dal</translation>
     </message>
     <message>
         <source>cut</source>
         <comment>modify - divide</comment>
+        <translation>griezt</translation>
+    </message>
+    <message>
+        <source>an</source>
+        <comment>angle</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ce</source>
+        <comment>center</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>cl</source>
+        <comment>chord length</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>co</source>
+        <comment>columns</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ra</source>
+        <comment>radius</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>row</source>
+        <comment>row</comment>
+        <translation type="unfinished">rinda</translation>
+    </message>
+    <message>
+        <source>cal</source>
+        <comment>command to trigger cli calculator</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>calculate</source>
+        <comment>command to trigger cli calculator</comment>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -37,18 +37,9 @@ RS_ActionDrawCircleTan2::RS_ActionDrawCircleTan2(
     :RS_PreviewActionInterface("Draw circle inscribed",
                                container, graphicView),
       cData(RS_Vector(0.,0.),1.),
-      enTypeList()
+	  enTypeList({RS2::EntityLine, RS2::EntityArc, RS2::EntityCircle})
 {
-    //    supported types
-    enTypeList<<RS2::EntityLine<<RS2::EntityArc<<RS2::EntityCircle;
 }
-
-
-
-RS_ActionDrawCircleTan2::~RS_ActionDrawCircleTan2() {
-}
-
-
 
 QAction* RS_ActionDrawCircleTan2::createGUIAction(RS2::ActionType /*type*/, QObject* /*parent*/) {
     QAction* action;
@@ -132,6 +123,9 @@ void RS_ActionDrawCircleTan2::mouseMoveEvent(QMouseEvent* e) {
             deletePreview();
             RS_Circle* e=new RS_Circle(preview, cData);
             preview->addEntity(e);
+			for(size_t i=0; i< centers.size(); ++i){
+				preview->addEntity(new RS_Point(preview, RS_PointData(centers.at(i))));
+			}
             drawPreview();
         }
     }
@@ -146,15 +140,13 @@ void RS_ActionDrawCircleTan2::setRadius(const double& r)
 {
     cData.radius=r;
     if(getStatus() == SetCenter){
-        RS_Circle c(NULL,cData);
-        centers=c.createTan2(circles,cData.radius);
+		centers=RS_Circle::createTan2(circles,cData.radius);
     }
 }
 
 bool RS_ActionDrawCircleTan2::getCenters(){
     if(getStatus() != SetCircle2) return false;
-    RS_Circle c(NULL,cData);
-    centers=c.createTan2(circles,cData.radius);
+	centers=RS_Circle::createTan2(circles,cData.radius);
     valid= (centers.size()>0);
     return valid;
 }

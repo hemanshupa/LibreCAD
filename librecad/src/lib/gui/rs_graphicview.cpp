@@ -2,6 +2,7 @@
 **
 ** This file is part of the LibreCAD project, a 2D CAD program
 **
+** Copyright (C) 2015 A. Stebich (librecad@mail.lordofbikes.de)
 ** Copyright (C) 2010 R. van Twisk (librecad@rvt.dds.nl)
 ** Copyright (C) 2001-2003 RibbonSoft. All rights reserved.
 **
@@ -742,6 +743,7 @@ void RS_GraphicView::zoomPrevious() {
  * switch back later with @see restoreView().
  */
 void RS_GraphicView::saveView() {
+    if(getGraphic()) getGraphic()->setModified(true);
     QDateTime noUpdateWindow=QDateTime::currentDateTime().addMSecs(-500);
     //do not update view within 500 milliseconds
     if(previousViewTime > noUpdateWindow) return;
@@ -1290,8 +1292,10 @@ void RS_GraphicView::drawEntity(RS_Painter *painter, RS_Entity* e, double& patte
         return;
     }
     if( isPrintPreview() || isPrinting() ) {
-        //do not draw construction layer on print preview or print
-            if(e->isConstructionLayer()) return;
+        // do not draw construction layer on print preview or print
+        if( ! e->isPrint()
+          ||  e->isConstruction())
+            return;
     }
 
     // test if the entity is in the viewport

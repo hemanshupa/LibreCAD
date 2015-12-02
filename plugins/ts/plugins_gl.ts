@@ -24,7 +24,7 @@
         <location filename="../align/align.cpp" line="20"/>
         <location filename="../align/align.cpp" line="27"/>
         <source>Align</source>
-        <translation>Aliñar</translation>
+        <translation>Ali&amp;ñar</translation>
     </message>
     <message>
         <location filename="../align/align.cpp" line="40"/>
@@ -53,7 +53,7 @@
         <location filename="../list/list.cpp" line="23"/>
         <location filename="../list/list.cpp" line="30"/>
         <source>List entities</source>
-        <translation>Listado de entidades</translation>
+        <translation>Li&amp;stado de entidades</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="46"/>
@@ -204,7 +204,7 @@
     <message>
         <location filename="../list/list.cpp" line="165"/>
         <source>OVERLAYBOX</source>
-        <translation type="unfinished">CAIXA DE CUBRICIÓN</translation>
+        <translation>CAIXA DE CUBRICIÓN</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="168"/>
@@ -318,7 +318,7 @@
         <location filename="../sameprop/sameprop.cpp" line="21"/>
         <location filename="../sameprop/sameprop.cpp" line="28"/>
         <source>Same properties</source>
-        <translation>Igualar atributos</translation>
+        <translation>Igualar &amp;atributos</translation>
     </message>
     <message>
         <location filename="../sameprop/sameprop.cpp" line="41"/>

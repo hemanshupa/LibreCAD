@@ -612,18 +612,18 @@
     <name>plot</name>
     <message>
         <source>Plot plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Grafiku spraudnis</translation>
     </message>
     <message>
         <source>Draw</source>
-        <translation type="unfinished"></translation>
+        <translation>Zīmēt</translation>
     </message>
 </context>
 <context>
     <name>plotDialog</name>
     <message>
         <source>Plot equation</source>
-        <translation type="unfinished"></translation>
+        <translation>Grafika vienādojums</translation>
     </message>
     <message>
         <source>This plugin allows you to plot mathematical equations.
@@ -655,7 +655,7 @@ Use t or x in your equation as a variable/parameter.
     </message>
     <message>
         <source>Draw</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zīmēt</translation>
     </message>
     <message>
         <source>Cancel</source>

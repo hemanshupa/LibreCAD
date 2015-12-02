@@ -10,7 +10,8 @@
     <message>
         <source>radius=%1 is too small for points selected
 distance between points=%2 is larger than diameter=%3</source>
-        <translation>Raio =% 1 é moi pequeno para puntos seleccionados \ na distancia entre puntos = 2% é maior ca o diámetro = 3%</translation>
+        <translation>Raio =% 1 é moi pequeno para puntos seleccionados
+a distancia entre puntos=%2 é maior ca o diámetro=%3</translation>
     </message>
     <message>
         <source>Select from two possible circle centers</source>
@@ -371,7 +372,7 @@ Gardado automático desactivado.</translation>
     </message>
     <message>
         <source>Import</source>
-        <translation>Importar</translation>
+        <translation>I&amp;mportar</translation>
     </message>
     <message>
         <source>&amp;Toolbars</source>
@@ -515,7 +516,7 @@ Gardado automático desactivado.</translation>
     </message>
     <message>
         <source>&amp;Text</source>
-        <translation type="unfinished">&amp;Texto</translation>
+        <translation>&amp;Texto</translation>
     </message>
 </context>
 <context>
@@ -595,7 +596,7 @@ Gardado automático desactivado.</translation>
     </message>
     <message>
         <source>&amp;Block</source>
-        <translation type="unfinished">&amp;Bloques</translation>
+        <translation>&amp;Bloques</translation>
     </message>
 </context>
 <context>
@@ -603,7 +604,7 @@ Gardado automático desactivado.</translation>
     <message>
         <source>escape</source>
         <comment>escape, go back from action steps</comment>
-        <translation type="unfinished"></translation>
+        <translation>escape</translation>
     </message>
 </context>
 <context>
@@ -969,7 +970,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Concentric</source>
-        <translation type="unfinished">Acoutamento concéntrico</translation>
+        <translation>Acoutamento concéntrico</translation>
     </message>
 </context>
 <context>
@@ -1012,7 +1013,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Concentric</source>
-        <translation type="unfinished">Concéntrica</translation>
+        <translation>Concéntrica</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Draw Ellipse by center and 3 points on ellipse&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -1051,7 +1052,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Concentric</source>
-        <translation type="unfinished">Concéntrica</translation>
+        <translation>Concéntrica</translation>
     </message>
 </context>
 <context>
@@ -1322,7 +1323,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Delete between two nodes</source>
-        <translation>Borrar entre dous nodos</translation>
+        <translation>Desbotar varios nodos entre dous</translation>
     </message>
     <message>
         <source>Add node</source>
@@ -1330,11 +1331,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Delete node</source>
-        <translation>Borrar nodo</translation>
+        <translation>Desbotar un nodo</translation>
     </message>
     <message>
         <source>Trim segments</source>
-        <translation>Tallar segmentos</translation>
+        <translation>Tallar/estender segmentos</translation>
     </message>
     <message>
         <source>Append node</source>
@@ -1346,11 +1347,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Create Polyline from Existing Segments</source>
-        <translation>Poliliña nova a partir de segmentos de poliliña</translation>
+        <translation>Poliliña nova a partir de segmentos independentes en contacto</translation>
     </message>
     <message>
         <source>Concentric</source>
-        <translation type="unfinished">Concéntrica</translation>
+        <translation>Concéntrica</translation>
     </message>
 </context>
 <context>
@@ -1579,12 +1580,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>select&amp;All</source>
-        <translation>Seleccionar&amp;todo</translation>
+        <translation>Seleccionar &amp;todo</translation>
     </message>
     <message>
         <source>escape</source>
         <comment>escape, go back from action steps</comment>
-        <translation type="unfinished"></translation>
+        <translation>escape</translation>
     </message>
 </context>
 <context>
@@ -2068,7 +2069,7 @@ Vostede pode trocar estas preferencias despois, no cadro de diálogo de opcións
     </message>
     <message>
         <source>Alignment</source>
-        <translation>Situación punteiro</translation>
+        <translation>Aliñamento</translation>
     </message>
     <message>
         <source>Top Right</source>
@@ -3012,7 +3013,7 @@ Vostede pode trocar estas preferencias despois, no cadro de diálogo de opcións
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Scale to multiply all dimension values.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Escala para multiplicar os valores de tódalas dimensión.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Factor polo cal multiplicar os valores de tódalas dimensión.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>General Factor:</source>
@@ -3020,7 +3021,7 @@ Vostede pode trocar estas preferencias despois, no cadro de diálogo de opcións
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Scale to multiply all dimension geometries.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Factor polo que multiplicares a xeometría dos acoutamentos en si. Liñas, texto e frechas.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Escala para multiplicares a xeometría dos acoutamentos en si. Liñas, texto e frechas.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Text alignment.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -4711,6 +4712,30 @@ Os contidos dunha Capa de Construción non deberan aparecer na impresión.</tran
         <source>- Unchanged -</source>
         <translation>- Sen trocos -</translation>
     </message>
+    <message>
+        <source>Dot (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dash (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dash Dot (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Divide (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Border (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QG_MTextOptions</name>
@@ -5419,7 +5444,7 @@ Quere reemprazalo?</translation>
     </message>
     <message>
         <source>Mil</source>
-        <translation type="unfinished">Milla</translation>
+        <translation>Milla</translation>
     </message>
     <message>
         <source>Yard</source>
@@ -5455,7 +5480,7 @@ Quere reemprazalo?</translation>
     </message>
     <message>
         <source>Astro</source>
-        <translation type="unfinished">Astro</translation>
+        <translation>Unidade astronómica</translation>
     </message>
     <message>
         <source>Lightyear</source>
@@ -5479,11 +5504,11 @@ Quere reemprazalo?</translation>
     </message>
     <message>
         <source>enter an integer number</source>
-        <translation type="unfinished">introducir unha integral</translation>
+        <translation>introducir un número enteiro</translation>
     </message>
     <message>
         <source>LibreCAD query</source>
-        <translation type="unfinished">Requirir a LibreCAD</translation>
+        <translation>Requirir a LibreCAD</translation>
     </message>
     <message>
         <source>enter a number</source>
@@ -5907,7 +5932,7 @@ Quere reemprazalo?</translation>
     </message>
     <message>
         <source>Enter dimension line angle:</source>
-        <translation type="unfinished">Introducir ángulo do texto de dimensión:</translation>
+        <translation>Introducir ángulo da liña de acoutamento:</translation>
     </message>
 </context>
 <context>
@@ -6221,7 +6246,7 @@ Quere reemprazalo?</translation>
     </message>
     <message>
         <source>Tangential, 2 P&amp;oints</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Tanxencial mais 2 puntos</translation>
     </message>
 </context>
 <context>
@@ -6253,7 +6278,7 @@ Quere reemprazalo?</translation>
     <message>
         <source>Tangential 2 Circles, Radius</source>
         <comment>circle tangential to two give circles and with radius</comment>
-        <translation type="unfinished"></translation>
+        <translation>T&amp;anxencial a 2 mais raio</translation>
     </message>
 </context>
 <context>
@@ -6288,7 +6313,7 @@ Quere reemprazalo?</translation>
     </message>
     <message>
         <source>Tangential 2 Circles, 1 Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Tan&amp;xencial a 2 mais un punto</translation>
     </message>
 </context>
 <context>
@@ -6323,7 +6348,7 @@ Quere reemprazalo?</translation>
     </message>
     <message>
         <source>Tangential &amp;3 Circles</source>
-        <translation type="unfinished"></translation>
+        <translation>Tanx&amp;encial a 3 entidades</translation>
     </message>
 </context>
 <context>
@@ -6782,7 +6807,7 @@ Quere reemprazalo?</translation>
     </message>
     <message>
         <source>&amp;Concentric</source>
-        <translation>Concén&amp;trica</translation>
+        <translation>Concén&amp;trico</translation>
     </message>
 </context>
 <context>
@@ -6831,7 +6856,7 @@ Quere reemprazalo?</translation>
     <name>RS_ActionDrawLinePolygonCenCor</name>
     <message>
         <source>Pol&amp;ygon (Cen,Cor)</source>
-        <translation>Polí&amp;gono centro e vért.</translation>
+        <translation>Polí&amp;gono con centro e vért.</translation>
     </message>
     <message>
         <source>Specify center</source>
@@ -7275,11 +7300,11 @@ Quere reemprazalo?</translation>
     </message>
     <message>
         <source>Polygonal &amp;Area</source>
-        <translation>&amp;Área poligonal</translation>
+        <translation>Á&amp;rea poligonal</translation>
     </message>
     <message>
         <source>Closing Point: %1/%2</source>
-        <translation type="unfinished">Pechando o punto: %1/%2</translation>
+        <translation>Pechando no punto: %1/%2</translation>
     </message>
 </context>
 <context>
@@ -7527,7 +7552,7 @@ Quere reemprazalo?</translation>
     </message>
     <message>
         <source>Specify entity to cut</source>
-        <translation>Escolla unha entidade para tallar</translation>
+        <translation>Escolla unha entidade para partir</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -7535,7 +7560,7 @@ Quere reemprazalo?</translation>
     </message>
     <message>
         <source>Specify cutting point</source>
-        <translation type="unfinished">Especifique o punto de corte</translation>
+        <translation>Especifique o punto de corte</translation>
     </message>
     <message>
         <source>Back</source>
@@ -7547,7 +7572,7 @@ Quere reemprazalo?</translation>
     </message>
     <message>
         <source>Entity must be a line, arc, circle, ellipse or interpolation spline.</source>
-        <translation>A entidade debe ser unha liña, arco, círculo, elipse ou  spline interpolada.</translation>
+        <translation>A entidade debe ser unha liña, arco, círculo, elipse ou spline interpolada.</translation>
     </message>
 </context>
 <context>
@@ -7565,7 +7590,7 @@ Quere reemprazalo?</translation>
     </message>
     <message>
         <source>Specify first break point on a polyline</source>
-        <translation type="unfinished">Especifique o primeiro punto de corte na poliliña</translation>
+        <translation>Especifique o primeiro punto de corte na poliliña</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -7573,7 +7598,7 @@ Quere reemprazalo?</translation>
     </message>
     <message>
         <source>Specify second break point on the same polyline</source>
-        <translation type="unfinished">Especifique o segundo punto de corte na poliliña</translation>
+        <translation>Especifique o segundo punto de corte na mesma poliliña</translation>
     </message>
     <message>
         <source>Back</source>
@@ -7581,35 +7606,35 @@ Quere reemprazalo?</translation>
     </message>
     <message>
         <source>Entities not in the same polyline.</source>
-        <translation type="unfinished">As entidades non están na mesma poliliña</translation>
+        <translation>As entidades non están na mesma poliliña</translation>
     </message>
     <message>
         <source>Parent of second entity is not a polyline</source>
-        <translation type="unfinished">O pai de segunda entidade non é unha poliliña</translation>
+        <translation>O pai de segunda entidade non é unha poliliña</translation>
     </message>
     <message>
         <source>Parent of second entity is NULL</source>
-        <translation type="unfinished">O pai da segunda entidade é nulo</translation>
+        <translation>O pai da segunda entidade é nulo</translation>
     </message>
     <message>
         <source>One of the chosen entities is NULL</source>
-        <translation type="unfinished">Unha das entidades escollidas é nula</translation>
+        <translation>Unha das entidades escollidas é nula</translation>
     </message>
     <message>
         <source>Parent of first entity is not a polyline</source>
-        <translation type="unfinished">O pai da primeira entidade non é unha poliliña</translation>
+        <translation>O pai da primeira entidade non é unha poliliña</translation>
     </message>
     <message>
         <source>Parent of first entity is NULL</source>
-        <translation type="unfinished">O pai da primeira entidade é nulo</translation>
+        <translation>O pai da primeira entidade é nulo</translation>
     </message>
     <message>
         <source>First entity is NULL</source>
-        <translation type="unfinished">A primeira entidade é nula</translation>
+        <translation>A primeira entidade é nula</translation>
     </message>
     <message>
         <source>Second entity is NULL</source>
-        <translation type="unfinished">A segunda entidade é nula</translation>
+        <translation>A segunda entidade é nula</translation>
     </message>
 </context>
 <context>
@@ -7620,7 +7645,7 @@ Quere reemprazalo?</translation>
     </message>
     <message>
         <source>Pick entity to delete</source>
-        <translation type="unfinished">Escolla entidade para desbotar</translation>
+        <translation>Escolla entidade para desbotar</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -7730,7 +7755,7 @@ Quere reemprazalo?</translation>
     </message>
     <message>
         <source>Specify direction of offset</source>
-        <translation type="unfinished">Escolla a dirección do desprazamento</translation>
+        <translation>Escolla a dirección do desprazamento</translation>
     </message>
     <message>
         <source>Back</source>
@@ -7768,7 +7793,7 @@ Quere reemprazalo?</translation>
     </message>
     <message>
         <source>Specify target point to rotate to</source>
-        <translation type="unfinished">Especifique o punto de destino para xirar</translation>
+        <translation>Especifique o punto de destino para xirar</translation>
     </message>
 </context>
 <context>
@@ -7875,11 +7900,11 @@ Quere reemprazalo?</translation>
     <name>RS_ActionModifyTrim</name>
     <message>
         <source>&amp;Trim</source>
-        <translation>&amp;Tallar</translation>
+        <translation>&amp;Tallar/Estender</translation>
     </message>
     <message>
         <source>&amp;Trim Two</source>
-        <translation>Tallar do&amp;us</translation>
+        <translation>Tallar/Estender do&amp;us</translation>
     </message>
     <message>
         <source>Select first trim entity</source>
@@ -7918,7 +7943,7 @@ Quere reemprazalo?</translation>
     </message>
     <message>
         <source>The chosen Entity is in a block. Please edit the block.</source>
-        <translation type="unfinished">A entidade escollida é un bloque. por favor edite o bloque.</translation>
+        <translation>A entidade escollida é un bloque. por favor edite o bloque.</translation>
     </message>
     <message>
         <source>The chosen Entity is not an atomic entity or cannot be trimmed.</source>
@@ -7952,27 +7977,27 @@ Quere reemprazalo?</translation>
     </message>
     <message>
         <source>set to bottom</source>
-        <translation type="unfinished">definir no fondo</translation>
+        <translation>Pór no fondo</translation>
     </message>
     <message>
         <source>lower after entity</source>
-        <translation type="unfinished">inferior por baixo doutra entidade</translation>
+        <translation>Pór por baixo doutra entidade</translation>
     </message>
     <message>
         <source>lower over entity</source>
-        <translation type="unfinished">inferior por riba doutra entidade</translation>
+        <translation>Pór por riba doutra entidade</translation>
     </message>
     <message>
         <source>raise over entity</source>
-        <translation type="unfinished">superior por riba doutra entidade</translation>
+        <translation>Pór por riba doutra entidade</translation>
     </message>
     <message>
         <source>move to top</source>
-        <translation>mover á cima</translation>
+        <translation>Pór na cima</translation>
     </message>
     <message>
         <source>set to top</source>
-        <translation type="unfinished">definir na cima</translation>
+        <translation>Pór na cima</translation>
     </message>
     <message>
         <source>No Entity found.</source>
@@ -7980,7 +8005,7 @@ Quere reemprazalo?</translation>
     </message>
     <message>
         <source>Choose entity for order</source>
-        <translation>Escolla a entidade para ordenar</translation>
+        <translation>Escolla a entidade respecto da que se ordena</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -8109,7 +8134,7 @@ Quere reemprazalo?</translation>
     </message>
     <message>
         <source>Specify deleting node&apos;s point</source>
-        <translation>Especifique o punto no nodo a desbotar</translation>
+        <translation>Especifique o nodo a desbotar</translation>
     </message>
     <message>
         <source>Back</source>
@@ -8121,18 +8146,18 @@ Quere reemprazalo?</translation>
     </message>
     <message>
         <source>Deleting point is not on entity.</source>
-        <translation>O punto que tenta desbotar non está na entidade.</translation>
+        <translation>O nodo que tenta desbotar non está na entidade.</translation>
     </message>
 </context>
 <context>
     <name>RS_ActionPolylineDelBetween</name>
     <message>
         <source>Delete &amp;between two nodes</source>
-        <translation>Des&amp;botar entre dous nodos</translation>
+        <translation>Des&amp;botar varios nodos entre dous</translation>
     </message>
     <message>
         <source>Delete between two nodes</source>
-        <translation>Desbotar entre dous nodos</translation>
+        <translation>Desbotar varios nodos entre dous</translation>
     </message>
     <message>
         <source>No Entity found.</source>
@@ -8144,19 +8169,19 @@ Quere reemprazalo?</translation>
     </message>
     <message>
         <source>Deletinging point is invalid.</source>
-        <translation>O punto que tenta desbotar non é válido.</translation>
+        <translation>O nodo que tenta desbotar non é válido.</translation>
     </message>
     <message>
         <source>Deleting point is not on entity.</source>
-        <translation>O punto que tenta desbotar non está na entidade.</translation>
+        <translation>O nodo que tenta desbotar non está na entidade.</translation>
     </message>
     <message>
         <source>Deleteinging point is not on entity.</source>
-        <translation type="unfinished">O punto que tenta desbotar non está na entidade.</translation>
+        <translation>O nodo que tenta desbotar non está na entidade.</translation>
     </message>
     <message>
         <source>Specify polyline to delete between two nodes</source>
-        <translation type="unfinished">Escolla unha poliliña para desbotar entre dous nodos</translation>
+        <translation>Escolla unha poliliña para desbotar entre dous nodos</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -8210,7 +8235,7 @@ Quere reemprazalo?</translation>
     <name>RS_ActionPolylineSegment</name>
     <message>
         <source>Create Polyline from Existing &amp;Segments</source>
-        <translation>Poliliña nova con &amp;segmentos vellos</translation>
+        <translation>Poliliña &amp;nova con entidades existentes</translation>
     </message>
     <message>
         <source>Create Polyline from Existing Segments</source>
@@ -8222,7 +8247,7 @@ Quere reemprazalo?</translation>
     </message>
     <message>
         <source>Choose one of the segments on the original polyline</source>
-        <translation>Escolla un dos segmentos na poliliña orixinal</translation>
+        <translation>Escolla algún segmento na poliliña nova a crear</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -8241,7 +8266,7 @@ Quere reemprazalo?</translation>
     <name>RS_ActionPolylineTrim</name>
     <message>
         <source>&amp;Trim segments</source>
-        <translation>&amp;Tallar segmentos</translation>
+        <translation>&amp;Tallar/estender segmentos</translation>
     </message>
     <message>
         <source>Trim polyline&apos;s segments</source>
@@ -8265,7 +8290,7 @@ Quere reemprazalo?</translation>
     </message>
     <message>
         <source>Specify polyline to trim</source>
-        <translation>Escolla a poliliña a tallar</translation>
+        <translation>Escolla a poliliña a tallar/estender</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -8296,31 +8321,31 @@ Quere reemprazalo?</translation>
     </message>
     <message>
         <source>Printout offset in paper coordinates by (%1, %2)</source>
-        <translation type="unfinished">Desprazamento da impresión no papel por coordenadas (%1, %2)</translation>
+        <translation>Desprazamento da impresión no papel por coordenadas (%1, %2)</translation>
     </message>
     <message>
         <source>Printout offset in graph coordinates by (%1, %2)</source>
-        <translation type="unfinished">Desprazamento da impresión no gráfico por coordenadas (%1, %2)</translation>
+        <translation>Desprazamento da impresión no gráfico por coordenadas (%1, %2)</translation>
     </message>
     <message>
         <source>Printout offset in graph coordinates</source>
-        <translation type="unfinished">Coordenadas de desprazamento da impresión no gráfico</translation>
+        <translation>Coordenadas de desprazamento da impresión no gráfico</translation>
     </message>
     <message>
         <source>Printout offset in paper coordinates</source>
-        <translation type="unfinished">Coordenadas de desprazamento da impresión no papel</translation>
+        <translation>Coordenadas de desprazamento da impresión no papel</translation>
     </message>
     <message>
         <source>: select printout offset coordinates</source>
-        <translation type="unfinished">: seleccione coordenadas de desprazamento da impresión</translation>
+        <translation>: seleccione coordenadas de desprazamento da impresión</translation>
     </message>
     <message>
         <source>type in offset from command line to offset printout</source>
-        <translation type="unfinished">introduza desprazamento dende a liña de comandos para o desprazamento da impresión</translation>
+        <translation>introduza desprazamento dende a liña de comandos para o desprazamento da impresión</translation>
     </message>
     <message>
         <source>Printout offset ignores relative zero. Ignoring &apos;@&apos;</source>
-        <translation type="unfinished">Desprazamento da impresión ignora a orixe relativa. Esquecendo &apos;@&apos;</translation>
+        <translation>Desprazamento da impresión ignora a orixe relativa. Esquecendo &apos;@&apos;</translation>
     </message>
 </context>
 <context>
@@ -8395,7 +8420,7 @@ Quere reemprazalo?</translation>
     </message>
     <message>
         <source>Select to explode block</source>
-        <translation>Escolla un bloque para estopar</translation>
+        <translation>Escolla un conxunto para estoupar</translation>
     </message>
     <message>
         <source>Select to revert direction</source>
@@ -8492,7 +8517,7 @@ Quere reemprazalo?</translation>
     </message>
     <message>
         <source>Choose second edge</source>
-        <translation type="unfinished">Escoller o segundo lado</translation>
+        <translation>Escolla a segunda esquina</translation>
     </message>
     <message>
         <source>Back</source>
@@ -8522,7 +8547,7 @@ Quere reemprazalo?</translation>
     <name>RS_ActionSnapIntersectionManual</name>
     <message>
         <source>I&amp;ntersection Manually</source>
-        <translation type="unfinished">Manualmente á &amp;intersección</translation>
+        <translation>Manualmente á &amp;intersección</translation>
     </message>
     <message>
         <source>Select first entity</source>
@@ -8541,15 +8566,15 @@ Quere reemprazalo?</translation>
     <name>RS_ActionToolRegenerateDimensions</name>
     <message>
         <source>Regenerate Dimension Entities</source>
-        <translation type="unfinished">Rexenerar entidades de acoutamento</translation>
+        <translation>Rexenerar entidades de acoutamento</translation>
     </message>
     <message>
         <source>Regenerated %1 dimension entities</source>
-        <translation type="unfinished">Rexeneradas %1 entidades de acoutamento</translation>
+        <translation>Rexeneradas %1 entidades de acoutamento</translation>
     </message>
     <message>
         <source>No dimension entities found</source>
-        <translation type="unfinished">Non se atopou ningunha entidade de acoutamento.</translation>
+        <translation>Non se atopou ningunha entidade de acoutamento.</translation>
     </message>
 </context>
 <context>
@@ -8693,7 +8718,7 @@ Quere reemprazalo?</translation>
     <message>
         <source>a</source>
         <comment>angle</comment>
-        <translation>an</translation>
+        <translation type="obsolete">an</translation>
     </message>
     <message>
         <source>fact</source>
@@ -8713,7 +8738,7 @@ Quere reemprazalo?</translation>
     <message>
         <source>c</source>
         <comment>columns</comment>
-        <translation>c</translation>
+        <translation type="obsolete">c</translation>
     </message>
     <message>
         <source>columnspacing</source>
@@ -8752,7 +8777,7 @@ Quere reemprazalo?</translation>
     <message>
         <source>c</source>
         <comment>center</comment>
-        <translation>cn</translation>
+        <translation type="obsolete">cn</translation>
     </message>
     <message>
         <source>point</source>
@@ -8880,7 +8905,7 @@ Quere reemprazalo?</translation>
     <message>
         <source>r</source>
         <comment>radius</comment>
-        <translation>ra</translation>
+        <translation type="obsolete">ra</translation>
     </message>
     <message>
         <source>t</source>
@@ -8894,12 +8919,12 @@ Quere reemprazalo?</translation>
     <message>
         <source>length</source>
         <comment>chord length</comment>
-        <translation>largurac</translation>
+        <translation type="obsolete">largurac</translation>
     </message>
     <message>
         <source>l</source>
         <comment>chord length</comment>
-        <translation>lc</translation>
+        <translation type="obsolete">lc</translation>
     </message>
     <message>
         <source>Command: %1</source>
@@ -8926,7 +8951,7 @@ Quere reemprazalo?</translation>
     <message>
         <source>zp</source>
         <comment>zoom - pan</comment>
-        <translation>pa</translation>
+        <translation>pn</translation>
     </message>
     <message>
         <source>da</source>
@@ -9337,16 +9362,16 @@ Quere reemprazalo?</translation>
     <message>
         <source>r</source>
         <comment>reversed</comment>
-        <translation>rv</translation>
+        <translation type="obsolete">rv</translation>
     </message>
     <message>
         <source>row</source>
-        <translation>ringleira</translation>
+        <translation type="obsolete">ringleira</translation>
     </message>
     <message>
         <source>r</source>
         <comment>row</comment>
-        <translation>ri</translation>
+        <translation type="obsolete">ri</translation>
     </message>
     <message>
         <source>r</source>
@@ -9416,12 +9441,12 @@ Quere reemprazalo?</translation>
     </message>
     <message>
         <source>setrelativezero</source>
-        <translation>definircerorel</translation>
+        <translation>definirorixerelativa</translation>
     </message>
     <message>
         <source>setrelativezero</source>
         <comment>snap - set relative zero position</comment>
-        <translation>definirorixerel</translation>
+        <translation>definirorixerelativa</translation>
     </message>
     <message>
         <source>rz</source>
@@ -9438,21 +9463,61 @@ Quere reemprazalo?</translation>
     <message>
         <source>fillet</source>
         <comment>modify - fillet</comment>
-        <translation type="unfinished"></translation>
+        <translation>chafranchairo</translation>
     </message>
     <message>
         <source>divide</source>
         <comment>modify - divide</comment>
-        <translation type="unfinished"></translation>
+        <translation>partir</translation>
     </message>
     <message>
         <source>div</source>
         <comment>modify - divide</comment>
-        <translation type="unfinished"></translation>
+        <translation>part</translation>
     </message>
     <message>
         <source>cut</source>
         <comment>modify - divide</comment>
+        <translation>p</translation>
+    </message>
+    <message>
+        <source>an</source>
+        <comment>angle</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ce</source>
+        <comment>center</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>cl</source>
+        <comment>chord length</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>co</source>
+        <comment>columns</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ra</source>
+        <comment>radius</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>row</source>
+        <comment>row</comment>
+        <translation type="unfinished">ringleira</translation>
+    </message>
+    <message>
+        <source>cal</source>
+        <comment>command to trigger cli calculator</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>calculate</source>
+        <comment>command to trigger cli calculator</comment>
         <translation type="unfinished"></translation>
     </message>
 </context>

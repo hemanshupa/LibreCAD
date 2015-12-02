@@ -5,20 +5,20 @@
     <name>LC_ActionDrawCircle2PR</name>
     <message>
         <source>2 Points, Radius</source>
-        <translation type="unfinished"></translation>
+        <translation>2점, 반지름</translation>
     </message>
     <message>
         <source>radius=%1 is too small for points selected
 distance between points=%2 is larger than diameter=%3</source>
-        <translation type="unfinished"></translation>
+        <translation>선택한 점들에 비해 반지름=%1이 너무작습니다.점들=%2사이의 거리가 지름=%3보다 큽니다.</translation>
     </message>
     <message>
         <source>Select from two possible circle centers</source>
-        <translation type="unfinished"></translation>
+        <translation>두개 가능한 원의 중심에서 선택</translation>
     </message>
     <message>
         <source>Specify first point</source>
-        <translation type="unfinished"></translation>
+        <translation>첫 위치 지정</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -26,7 +26,7 @@ distance between points=%2 is larger than diameter=%3</source>
     </message>
     <message>
         <source>Specify second point</source>
-        <translation type="unfinished"></translation>
+        <translation>둘째 위치 지정</translation>
     </message>
     <message>
         <source>Back</source>
@@ -34,18 +34,18 @@ distance between points=%2 is larger than diameter=%3</source>
     </message>
     <message>
         <source>Select circle center</source>
-        <translation type="unfinished"></translation>
+        <translation>원의 중심 선택</translation>
     </message>
 </context>
 <context>
     <name>LC_ActionDrawSplinePoints</name>
     <message>
         <source>&amp;Spline through points</source>
-        <translation type="unfinished"></translation>
+        <translation>점들을 통과하는 스플라인(&amp;S)</translation>
     </message>
     <message>
         <source>Specify first control point</source>
-        <translation type="unfinished"></translation>
+        <translation>첫 조절점 지정</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -53,7 +53,7 @@ distance between points=%2 is larger than diameter=%3</source>
     </message>
     <message>
         <source>Specify next control point or [%1]</source>
-        <translation type="unfinished"></translation>
+        <translation>다음 조절점 또는 [%1]지정하기</translation>
     </message>
     <message>
         <source>Back</source>
@@ -61,22 +61,22 @@ distance between points=%2 is larger than diameter=%3</source>
     </message>
     <message>
         <source>Specify next control point</source>
-        <translation type="unfinished"></translation>
+        <translation>다음 조절점 지정하기</translation>
     </message>
     <message>
         <source>Cannot undo: Not enough entities defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>되돌릴 수 없음: 아직 정의된 엔티티가 충분하지 않음.</translation>
     </message>
     <message>
         <source>Cannot undo: Nothing could be redone.</source>
-        <translation type="unfinished"></translation>
+        <translation>되돌릴 수 없음: 되돌릴 수 있는 것이 없음.</translation>
     </message>
 </context>
 <context>
     <name>QC_ActionGetEnt</name>
     <message>
         <source>Select object:</source>
-        <translation type="unfinished"></translation>
+        <translation>객체 선택:</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -98,7 +98,7 @@ distance between points=%2 is larger than diameter=%3</source>
     <name>QC_ActionGetSelect</name>
     <message>
         <source>Select objects:</source>
-        <translation type="unfinished"></translation>
+        <translation>객체 선택</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -109,67 +109,67 @@ distance between points=%2 is larger than diameter=%3</source>
     <name>QC_ApplicationWindow</name>
     <message>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>파일(&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>편집(&amp;E)</translation>
     </message>
     <message>
         <source>Focus on &amp;Command Line</source>
-        <translation type="unfinished"></translation>
+        <translation>명형행 포커스(&amp;C)</translation>
     </message>
     <message>
         <source>&amp;View</source>
-        <translation type="unfinished"></translation>
+        <translation>보기(&amp;V)</translation>
     </message>
     <message>
         <source>&amp;Select</source>
-        <translation type="unfinished"></translation>
+        <translation>선택(&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Line</source>
-        <translation type="unfinished"></translation>
+        <translation>선(&amp;L)</translation>
     </message>
     <message>
         <source>&amp;Arc</source>
-        <translation type="unfinished"></translation>
+        <translation>호(&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Circle</source>
-        <translation type="unfinished"></translation>
+        <translation>원(&amp;C)</translation>
     </message>
     <message>
         <source>&amp;Ellipse</source>
-        <translation type="unfinished"></translation>
+        <translation>타원(&amp;E)</translation>
     </message>
     <message>
         <source>&amp;Draw</source>
-        <translation type="unfinished"></translation>
+        <translation>그리기(&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>치수(&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>수정(&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Snap</source>
-        <translation type="unfinished"></translation>
+        <translation>스냅(&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Info</source>
-        <translation type="unfinished"></translation>
+        <translation>정보(&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Layer</source>
-        <translation type="unfinished"></translation>
+        <translation>레이어(&amp;L)</translation>
     </message>
     <message>
         <source>&amp;Block</source>
-        <translation type="unfinished"></translation>
+        <translation>블록(&amp;B)</translation>
     </message>
     <message>
         <source>About</source>
@@ -177,15 +177,15 @@ distance between points=%2 is larger than diameter=%3</source>
     </message>
     <message>
         <source>&amp;Scripts</source>
-        <translation type="unfinished"></translation>
+        <translation>스크립트(&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>도움말(&amp;H)</translation>
     </message>
     <message>
         <source>De&amp;bugging</source>
-        <translation type="unfinished"></translation>
+        <translation>디버깅(&amp;b)</translation>
     </message>
     <message>
         <source>&amp;Cascade</source>
@@ -201,147 +201,151 @@ distance between points=%2 is larger than diameter=%3</source>
     </message>
     <message>
         <source>Creating new file...</source>
-        <translation type="unfinished"></translation>
+        <translation>새 파일 만들기...</translation>
     </message>
     <message>
         <source>unnamed document %1</source>
-        <translation type="unfinished"></translation>
+        <translation>이름없는 문서%1</translation>
     </message>
     <message>
         <source>Opening recent file...</source>
-        <translation type="unfinished"></translation>
+        <translation>최근 파일 열기...</translation>
     </message>
     <message>
         <source>Loaded document: </source>
-        <translation type="unfinished"></translation>
+        <translation>읽은 문서:</translation>
     </message>
     <message>
         <source>Opening aborted</source>
-        <translation type="unfinished"></translation>
+        <translation>열기 취소</translation>
     </message>
     <message>
         <source>Printing...</source>
-        <translation type="unfinished"></translation>
+        <translation>인쇄하기...</translation>
     </message>
     <message>
         <source>Exiting application...</source>
-        <translation type="unfinished"></translation>
+        <translation>응용프로그램 종료...</translation>
     </message>
     <message>
         <source>About...</source>
-        <translation type="unfinished"></translation>
+        <translation>...에 대하여</translation>
     </message>
     <message>
         <source>Layer List</source>
-        <translation type="unfinished"></translation>
+        <translation>레이어 목록</translation>
     </message>
     <message>
         <source>Block List</source>
-        <translation type="unfinished"></translation>
+        <translation>블록 목록</translation>
     </message>
     <message>
         <source>Library Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>라이브러리 둘러보기</translation>
     </message>
     <message>
         <source>Print preview for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 인쇄 미리보기</translation>
     </message>
     <message>
         <source>New Drawing created.</source>
-        <translation type="unfinished"></translation>
+        <translation>새 도면 작성.</translation>
     </message>
     <message>
         <source>Saving drawing...</source>
-        <translation type="unfinished"></translation>
+        <translation>도면 저장하기...</translation>
     </message>
     <message>
         <source>Saved drawing: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>저장 도면 : %1</translation>
     </message>
     <message>
         <source>Saving drawing under new filename...</source>
-        <translation type="unfinished"></translation>
+        <translation>새 이름으로 도면 저장하기...</translation>
     </message>
     <message>
         <source>Exporting drawing...</source>
-        <translation type="unfinished"></translation>
+        <translation>도면 내보내기...</translation>
     </message>
     <message>
         <source>Exported: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>내보냄: %1</translation>
     </message>
     <message>
         <source>Exporting...</source>
-        <translation type="unfinished"></translation>
+        <translation>내보내는 중...</translation>
     </message>
     <message>
         <source>Export complete</source>
-        <translation type="unfinished"></translation>
+        <translation>내보내기 완료</translation>
     </message>
     <message>
         <source>Export failed!</source>
-        <translation type="unfinished"></translation>
+        <translation>내보내기 실패!</translation>
     </message>
     <message>
         <source>Printing complete</source>
-        <translation type="unfinished"></translation>
+        <translation>인쇄 완료</translation>
     </message>
     <message>
         <source>Command line</source>
-        <translation type="unfinished"></translation>
+        <translation>명령행</translation>
     </message>
     <message>
         <source>Block &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>블록 &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Cannot open the file
 %1
 Please check the permissions.</source>
-        <translation type="unfinished"></translation>
+        <translation>파일을 열수 없습니다.
+%1
+권한을 점검해 보십시오.</translation>
     </message>
     <message>
         <source>Cannot save the file
 %1
 Please check the permissions.</source>
-        <translation type="unfinished"></translation>
+        <translation>파일을 저장할 수 없습니다.
+%1
+권한을 점검해 보십시오.</translation>
     </message>
     <message>
         <source>&amp;Manual</source>
-        <translation type="unfinished"></translation>
+        <translation>메뉴얼(&amp;M)</translation>
     </message>
     <message>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>없음</translation>
     </message>
     <message>
         <source>Modules: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>모듈: %1</translation>
     </message>
     <message>
         <source>&amp;Window</source>
-        <translation type="unfinished"></translation>
+        <translation>창(&amp;W)</translation>
     </message>
     <message>
         <source>Running script &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>스크립트 &apos;%1&apos; 실행</translation>
     </message>
     <message>
         <source>Inserting block &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>볼록 &apos;%1&apos; 삽입</translation>
     </message>
     <message>
         <source>&amp;Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>다각형(&amp;P)</translation>
     </message>
     <message>
         <source>Insert Image</source>
-        <translation type="unfinished"></translation>
+        <translation>그림 삽입</translation>
     </message>
     <message>
         <source>Auto-saving drawing...</source>
-        <translation type="unfinished"></translation>
+        <translation>도면 자동 저장...</translation>
     </message>
     <message>
         <source>Auto-saved drawing</source>
@@ -352,47 +356,50 @@ Please check the permissions.</source>
 %1
 Please check the permissions.
 Auto-save disabled.</source>
-        <translation type="unfinished"></translation>
+        <translation>파일을 자동 저장할 수 없습니다.
+%1
+권한을 검검해 보시기 바랍니다.
+자동 저장 비활성</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>도움말</translation>
     </message>
     <message>
         <source>Bugger, I couldn&apos;t find the helpfiles on the filesystem.</source>
-        <translation type="unfinished"></translation>
+        <translation>버그, 파일시스템에서 도움말 파일을 찾을 수 없습니다.</translation>
     </message>
     <message>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation>가져오기</translation>
     </message>
     <message>
         <source>&amp;Toolbars</source>
-        <translation type="unfinished"></translation>
+        <translation>도구막대(&amp;T)</translation>
     </message>
     <message>
         <source>Compiled on: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>컴파일: %1</translation>
     </message>
     <message>
         <source>Program Icons Supplied by</source>
-        <translation type="unfinished"></translation>
+        <translation>(이)가 프로그램 아이콘들을 제공</translation>
     </message>
     <message>
         <source>Splash and Logo supplied by</source>
-        <translation type="unfinished"></translation>
+        <translation>(이)가 심볼과 로고 제공</translation>
     </message>
     <message>
         <source>Main Website : </source>
-        <translation type="unfinished"></translation>
+        <translation>주요 웹사이트:</translation>
     </message>
     <message>
         <source>Version: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>버전:%1</translation>
     </message>
     <message>
         <source>SCM Revision: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>SCM 개정: %1</translation>
     </message>
     <message>
         <source>&amp;%1 %2</source>
@@ -400,11 +407,11 @@ Auto-save disabled.</source>
     </message>
     <message>
         <source>Warning: File already opened : </source>
-        <translation type="unfinished"></translation>
+        <translation>경고:파일이 이미 열려있음:</translation>
     </message>
     <message>
         <source>Cannot save the file </source>
-        <translation type="unfinished"></translation>
+        <translation>파일을 저장할 수 없습니다.</translation>
     </message>
     <message>
         <source> , please check the filename and permissions.</source>
@@ -412,91 +419,91 @@ Auto-save disabled.</source>
     </message>
     <message>
         <source>Please consider donating to LibreCAD to help maintain the source code and website.</source>
-        <translation type="unfinished"></translation>
+        <translation>소스 코드와 웹사이트의 유지보수에 도움을 주는 LibreCAD에 기부를 고려해 주시기 바랍니다.</translation>
     </message>
     <message>
         <source>Su&amp;b-Window mode</source>
-        <translation type="unfinished"></translation>
+        <translation>부속(&amp;b)-창 모드</translation>
     </message>
     <message>
         <source>Tile &amp;Vertically</source>
-        <translation type="unfinished"></translation>
+        <translation>수직(&amp;V) 바둑판식 배열</translation>
     </message>
     <message>
         <source>Ta&amp;b mode</source>
-        <translation type="unfinished"></translation>
+        <translation>탭(&amp;b) 모드</translation>
     </message>
     <message>
         <source>Draw &amp;Order</source>
-        <translation type="unfinished"></translation>
+        <translation>그리기 정렬(&amp;O)</translation>
     </message>
     <message>
         <source>New document from template: </source>
-        <translation type="unfinished"></translation>
+        <translation>템플리트에서 새 문서:</translation>
     </message>
     <message>
         <source>Select Template aborted</source>
-        <translation type="unfinished"></translation>
+        <translation>선택한 템플리트 취소</translation>
     </message>
     <message>
         <source>Auto-saving failed</source>
-        <translation type="unfinished"></translation>
+        <translation>자동 저장 실패</translation>
     </message>
     <message>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>파일</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>편집</translation>
     </message>
     <message>
         <source>View</source>
-        <translation type="unfinished"></translation>
+        <translation>보기</translation>
     </message>
     <message>
         <source>Pen Selection</source>
-        <translation type="unfinished"></translation>
+        <translation>펜 선택</translation>
     </message>
     <message>
         <source>Snap Selection</source>
-        <translation type="unfinished"></translation>
+        <translation>스냅 선택</translation>
     </message>
     <message>
         <source>Tool Options</source>
-        <translation type="unfinished"></translation>
+        <translation>도구 선택사항</translation>
     </message>
     <message>
         <source>CAD Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>CAD 도구</translation>
     </message>
     <message>
         <source>Export as</source>
-        <translation type="unfinished"></translation>
+        <translation>다른이름으로 내보내기</translation>
     </message>
     <message>
         <source>Compiler: Clang %1.%2.%3</source>
-        <translation type="unfinished"></translation>
+        <translation>컴파일러: Clang %1.%2.%3</translation>
     </message>
     <message>
         <source>Compiler: GNU GCC %1.%2.%3</source>
-        <translation type="unfinished"></translation>
+        <translation>컴파일러: GNU GCC %1 %2 %3</translation>
     </message>
     <message>
         <source>Compiler: Microsoft Visual C++&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>컴파일러: Microsoft Visual C++&lt;br&gt;</translation>
     </message>
     <message>
         <source>Qt Version: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>QT 버전:%1</translation>
     </message>
     <message>
         <source>Help files not found</source>
-        <translation type="unfinished"></translation>
+        <translation>Help 파일을 찾지 못함</translation>
     </message>
     <message>
         <source>&amp;Spline</source>
-        <translation type="unfinished"></translation>
+        <translation>자유곡선(&amp;S)</translation>
     </message>
     <message>
         <source>Draft Mode</source>
@@ -504,7 +511,7 @@ Auto-save disabled.</source>
     </message>
     <message>
         <source>Export as PDF</source>
-        <translation type="unfinished"></translation>
+        <translation>PDF로 내보내기</translation>
     </message>
     <message>
         <source>&amp;Text</source>
@@ -516,78 +523,79 @@ Auto-save disabled.</source>
     <message>
         <source>Do you really want to close the file
 %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>정말로 파일을 닫겠습니까?
+%1?</translation>
     </message>
     <message>
         <source>Do you really want to close the drawing?</source>
-        <translation type="unfinished"></translation>
+        <translation>도면을 닫겠습니까?</translation>
     </message>
     <message>
         <source>Closing Drawing</source>
-        <translation type="unfinished"></translation>
+        <translation>도면 닫기</translation>
     </message>
 </context>
 <context>
     <name>QG_ActionFactory</name>
     <message>
         <source>&amp;Close</source>
-        <translation type="unfinished"></translation>
+        <translation>닫기(&amp;C)</translation>
     </message>
     <message>
         <source>&amp;Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>격자(&amp;G)</translation>
     </message>
     <message>
         <source>&amp;Application Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>응용프로그램 환경설정(&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Statusbar</source>
-        <translation type="unfinished"></translation>
+        <translation>상태표지줄(&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Draft</source>
-        <translation type="unfinished"></translation>
+        <translation>초안(&amp;D)</translation>
     </message>
     <message>
         <source>Open IDE</source>
-        <translation type="unfinished"></translation>
+        <translation>IDE 열기</translation>
     </message>
     <message>
         <source>Run Script..</source>
-        <translation type="unfinished"></translation>
+        <translation>스크립트 실행..</translation>
     </message>
     <message>
         <source>&amp;Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>환경설정(&amp;P)</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>내보내기(&amp;E)</translation>
     </message>
     <message>
         <source>&amp;Print...</source>
-        <translation type="unfinished"></translation>
+        <translation>인쇄(&amp;P)</translation>
     </message>
     <message>
         <source>CTRL-G</source>
-        <translation type="unfinished"></translation>
+        <translation>CTRL-G</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>끝내기(&amp;Q)</translation>
     </message>
     <message>
         <source>&amp;Selection pointer</source>
-        <translation type="unfinished"></translation>
+        <translation>지점 선택(&amp;S)</translation>
     </message>
     <message>
         <source>Export as PDF</source>
-        <translation type="unfinished"></translation>
+        <translation>PDF로 내보내기</translation>
     </message>
     <message>
         <source>&amp;Block</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">블록(&amp;B)</translation>
     </message>
 </context>
 <context>
@@ -602,15 +610,15 @@ Auto-save disabled.</source>
     <name>QG_ActiveLayerName</name>
     <message>
         <source>Selection</source>
-        <translation type="unfinished"></translation>
+        <translation>선택</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Current Layer</source>
-        <translation type="unfinished"></translation>
+        <translation>현재 레이어</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -618,58 +626,62 @@ Auto-save disabled.</source>
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Helvetica&apos;; font-size:7pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Name of Current Active Layer&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+ p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Helvetica&apos;; font-size:7pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;현재 활성 레이어 이름&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
     <name>QG_ArcOptions</name>
     <message>
         <source>Arc Options</source>
-        <translation type="unfinished"></translation>
+        <translation>호 선택사항</translation>
     </message>
     <message>
         <source>Clockwise</source>
-        <translation type="unfinished"></translation>
+        <translation>시계방향</translation>
     </message>
     <message>
         <source>Counterclockwise</source>
-        <translation type="unfinished"></translation>
+        <translation>반 시계방향</translation>
     </message>
 </context>
 <context>
     <name>QG_ArcTangentialOptions</name>
     <message>
         <source>Tangential Arc Options</source>
-        <translation type="unfinished"></translation>
+        <translation>접선 원호 선택사항</translation>
     </message>
     <message>
         <source>Radius of the tangential arc</source>
-        <translation type="unfinished"></translation>
+        <translation>접선 원호의 반지름</translation>
     </message>
     <message>
         <source>Total subtending angle of the tangential arc</source>
-        <translation type="unfinished"></translation>
+        <translation>접선 호에서 총 이루는 각도</translation>
     </message>
     <message>
         <source>Radius</source>
         <extracomment>Draw Tangential Arc by the given radius</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>반지름</translation>
     </message>
     <message>
         <source>Angle</source>
         <extracomment>Draw Tangential Arc by the given radius</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>각도</translation>
     </message>
 </context>
 <context>
     <name>QG_BevelOptions</name>
     <message>
         <source>Bevel Options</source>
-        <translation type="unfinished"></translation>
+        <translation>바벨 선택사항</translation>
     </message>
     <message>
         <source>Trim</source>
-        <translation type="unfinished"></translation>
+        <translation>자르기</translation>
     </message>
     <message>
         <source>Check to trim both entities to the bevel</source>
@@ -677,140 +689,141 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length 1:</source>
-        <translation type="unfinished"></translation>
+        <translation>길이 1:</translation>
     </message>
     <message>
         <source>Length 2:</source>
-        <translation type="unfinished"></translation>
+        <translation>길이 2:</translation>
     </message>
 </context>
 <context>
     <name>QG_BlockDialog</name>
     <message>
         <source>Block Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>블록 설정</translation>
     </message>
     <message>
         <source>Block Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>블록 이름:</translation>
     </message>
     <message>
         <source>Renaming Block</source>
-        <translation type="unfinished"></translation>
+        <translation>블록 이름변경</translation>
     </message>
     <message>
         <source>Could not name block. A block named &quot;%1&quot; already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>블록 이름이 잘못됨. &quot;%1&quot; 이란 블록 이름이 이미 있습니다.</translation>
     </message>
 </context>
 <context>
     <name>QG_BlockWidget</name>
     <message>
         <source>Remove the active block</source>
-        <translation type="unfinished"></translation>
+        <translation>활성 블록 제거</translation>
     </message>
     <message>
         <source>Rename the active block</source>
-        <translation type="unfinished"></translation>
+        <translation>활성 블록 이름변경</translation>
     </message>
     <message>
         <source>Edit the active block
 in a separate window</source>
-        <translation type="unfinished"></translation>
+        <translation>분리된 창에서
+활성 블록 편집</translation>
     </message>
     <message>
         <source>Insert the active block</source>
-        <translation type="unfinished"></translation>
+        <translation>활성 블록 삽입</translation>
     </message>
     <message>
         <source>Block Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>블록 메뉴</translation>
     </message>
     <message>
         <source>&amp;Defreeze all Blocks</source>
-        <translation type="unfinished"></translation>
+        <translation>모들 블록 해동(&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Freeze all Blocks</source>
-        <translation type="unfinished"></translation>
+        <translation>모든 블록 동결(&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Add Block</source>
-        <translation type="unfinished"></translation>
+        <translation>블록 추가(&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Block</source>
-        <translation type="unfinished"></translation>
+        <translation>블록 제거(&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Edit Block</source>
-        <translation type="unfinished"></translation>
+        <translation>블록 편집(&amp;E)</translation>
     </message>
     <message>
         <source>&amp;Toggle Visibility</source>
-        <translation type="unfinished"></translation>
+        <translation>보이기 토글(&amp;T)</translation>
     </message>
     <message>
         <source>Show all blocks</source>
-        <translation type="unfinished"></translation>
+        <translation>모든 블록 보이기</translation>
     </message>
     <message>
         <source>Hide all blocks</source>
-        <translation type="unfinished"></translation>
+        <translation>모든 블록 숨기기</translation>
     </message>
     <message>
         <source>&amp;Rename Block</source>
-        <translation type="unfinished"></translation>
+        <translation>블록 이름변경(&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Insert Block</source>
-        <translation type="unfinished"></translation>
+        <translation>블록 삽입(&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Create New Block</source>
-        <translation type="unfinished"></translation>
+        <translation>새 블록 만들기(&amp;C)</translation>
     </message>
     <message>
         <source>Create Block</source>
-        <translation type="unfinished"></translation>
+        <translation>블록 만들기</translation>
     </message>
     <message>
         <source>Add an empty block</source>
-        <translation type="unfinished"></translation>
+        <translation>빈 블록 추가</translation>
     </message>
     <message>
         <source>save the active block to a file</source>
-        <translation type="unfinished"></translation>
+        <translation>파일에 활성 블록 저장</translation>
     </message>
 </context>
 <context>
     <name>QG_CadToolBar</name>
     <message>
         <source>CAD Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>CAD 도구들</translation>
     </message>
 </context>
 <context>
     <name>QG_CadToolBarArcs</name>
     <message>
         <source>Arcs</source>
-        <translation type="unfinished"></translation>
+        <translation>원호</translation>
     </message>
     <message>
         <source>Arc with three points</source>
-        <translation type="unfinished"></translation>
+        <translation>3점 원호</translation>
     </message>
     <message>
         <source>Arc with Center, Point, Angles</source>
-        <translation type="unfinished"></translation>
+        <translation>중심, 점, 각도로된 호</translation>
     </message>
     <message>
         <source>Back to main menu</source>
-        <translation type="unfinished"></translation>
+        <translation>주 메뉴로 돌아가기</translation>
     </message>
     <message>
         <source>Concentric</source>
-        <translation type="unfinished"></translation>
+        <translation>동심</translation>
     </message>
     <message>
         <source>Arc tangential to base entity with radius</source>
@@ -821,31 +834,31 @@ in a separate window</source>
     <name>QG_CadToolBarCircles</name>
     <message>
         <source>Circles</source>
-        <translation type="unfinished"></translation>
+        <translation>원</translation>
     </message>
     <message>
         <source>Circle with two opposite points</source>
-        <translation type="unfinished"></translation>
+        <translation>두 반대 지점으로 원 그리기</translation>
     </message>
     <message>
         <source>Circle with center and radius</source>
-        <translation type="unfinished"></translation>
+        <translation>중심과 반지름으로 원 그리기</translation>
     </message>
     <message>
         <source>Circle with center and point</source>
-        <translation type="unfinished"></translation>
+        <translation>중심과 점으로 원그리기</translation>
     </message>
     <message>
         <source>Circle with three points</source>
-        <translation type="unfinished"></translation>
+        <translation>3점으로 원그리기</translation>
     </message>
     <message>
         <source>Back to main menu</source>
-        <translation type="unfinished"></translation>
+        <translation>주 메뉴로 돌아가기</translation>
     </message>
     <message>
         <source>Concentric</source>
-        <translation type="unfinished"></translation>
+        <translation>동심</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -853,7 +866,11 @@ in a separate window</source>
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;;&quot;&gt;Draw a tangential Circle of two circles, given the radius&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+ p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;;&quot;&gt;주어진 반지름으로 두개의 원에 접하는 원그리기&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -861,7 +878,11 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;;&quot;&gt;Draw a tangential Circle of a circle, passing two given points&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+ p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;;&quot;&gt;주어진 두개 점을 통과하는 원에 접하는 원 그리기&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -869,7 +890,11 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;;&quot;&gt;Draw a tangential Circle of two circles, passing a given point&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+ p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;;&quot;&gt;주어진 한 점을 통과하는 두개의 원에 접하는 원 그리기&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -877,7 +902,11 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Draw a tangential Circle of three lines/arcs/circles&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;3개 선분/호/원들에 접하는 원그리기&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -896,39 +925,39 @@ p, li { white-space: pre-wrap; }
     <name>QG_CadToolBarDim</name>
     <message>
         <source>Dimensions</source>
-        <translation type="unfinished"></translation>
+        <translation>치수</translation>
     </message>
     <message>
         <source>Back to main menu</source>
-        <translation type="unfinished"></translation>
+        <translation>주 메뉴로 돌아가기</translation>
     </message>
     <message>
         <source>Diametric Dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>지름 치수</translation>
     </message>
     <message>
         <source>Radial Dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>반지름 치수</translation>
     </message>
     <message>
         <source>Vertical Dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>수직 치수</translation>
     </message>
     <message>
         <source>Horizontal Dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>수평 치수</translation>
     </message>
     <message>
         <source>Linear Dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>선분 치수</translation>
     </message>
     <message>
         <source>Aligned Dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>정렬된 치수</translation>
     </message>
     <message>
         <source>Angular Dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>각도 치수</translation>
     </message>
     <message>
         <source>Leader</source>
@@ -936,34 +965,34 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Concentric</source>
-        <translation type="unfinished"></translation>
+        <translation>동심</translation>
     </message>
 </context>
 <context>
     <name>QG_CadToolBarEllipses</name>
     <message>
         <source>Ellipses</source>
-        <translation type="unfinished"></translation>
+        <translation>타원</translation>
     </message>
     <message>
         <source>Ellipse arc with center, two points and angles</source>
-        <translation type="unfinished"></translation>
+        <translation>중심, 두개 점과 각으로된 타원</translation>
     </message>
     <message>
         <source>Ellipse with Center and two points</source>
-        <translation type="unfinished"></translation>
+        <translation>중심과 두개 점으로 된 타원</translation>
     </message>
     <message>
         <source>Back to main menu</source>
-        <translation type="unfinished"></translation>
+        <translation>주 메뉴로 돌아가기</translation>
     </message>
     <message>
         <source>Draw Ellipse by foci and a point on ellipse</source>
-        <translation type="unfinished"></translation>
+        <translation>타원상의 한점과 초점으로 타원그리기</translation>
     </message>
     <message>
         <source>Draw Ellipse with axes in x-/y-directions by four points on ellipse</source>
-        <translation type="unfinished"></translation>
+        <translation>타원상의 4점으로 x/y 방향 축에 타원그리기</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -975,7 +1004,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Concentric</source>
-        <translation type="unfinished"></translation>
+        <translation>동심</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Draw Ellipse by center and 3 points on ellipse&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -986,70 +1015,70 @@ p, li { white-space: pre-wrap; }
     <name>QG_CadToolBarInfo</name>
     <message>
         <source>Info</source>
-        <translation type="unfinished"></translation>
+        <translation>정보</translation>
     </message>
     <message>
         <source>Back to main menu</source>
-        <translation type="unfinished"></translation>
+        <translation>주 메뉴로 돌아가기</translation>
     </message>
     <message>
         <source>Distance (Point, Point)</source>
-        <translation type="unfinished"></translation>
+        <translation>거리(엔터티, 점)</translation>
     </message>
     <message>
         <source>Distance (Entity, Point)</source>
-        <translation type="unfinished"></translation>
+        <translation>거리(엔터티, 점)</translation>
     </message>
     <message>
         <source>Angle</source>
-        <translation type="unfinished"></translation>
+        <translation>각도</translation>
     </message>
     <message>
         <source>Total length of selected entities</source>
-        <translation type="unfinished"></translation>
+        <translation>선택된 엔터티의 총 길이</translation>
     </message>
     <message>
         <source>Area of polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>다각형의 면적</translation>
     </message>
     <message>
         <source>Concentric</source>
-        <translation type="unfinished"></translation>
+        <translation>동심</translation>
     </message>
 </context>
 <context>
     <name>QG_CadToolBarLines</name>
     <message>
         <source>Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>선분</translation>
     </message>
     <message>
         <source>Freehand lines</source>
-        <translation type="unfinished"></translation>
+        <translation>자유형 선</translation>
     </message>
     <message>
         <source>Orthogonal lines</source>
-        <translation type="unfinished"></translation>
+        <translation>직교 선분</translation>
     </message>
     <message>
         <source>Back to main menu</source>
-        <translation type="unfinished"></translation>
+        <translation>주 메뉴로 돌아가기</translation>
     </message>
     <message>
         <source>Bisectors</source>
-        <translation type="unfinished"></translation>
+        <translation>이등분선</translation>
     </message>
     <message>
         <source>Tangents from circle to circle</source>
-        <translation type="unfinished"></translation>
+        <translation>원과 원의 접선</translation>
     </message>
     <message>
         <source>Tangents from point to circle</source>
-        <translation type="unfinished"></translation>
+        <translation>점과 원의 접선</translation>
     </message>
     <message>
         <source>Line with two points</source>
-        <translation type="unfinished"></translation>
+        <translation>두점간선</translation>
     </message>
     <message>
         <source>Lines with relative angles</source>
@@ -1061,23 +1090,23 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Horizontal lines</source>
-        <translation type="unfinished"></translation>
+        <translation>수평선</translation>
     </message>
     <message>
         <source>Vertical lines</source>
-        <translation type="unfinished"></translation>
+        <translation>수직선</translation>
     </message>
     <message>
         <source>Rectangles</source>
-        <translation type="unfinished"></translation>
+        <translation>직사각형</translation>
     </message>
     <message>
         <source>Polygons with Center and Corner</source>
-        <translation type="unfinished"></translation>
+        <translation>중심과 모서리를 갖는 다각형</translation>
     </message>
     <message>
         <source>Polygons with two Corners</source>
-        <translation type="unfinished"></translation>
+        <translation>두 모서리를 갖는 다각형</translation>
     </message>
     <message>
         <source>Parallels with distance</source>
@@ -1100,7 +1129,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Create Block</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">블록 만들기</translation>
     </message>
     <message>
         <source>Show toolbar &quot;Lines&quot;</source>
@@ -1140,7 +1169,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Insert Image</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">그림 삽입</translation>
     </message>
     <message>
         <source>Show toolbar &quot;Modify&quot;</source>
@@ -1167,7 +1196,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Back to main menu</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">주 메뉴로 돌아가기</translation>
     </message>
     <message>
         <source>Rotate</source>
@@ -1262,7 +1291,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Back to main menu</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">주 메뉴로 돌아가기</translation>
     </message>
     <message>
         <source>Single points</source>
@@ -1277,7 +1306,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Back to main menu</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">주 메뉴로 돌아가기</translation>
     </message>
     <message>
         <source>Create Polyline</source>
@@ -1313,7 +1342,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Concentric</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">동심</translation>
     </message>
 </context>
 <context>
@@ -1328,7 +1357,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Back to main menu</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">주 메뉴로 돌아가기</translation>
     </message>
     <message>
         <source>Select intersected entities</source>
@@ -1379,7 +1408,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Back to main menu</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">주 메뉴로 돌아가기</translation>
     </message>
     <message>
         <source>Spline</source>
@@ -1731,7 +1760,7 @@ p, li { white-space: pre-wrap; }
     <name>QG_DlgDimLinear</name>
     <message>
         <source>Linear Dimension</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">선분 치수</translation>
     </message>
     <message>
         <source>Layer:</source>
@@ -2067,7 +2096,7 @@ You can changes these settings later in the Options Dialog of QCad.</source>
     </message>
     <message>
         <source>Angle</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">각도</translation>
     </message>
     <message>
         <source>Text:</source>
@@ -2747,7 +2776,7 @@ You can changes these settings later in the Options Dialog of QCad.</source>
     </message>
     <message>
         <source>Angle</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">각도</translation>
     </message>
     <message>
         <source>Decimal Degrees</source>
@@ -2891,7 +2920,7 @@ You can changes these settings later in the Options Dialog of QCad.</source>
     </message>
     <message>
         <source>&amp;Grid</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">격자(&amp;G)</translation>
     </message>
     <message>
         <source>Splines</source>
@@ -4350,7 +4379,7 @@ The contents of a Construction Layer should not appear in printout.</source>
     </message>
     <message>
         <source>&amp;Toggle Visibility</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">보이기 토글(&amp;T)</translation>
     </message>
     <message>
         <source>Looking for matching layer names</source>
@@ -4669,6 +4698,30 @@ The contents of a Construction Layer should not appear in printout.</source>
         <source>- Unchanged -</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Dot (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dash (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dash Dot (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Divide (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Border (tiny)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QG_MTextOptions</name>
@@ -4792,7 +4845,7 @@ The contents of a Construction Layer should not appear in printout.</source>
     </message>
     <message>
         <source>Angle</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">각도</translation>
     </message>
     <message>
         <source>Radius:</source>
@@ -4804,7 +4857,7 @@ The contents of a Construction Layer should not appear in printout.</source>
     </message>
     <message>
         <source>Clockwise</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">시계방향</translation>
     </message>
     <message>
         <source>Counter Clockwise</source>
@@ -4846,7 +4899,7 @@ The contents of a Construction Layer should not appear in printout.</source>
     </message>
     <message>
         <source>Trim</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">자르기</translation>
     </message>
     <message>
         <source>Check to trim both edges to the rounding</source>
@@ -4861,7 +4914,7 @@ The contents of a Construction Layer should not appear in printout.</source>
     <name>QG_SelectionWidget</name>
     <message>
         <source>Selection</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">선택</translation>
     </message>
     <message>
         <source>Selected</source>
@@ -5332,7 +5385,7 @@ Do you want to replace it?</source>
     </message>
     <message>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">없음</translation>
     </message>
     <message>
         <source>Inch</source>
@@ -5567,14 +5620,14 @@ Do you want to replace it?</source>
     <name>RS_ActionBlocksAdd</name>
     <message>
         <source>&amp;Add Block</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">블록 추가(&amp;A)</translation>
     </message>
 </context>
 <context>
     <name>RS_ActionBlocksAttributes</name>
     <message>
         <source>&amp;Rename Block</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">블록 이름변경(&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -5596,7 +5649,7 @@ Do you want to replace it?</source>
     <name>RS_ActionBlocksEdit</name>
     <message>
         <source>&amp;Edit Block</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">블록 편집(&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -5621,7 +5674,7 @@ Do you want to replace it?</source>
     <name>RS_ActionBlocksInsert</name>
     <message>
         <source>&amp;Insert Block</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">블록 삽입(&amp;I)</translation>
     </message>
     <message>
         <source>Not a valid expression</source>
@@ -5668,7 +5721,7 @@ Do you want to replace it?</source>
     <name>RS_ActionBlocksRemove</name>
     <message>
         <source>&amp;Remove Block</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">블록 제거(&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -5953,7 +6006,7 @@ Do you want to replace it?</source>
     </message>
     <message>
         <source>Specify second point</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">둘째 위치 지정</translation>
     </message>
     <message>
         <source>Back</source>
@@ -6034,7 +6087,7 @@ Do you want to replace it?</source>
     </message>
     <message>
         <source>Specify first point</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">첫 위치 지정</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -6042,7 +6095,7 @@ Do you want to replace it?</source>
     </message>
     <message>
         <source>Specify second point</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">둘째 위치 지정</translation>
     </message>
     <message>
         <source>Back</source>
@@ -6061,7 +6114,7 @@ Do you want to replace it?</source>
     </message>
     <message>
         <source>Specify first point</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">첫 위치 지정</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -6069,7 +6122,7 @@ Do you want to replace it?</source>
     </message>
     <message>
         <source>Specify second point</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">둘째 위치 지정</translation>
     </message>
     <message>
         <source>Back</source>
@@ -6516,7 +6569,7 @@ Do you want to replace it?</source>
     </message>
     <message>
         <source>Specify first point</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">첫 위치 지정</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -6536,7 +6589,7 @@ Do you want to replace it?</source>
     </message>
     <message>
         <source>Cannot undo: Not enough entities defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">되돌릴 수 없음: 아직 정의된 엔티티가 충분하지 않음.</translation>
     </message>
     <message>
         <source>Cannot close sequence of lines: Not enough entities defined yet, or already closed.</source>
@@ -6645,7 +6698,7 @@ Do you want to replace it?</source>
     <name>RS_ActionDrawLineHorVert</name>
     <message>
         <source>Specify first point</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">첫 위치 지정</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -6653,7 +6706,7 @@ Do you want to replace it?</source>
     </message>
     <message>
         <source>Specify second point</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">둘째 위치 지정</translation>
     </message>
     <message>
         <source>Back</source>
@@ -6964,7 +7017,7 @@ Do you want to replace it?</source>
     <name>RS_ActionDrawPolyline</name>
     <message>
         <source>&amp;Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">다각형(&amp;P)</translation>
     </message>
     <message>
         <source>Draw polylines</source>
@@ -6972,7 +7025,7 @@ Do you want to replace it?</source>
     </message>
     <message>
         <source>Specify first point</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">첫 위치 지정</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -6996,18 +7049,18 @@ Do you want to replace it?</source>
     </message>
     <message>
         <source>Cannot undo: Not enough entities defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">되돌릴 수 없음: 아직 정의된 엔티티가 충분하지 않음.</translation>
     </message>
 </context>
 <context>
     <name>RS_ActionDrawSpline</name>
     <message>
         <source>&amp;Spline</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">자유곡선(&amp;S)</translation>
     </message>
     <message>
         <source>Specify first control point</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">첫 조절점 지정</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -7015,7 +7068,7 @@ Do you want to replace it?</source>
     </message>
     <message>
         <source>Specify next control point or [%1]</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">다음 조절점 또는 [%1]지정하기</translation>
     </message>
     <message>
         <source>Back</source>
@@ -7023,11 +7076,11 @@ Do you want to replace it?</source>
     </message>
     <message>
         <source>Specify next control point</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">다음 조절점 지정하기</translation>
     </message>
     <message>
         <source>Cannot undo: Not enough entities defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">되돌릴 수 없음: 아직 정의된 엔티티가 충분하지 않음.</translation>
     </message>
 </context>
 <context>
@@ -7054,7 +7107,7 @@ Do you want to replace it?</source>
     </message>
     <message>
         <source>Specify second point</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">둘째 위치 지정</translation>
     </message>
 </context>
 <context>
@@ -8011,7 +8064,7 @@ Do you want to replace it?</source>
     </message>
     <message>
         <source>Cannot undo: Not enough entities defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">되돌릴 수 없음: 아직 정의된 엔티티가 충분하지 않음.</translation>
     </message>
 </context>
 <context>
@@ -8624,11 +8677,6 @@ Do you want to replace it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>a</source>
-        <comment>angle</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>fact</source>
         <comment>factor</comment>
         <translation type="unfinished"></translation>
@@ -8640,11 +8688,6 @@ Do you want to replace it?</source>
     </message>
     <message>
         <source>cols</source>
-        <comment>columns</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>c</source>
         <comment>columns</comment>
         <translation type="unfinished"></translation>
     </message>
@@ -8679,11 +8722,6 @@ Do you want to replace it?</source>
     </message>
     <message>
         <source>cen</source>
-        <comment>center</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>c</source>
         <comment>center</comment>
         <translation type="unfinished"></translation>
     </message>
@@ -8811,27 +8849,12 @@ Do you want to replace it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>r</source>
-        <comment>radius</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>t</source>
         <comment>text</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>chord length</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>length</source>
-        <comment>chord length</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>l</source>
-        <comment>chord length</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -9269,20 +9292,6 @@ Do you want to replace it?</source>
     </message>
     <message>
         <source>r</source>
-        <comment>reversed</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>row</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>r</source>
-        <comment>row</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>r</source>
         <comment>redo</comment>
         <translation type="unfinished"></translation>
     </message>
@@ -9386,6 +9395,46 @@ Do you want to replace it?</source>
     <message>
         <source>cut</source>
         <comment>modify - divide</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>an</source>
+        <comment>angle</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ce</source>
+        <comment>center</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>cl</source>
+        <comment>chord length</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>co</source>
+        <comment>columns</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ra</source>
+        <comment>radius</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>row</source>
+        <comment>row</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>cal</source>
+        <comment>command to trigger cli calculator</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>calculate</source>
+        <comment>command to trigger cli calculator</comment>
         <translation type="unfinished"></translation>
     </message>
 </context>

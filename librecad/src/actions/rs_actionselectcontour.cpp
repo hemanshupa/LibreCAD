@@ -27,6 +27,7 @@
 #include "rs_actionselectcontour.h"
 
 #include <QAction>
+#include <QMouseEvent>
 #include "rs_dialogfactory.h"
 #include "rs_graphicview.h"
 #include "rs_selection.h"
@@ -36,31 +37,24 @@
 
 RS_ActionSelectContour::RS_ActionSelectContour(RS_EntityContainer& container,
         RS_GraphicView& graphicView)
-        :RS_ActionInterface("Select Contours", container, graphicView) {
-
-    en = NULL;
-}
-
-QAction* RS_ActionSelectContour::createGUIAction(RS2::ActionType /*type*/, QObject* /*parent*/) {
-        // tr("(De-)Select Contour")
-    QAction* action = new QAction(tr("(De-)Select &Contour"),  NULL);
-        action->setIcon(QIcon(":/extui/selectcontour.png"));
-        //action->zetStatusTip(tr("(De-)Selects connected entities"));
-    return action;
+		:RS_ActionInterface("Select Contours", container, graphicView)
+		,en(nullptr)
+{
+	actionType=RS2::ActionSelectContour;
 }
 
 
 void RS_ActionSelectContour::trigger() {
-    if (en!=NULL) {
+    if (en) {
         if (en->isAtomic()) {
             RS_Selection s(*container, graphicView);
             s.selectContour(en);
 
-            if (RS_DIALOGFACTORY!=NULL) {
+            if (RS_DIALOGFACTORY) {
                 RS_DIALOGFACTORY->updateSelectionWidget(container->countSelected(),container->totalSelectedLength());
             }
         } else {
-            if (RS_DIALOGFACTORY!=NULL) {
+            if (RS_DIALOGFACTORY) {
                 RS_DIALOGFACTORY->commandMessage(
                     tr("Entity must be an Atomic Entity."));
             }

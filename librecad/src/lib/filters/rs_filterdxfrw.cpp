@@ -24,28 +24,36 @@
 **********************************************************************/
 
 
+#include <QStringList>
+#include <QTextCodec>
+
 #include "rs_filterdxfrw.h"
 
-#include <stdio.h>
-
+#include "rs_arc.h"
+#include "rs_circle.h"
 #include "rs_dimaligned.h"
 #include "rs_dimangular.h"
 #include "rs_dimdiametric.h"
 #include "rs_dimlinear.h"
 #include "rs_dimradial.h"
+#include "rs_ellipse.h"
 #include "rs_hatch.h"
 #include "rs_image.h"
+#include "rs_insert.h"
+#include "rs_layer.h"
 #include "rs_leader.h"
+#include "rs_line.h"
+#include "rs_mtext.h"
+#include "rs_point.h"
+#include "rs_polyline.h"
+#include "rs_solid.h"
 #include "rs_spline.h"
 #include "lc_splinepoints.h"
 #include "rs_system.h"
+#include "rs_text.h"
 #include "rs_graphicview.h"
-#include "rs_grid.h"
 #include "rs_dialogfactory.h"
-
-#include <QStringList>
-
-#include <qtextcodec.h>
+#include "rs_math.h"
 
 #ifdef DWGSUPPORT
 #include "libdwgr.h"
@@ -60,8 +68,8 @@ RS_FilterDXFRW::RS_FilterDXFRW()
 
     RS_DEBUG->print("RS_FilterDXFRW::RS_FilterDXFRW()");
 
-    currentContainer = NULL;
-    graphic = NULL;
+	currentContainer = nullptr;
+	graphic = nullptr;
 // Init hash to change the QCAD "normal" style to the more correct ISO-3059
 // or draftsight symbol (AR*.shx) to sy*.lff
     fontList["normal"] = "iso";
@@ -104,7 +112,7 @@ bool RS_FilterDXFRW::fileImport(RS_Graphic& g, const QString& file, RS2::FormatT
 
     graphic = &g;
     currentContainer = graphic;
-    dummyContainer = new RS_EntityContainer(NULL, true);
+	dummyContainer = new RS_EntityContainer(nullptr, true);
 
     this->file = file;
     // add some variables that need to be there for DXF drawings:
@@ -121,6 +129,8 @@ bool RS_FilterDXFRW::fileImport(RS_Graphic& g, const QString& file, RS2::FormatT
     if (type == RS2::FormatDWG) {
         dwgR dwgr(QFile::encodeName(file));
         RS_DEBUG->print("RS_FilterDXFRW::fileImport: reading DWG file");
+        if (RS_DEBUG->getLevel()== RS_Debug::D_DEBUGGING)
+            dwgr.setDebug(DRW::DEBUG);
         bool success = dwgr.read(this, true);
         RS_DEBUG->print("RS_FilterDXFRW::fileImport: reading DWG file: OK");
         RS_DIALOGFACTORY->commandMessage(QObject::tr("Opened dwg file version %1.").arg(printDwgVersion(dwgr.getVersion())));
@@ -152,7 +162,7 @@ bool RS_FilterDXFRW::fileImport(RS_Graphic& g, const QString& file, RS2::FormatT
     delete dummyContainer;
     /*set current layer */
     RS_Layer* cl = graphic->findLayer(graphic->getVariableString("$CLAYER", "0"));
-    if (cl != NULL){
+	if (cl ){
         //require to notify
         graphic->getLayerList()->activate(cl, true);
     }
@@ -174,7 +184,7 @@ void RS_FilterDXFRW::addLayer(const DRW_Layer &data) {
     RS_DEBUG->print("RS_FilterDXF::addLayer: creating layer");
 
     QString name = QString::fromUtf8(data.name.c_str());
-    if (name != "0" && graphic->findLayer(name)!=NULL) {
+    if (name != "0" && graphic->findLayer(name)) {
         return;
     }
     RS_Layer* layer = new RS_Layer(name);
@@ -195,12 +205,12 @@ void RS_FilterDXFRW::addLayer(const DRW_Layer &data) {
         RS_DEBUG->print(RS_Debug::D_WARNING, "RS_FilterDXF::addLayer: layer %s have extended data", layer->getName().toStdString().c_str());
         bool isLCdata = false;
         for (std::vector<DRW_Variant*>::const_iterator it=data.extData.begin(); it!=data.extData.end(); ++it){
-            if ((*it)->code == 1001){
+            if ((*it)->code() == 1001){
                 if (*(*it)->content.s == std::string("LibreCad"))
                     isLCdata = true;
                 else
                     isLCdata = false;
-            } else if (isLCdata && (*it)->code == 1070){
+            } else if (isLCdata && (*it)->code() == 1070){
                 if ((*it)->content.i == 1){
                     layer->setConstruction(true);
                 }
@@ -220,6 +230,27 @@ void RS_FilterDXFRW::addLayer(const DRW_Layer &data) {
 }
 
 /**
+ * Implementation of the method which handles dimension styles.
+ */
+void RS_FilterDXFRW::addDimStyle(const DRW_Dimstyle& data){
+    RS_DEBUG->print("RS_FilterDXFRW::addLayer");
+    QString dimstyle = graphic->getVariableString("$DIMSTYLE", "standard");
+
+    if (QString::compare(data.name.c_str(), dimstyle, Qt::CaseInsensitive) == 0) {
+        if (libVersionStr == "dxfrw" && libVersion==0 && libRelease < 62){
+            graphic->addVariable("$DIMDEC", graphic->getVariableInt("$DIMDEC",
+                                            graphic->getVariableInt("$LUPREC", 4)), 70);
+            graphic->addVariable("$DIMADEC", graphic->getVariableInt("$DIMADEC",
+                                             graphic->getVariableInt("$AUPREC", 2)), 70);
+            //do nothing;
+        } else {
+            graphic->addVariable("$DIMDEC", data.dimdec, 70);
+            graphic->addVariable("$DIMADEC", data.dimadec, 70);
+        }
+    }
+}
+
+/**
  * Implementation of the method which handles vports.
  */
 void RS_FilterDXFRW::addVport(const DRW_Vport &data) {
@@ -229,7 +260,7 @@ void RS_FilterDXFRW::addVport(const DRW_Vport &data) {
         graphic->setIsometricGrid(data.snapStyle);
         graphic->setCrosshairType( (RS2::CrosshairType)data.snapIsopair);
         RS_GraphicView *gv = graphic->getGraphicView();
-        if (gv != NULL) {
+		if (gv ) {
             double width = data.height * data.ratio;
             double factorX= gv->getWidth() / width;
             double factorY= gv->getHeight() / data.height;
@@ -267,14 +298,14 @@ void RS_FilterDXFRW::addBlock(const DRW_Block& data) {
 
             if (graphic->addBlock(block)) {
                 currentContainer = block;
-                blockHash.insert(data.handleBlock, currentContainer);
+                blockHash.insert(data.parentHandle, currentContainer);
             } else
-                blockHash.insert(data.handleBlock, dummyContainer);
+                blockHash.insert(data.parentHandle, dummyContainer);
     } else {
         if (mid.toLower() == "model_space") {
-            blockHash.insert(data.handleBlock, graphic);
+            blockHash.insert(data.parentHandle, graphic);
         } else {
-            blockHash.insert(data.handleBlock, dummyContainer);
+            blockHash.insert(data.parentHandle, dummyContainer);
         }
     }
 }
@@ -330,12 +361,11 @@ void RS_FilterDXFRW::addLine(const DRW_Line& data) {
 
     RS_DEBUG->print("RS_FilterDXF::addLine: create line");
 
-    if (currentContainer==NULL) {
-        RS_DEBUG->print("RS_FilterDXF::addLine: currentContainer is NULL");
+	if (!currentContainer) {
+		RS_DEBUG->print("RS_FilterDXF::addLine: currentContainer is nullptr");
     }
 
-    RS_Line* entity = new RS_Line(currentContainer,
-                                  RS_LineData(v1, v2));
+	RS_Line* entity = new RS_Line{currentContainer, {v1, v2}};
     RS_DEBUG->print("RS_FilterDXF::addLine: set attributes");
     setEntityAttributes(entity, &data);
 
@@ -353,17 +383,17 @@ void RS_FilterDXFRW::addLine(const DRW_Line& data) {
 void RS_FilterDXFRW::addRay(const DRW_Ray& data) {
     RS_DEBUG->print("RS_FilterDXF::addRay");
 
-    RS_Vector v1(data.basePoint.x, data.basePoint.y);
-    RS_Vector v2(data.basePoint.x+data.secPoint.x, data.basePoint.y+data.secPoint.y);
+	RS_Vector v1{data.basePoint.x, data.basePoint.y};
+	RS_Vector v2{data.basePoint.x+data.secPoint.x,
+				data.basePoint.y+data.secPoint.y};
 
     RS_DEBUG->print("RS_FilterDXF::addRay: create line");
 
-    if (currentContainer==NULL) {
-        RS_DEBUG->print("RS_FilterDXF::addRay: currentContainer is NULL");
+	if (!currentContainer) {
+		RS_DEBUG->print("RS_FilterDXF::addRay: currentContainer is nullptr");
     }
 
-    RS_Line* entity = new RS_Line(currentContainer,
-                                  RS_LineData(v1, v2));
+	RS_Line* entity = new RS_Line{currentContainer, {v1, v2}};
     RS_DEBUG->print("RS_FilterDXF::addRay: set attributes");
     setEntityAttributes(entity, &data);
 
@@ -386,12 +416,11 @@ void RS_FilterDXFRW::addXline(const DRW_Xline& data) {
 
     RS_DEBUG->print("RS_FilterDXF::addXline: create line");
 
-    if (currentContainer==NULL) {
-        RS_DEBUG->print("RS_FilterDXF::addXline: currentContainer is NULL");
+	if (!currentContainer) {
+		RS_DEBUG->print("RS_FilterDXF::addXline: currentContainer is nullptr");
     }
 
-    RS_Line* entity = new RS_Line(currentContainer,
-                                  RS_LineData(v1, v2));
+	RS_Line* entity = new RS_Line{currentContainer, {v1, v2}};
     RS_DEBUG->print("RS_FilterDXF::addXline: set attributes");
     setEntityAttributes(entity, &data);
 
@@ -410,9 +439,8 @@ void RS_FilterDXFRW::addXline(const DRW_Xline& data) {
 void RS_FilterDXFRW::addCircle(const DRW_Circle& data) {
     RS_DEBUG->print("RS_FilterDXF::addCircle");
 
-    RS_Vector v(data.basePoint.x, data.basePoint.y);
-    RS_CircleData d(v, data.radious);
-    RS_Circle* entity = new RS_Circle(currentContainer, d);
+	RS_Vector v{data.basePoint.x, data.basePoint.y};
+	RS_Circle* entity = new RS_Circle(currentContainer, {v, data.radious});
     setEntityAttributes(entity, &data);
 
     currentContainer->addEntity(entity);
@@ -450,14 +478,16 @@ void RS_FilterDXFRW::addArc(const DRW_Arc& data) {
 void RS_FilterDXFRW::addEllipse(const DRW_Ellipse& data) {
     RS_DEBUG->print("RS_FilterDXFRW::addEllipse");
 
-    RS_Vector v1(data.basePoint.x, data.basePoint.y);
-    RS_Vector v2(data.secPoint.x, data.secPoint.y);
-    double ang2 = data.endparam;
-    if ( fabs(ang2- 6.28318530718) < 1.0e-10 && fabs(data.staparam) < 1.0e-10 )
-        ang2 = 0.0;
-    RS_EllipseData ed(v1, v2, data.ratio, data.staparam,
-                                    ang2, false);
-    RS_Ellipse* entity = new RS_Ellipse(currentContainer, ed);
+	RS_Vector v1(data.basePoint.x, data.basePoint.y);
+	RS_Vector v2(data.secPoint.x, data.secPoint.y);
+	double ang2 = data.endparam;
+	if (fabs(ang2 - 2.*M_PI) < RS_TOLERANCE &&
+			fabs(data.staparam) < RS_TOLERANCE)
+		ang2 = 0.;
+	RS_Ellipse* entity = new RS_Ellipse{currentContainer,
+										{v1, v2,
+										data.ratio,
+										data.staparam, ang2, false}};
     setEntityAttributes(entity, &data);
 
     currentContainer->addEntity(entity);
@@ -469,10 +499,10 @@ void RS_FilterDXFRW::addEllipse(const DRW_Ellipse& data) {
  */
 void RS_FilterDXFRW::addTrace(const DRW_Trace& data) {
     RS_Solid* entity;
-    RS_Vector v1(data.basePoint.x, data.basePoint.y);
-    RS_Vector v2(data.secPoint.x, data.secPoint.y);
-    RS_Vector v3(data.thirdPoint.x, data.thirdPoint.y);
-    RS_Vector v4(data.fourPoint.x, data.fourPoint.y);
+	RS_Vector v1{data.basePoint.x, data.basePoint.y};
+	RS_Vector v2{data.secPoint.x, data.secPoint.y};
+	RS_Vector v3{data.thirdPoint.x, data.thirdPoint.y};
+	RS_Vector v4{data.fourPoint.x, data.fourPoint.y};
     if (v3 == v4)
         entity = new RS_Solid(currentContainer, RS_SolidData(v1, v2, v3));
     else
@@ -494,21 +524,21 @@ void RS_FilterDXFRW::addSolid(const DRW_Solid& data) {
  */
 void RS_FilterDXFRW::addLWPolyline(const DRW_LWPolyline& data) {
     RS_DEBUG->print("RS_FilterDXFRW::addLWPolyline");
-    RS_PolylineData d(RS_Vector(false),
-                      RS_Vector(false),
+    if (data.vertlist.empty())
+        return;
+	RS_PolylineData d(RS_Vector{},
+					  RS_Vector{},
                       data.flags&0x1);
     RS_Polyline *polyline = new RS_Polyline(currentContainer, d);
     setEntityAttributes(polyline, &data);
 
-    QList< QPair<RS_Vector*, double> > verList;
+	std::vector< std::pair<RS_Vector, double> > verList;
     for (unsigned int i=0; i<data.vertlist.size(); i++) {
         DRW_Vertex2D *vert = data.vertlist.at(i);
-        RS_Vector *v = new RS_Vector(vert->x, vert->y);
-        verList.append(qMakePair(v, vert->bulge));
+		RS_Vector v(vert->x, vert->y);
+		verList.emplace_back(std::make_pair(v, vert->bulge));
     }
-    polyline->appendVertexs(verList);
-    while (!verList.isEmpty())
-         delete verList.takeFirst().first;
+	polyline->appendVertexs(verList);
 
     currentContainer->addEntity(polyline);
 }
@@ -525,21 +555,19 @@ void RS_FilterDXFRW::addPolyline(const DRW_Polyline& data) {
     if ( data.flags&0x40)
         return; //the polyline is a poliface mesh, TODO convert
 
-    RS_PolylineData d(RS_Vector(false),
-                      RS_Vector(false),
+	RS_PolylineData d(RS_Vector{},
+					  RS_Vector{},
                       data.flags&0x1);
     RS_Polyline *polyline = new RS_Polyline(currentContainer, d);
     setEntityAttributes(polyline, &data);
 
-    QList< QPair<RS_Vector*, double> > verList;
+	std::vector< std::pair<RS_Vector, double> > verList;
     for (unsigned int i=0; i<data.vertlist.size(); i++) {
         DRW_Vertex *vert = data.vertlist.at(i);
-        RS_Vector *v = new RS_Vector(vert->basePoint.x, vert->basePoint.y);
-        verList.append(qMakePair(v, vert->bulge));
+		RS_Vector const v(vert->basePoint.x, vert->basePoint.y);
+		verList.push_back(std::make_pair(v, vert->bulge));
     }
-    polyline->appendVertexs(verList);
-    while (!verList.isEmpty())
-         delete verList.takeFirst().first;
+	polyline->appendVertexs(verList);
 
     currentContainer->addEntity(polyline);
 }
@@ -587,6 +615,14 @@ void RS_FilterDXFRW::addSpline(const DRW_Spline* data) {
         RS_Vector v(vert->x, vert->y);
         spline->addControlPoint(v);
     }
+    if (data->ncontrol== 0 && data->degree != 2){
+        for (unsigned int i=0; i<data->fitlist.size(); i++) {
+            DRW_Coord *vert = data->fitlist.at(i);
+            RS_Vector v(vert->x, vert->y);
+            spline->addControlPoint(v);
+        }
+
+    }
     spline->update();
 }
 
@@ -605,9 +641,9 @@ void RS_FilterDXFRW::addInsert(const DRW_Insert& data) {
     //cout << "Insert: " << name << " " << ip << " " << cols << "/" << rows << endl;
 
     RS_InsertData d( QString::fromUtf8(data.name.c_str()),
-                    ip, sc, data.angle/ARAD,
+                    ip, sc, data.angle,
                     data.colcount, data.rowcount,
-                    sp, NULL, RS2::NoUpdate);
+					sp, nullptr, RS2::NoUpdate);
     RS_Insert* entity = new RS_Insert(currentContainer, d);
     setEntityAttributes(entity, &data);
     RS_DEBUG->print("  id: %d", entity->getId());
@@ -696,7 +732,7 @@ void RS_FilterDXFRW::addMText(const DRW_MText& data) {
                               data.height, 1, RS_TextData::VABaseline, RS_TextData::HALeft,
                               RS_TextData::None, txt, sty, 0,
                               RS2::Update);
-                RS_Text* entity = new RS_Text(NULL, d);
+				RS_Text* entity = new RS_Text(nullptr, d);
                 double textTail = entity->getMin().y;
                 delete entity;
                 RS_Vector ot = RS_Vector(0.0,textTail).rotate(angle);
@@ -973,8 +1009,8 @@ void RS_FilterDXFRW::addDimAngular3P(const DRW_DimAngular3p* data) {
     RS_Vector dp1(data->getFirstLine().x, data->getFirstLine().y);
     RS_Vector dp2(data->getSecondLine().x, data->getSecondLine().y);
     RS_Vector dp3(data->getVertexPoint().x, data->getVertexPoint().y);
-    RS_Vector dp4 = dimensionData.definitionPoint;
-    dimensionData.definitionPoint = RS_Vector(data->getVertexPoint().x, data->getVertexPoint().y);
+	RS_Vector dp4 = dimensionData.definitionPoint;
+	dimensionData.definitionPoint = RS_Vector(data->getVertexPoint().x, data->getVertexPoint().y);
 
     RS_DimAngularData d(dp1, dp2, dp3, dp4);
 
@@ -1033,45 +1069,45 @@ void RS_FilterDXFRW::addHatch(const DRW_Hatch *data) {
         DRW_HatchLoop *loop = data->looplist.at(i);
         if ((loop->type & 32) == 32) continue;
         hatchLoop = new RS_EntityContainer(hatch);
-        hatchLoop->setLayer(NULL);
+		hatchLoop->setLayer(nullptr);
         hatch->addEntity(hatchLoop);
 
-        RS_Entity* e = NULL;
+		RS_Entity* e = nullptr;
         if ((loop->type & 2) == 2){   //polyline, convert to lines & arcs
             DRW_LWPolyline *pline = (DRW_LWPolyline *)loop->objlist.at(0);
-            RS_Polyline *polyline = new RS_Polyline(NULL,
+			RS_Polyline *polyline = new RS_Polyline(nullptr,
                     RS_PolylineData(RS_Vector(false), RS_Vector(false), pline->flags) );
             for (unsigned int j=0; j < pline->vertlist.size(); j++) {
                     DRW_Vertex2D *vert = pline->vertlist.at(j);
                     polyline->addVertex(RS_Vector(vert->x, vert->y), vert->bulge);
             }
-            for (RS_Entity* e=polyline->firstEntity(); e!=NULL;
+            for (RS_Entity* e=polyline->firstEntity(); e;
                     e=polyline->nextEntity()) {
                 RS_Entity* tmp = e->clone();
                 tmp->reparent(hatchLoop);
-                tmp->setLayer(NULL);
+				tmp->setLayer(nullptr);
                 hatchLoop->addEntity(tmp);
             }
             delete polyline;
 
         } else {
             for (unsigned int j=0; j<loop->objlist.size(); j++) {
-                e = NULL;
+				e = nullptr;
                 DRW_Entity *ent = loop->objlist.at(j);
                 switch (ent->eType) {
                 case DRW::LINE: {
-                    DRW_Line *e2 = (DRW_Line *)ent;
-                    e = new RS_Line(hatchLoop,
-                                    RS_LineData(RS_Vector(e2->basePoint.x, e2->basePoint.y),
-                                                RS_Vector(e2->secPoint.x, e2->secPoint.y)));
-                    break;
+					DRW_Line *e2 = (DRW_Line *)ent;
+					e = new RS_Line{hatchLoop,
+					{{e2->basePoint.x, e2->basePoint.y},
+					{e2->secPoint.x, e2->secPoint.y}}};
+					break;
                 }
                 case DRW::ARC: {
                     DRW_Arc *e2 = (DRW_Arc *)ent;
                     if (e2->isccw && e2->staangle<1.0e-6 && e2->endangle>RS_Math::deg2rad(360)-1.0e-6) {
                         e = new RS_Circle(hatchLoop,
-                                          RS_CircleData(RS_Vector(e2->basePoint.x, e2->basePoint.y),
-                                                        e2->radious));
+						{{e2->basePoint.x, e2->basePoint.y},
+														e2->radious});
                     } else {
 
                         if (e2->isccw) {
@@ -1094,7 +1130,7 @@ void RS_FilterDXFRW::addHatch(const DRW_Hatch *data) {
                     DRW_Ellipse *e2 = (DRW_Ellipse *)ent;
                     double ang1 = e2->staparam;
                     double ang2 = e2->endparam;
-                    if ( fabs(ang2 - 6.28318530718) < 1.0e-10 && fabs(ang1) < 1.0e-10 )
+					if ( fabs(ang2 - 2.*M_PI) < 1.0e-10 && fabs(ang1) < 1.0e-10 )
                         ang2 = 0.0;
                     else { //convert angle to parameter
                         ang1 = atan(tan(ang1)/e2->ratio);
@@ -1114,17 +1150,17 @@ void RS_FilterDXFRW::addHatch(const DRW_Hatch *data) {
                             ang2 +=M_PI;
                         }
                     }
-                    e = new RS_Ellipse(hatchLoop,
-                                       RS_EllipseData(RS_Vector(e2->basePoint.x, e2->basePoint.y),
-                                                      RS_Vector(e2->secPoint.x, e2->secPoint.y),
-                                                      e2->ratio, ang1, ang2, !e2->isccw));
-                    break;
+					e = new RS_Ellipse{hatchLoop,
+					{{e2->basePoint.x, e2->basePoint.y},
+					{e2->secPoint.x, e2->secPoint.y},
+							e2->ratio, ang1, ang2, !e2->isccw}};
+					break;
                 }
                 default:
                     break;
                 }
-                if (e!=NULL) {
-                    e->setLayer(NULL);
+                if (e) {
+					e->setLayer(nullptr);
                     hatchLoop->addEntity(e);
                 }
             }
@@ -1151,12 +1187,11 @@ void RS_FilterDXFRW::addImage(const DRW_Image *data) {
 
     RS_Vector ip(data->basePoint.x, data->basePoint.y);
     RS_Vector uv(data->secPoint.x, data->secPoint.y);
-    RS_Vector vv(data->vx, data->vy);
+    RS_Vector vv(data->vVector.x, data->vVector.y);
     RS_Vector size(data->sizeu, data->sizev);
 
     RS_Image* image = new RS_Image( currentContainer,
-            RS_ImageData(QString(data->ref.c_str()).toInt(NULL, 16),
-                         ip, uv, vv, size,
+            RS_ImageData(data->ref, ip, uv, vv, size,
                          QString(""), data->brightness,
                          data->contrast, data->fade));
 
@@ -1172,7 +1207,7 @@ void RS_FilterDXFRW::addImage(const DRW_Image *data) {
 void RS_FilterDXFRW::linkImage(const DRW_ImageDef *data) {
     RS_DEBUG->print("RS_FilterDXFRW::linkImage");
 
-    int handle = QString(data->handle.c_str()).toInt(NULL, 16);
+    int handle = data->handle;
     QString sfile(QString::fromUtf8(data->name.c_str()));
     QFileInfo fiDxf(file);
     QFileInfo fiBitmap(sfile);
@@ -1201,7 +1236,7 @@ void RS_FilterDXFRW::linkImage(const DRW_ImageDef *data) {
 
     // Also link images in subcontainers (e.g. inserts):
     for (RS_Entity* e=graphic->firstEntity(RS2::ResolveNone);
-            e!=NULL; e=graphic->nextEntity(RS2::ResolveNone)) {
+            e; e=graphic->nextEntity(RS2::ResolveNone)) {
         if (e->rtti()==RS2::EntityImage) {
             RS_Image* img = (RS_Image*)e;
             if (img->getHandle()==handle) {
@@ -1216,7 +1251,7 @@ void RS_FilterDXFRW::linkImage(const DRW_ImageDef *data) {
     for (unsigned i=0; i<graphic->countBlocks(); ++i) {
         RS_Block* b = graphic->blockAt(i);
         for (RS_Entity* e=b->firstEntity(RS2::ResolveNone);
-                e!=NULL; e=b->nextEntity(RS2::ResolveNone)) {
+                e; e=b->nextEntity(RS2::ResolveNone)) {
             if (e->rtti()==RS2::EntityImage) {
                 RS_Image* img = (RS_Image*)e;
                 if (img->getHandle()==handle) {
@@ -1236,7 +1271,7 @@ using std::map;
  * Sets the header variables from the DXF file.
  */
 void RS_FilterDXFRW::addHeader(const DRW_Header* data){
-    RS_Graphic* container = NULL;
+	RS_Graphic* container = nullptr;
     if (currentContainer->rtti()==RS2::EntityGraphic) {
         container = (RS_Graphic*)currentContainer;
     } else return;
@@ -1245,23 +1280,23 @@ void RS_FilterDXFRW::addHeader(const DRW_Header* data){
     for ( it=data->vars.begin() ; it != data->vars.end(); ++it ){
         QString key = QString::fromStdString((*it).first);
         DRW_Variant *var = (*it).second;
-        switch (var->type) {
+        switch (var->type()) {
         case DRW_Variant::COORD:
             container->addVariable(key,
 #ifdef  RS_VECTOR2D
-            RS_Vector(var->content.v->x, var->content.v->y), var->code);
+            RS_Vector(var->content.v->x, var->content.v->y), var->code());
 #else
-            RS_Vector(var->content.v->x, var->content.v->y, var->content.v->z), var->code);
+            RS_Vector(var->content.v->x, var->content.v->y, var->content.v->z), var->code());
 #endif
             break;
         case DRW_Variant::STRING:
-            container->addVariable(key, QString::fromUtf8(var->content.s->c_str()), var->code);
+            container->addVariable(key, QString::fromUtf8(var->content.s->c_str()), var->code());
             break;
         case DRW_Variant::INTEGER:
-            container->addVariable(key, var->content.i, var->code);
+            container->addVariable(key, var->content.i, var->code());
             break;
         case DRW_Variant::DOUBLE:
-            container->addVariable(key, var->content.d, var->code);
+            container->addVariable(key, var->content.d, var->code());
             break;
         default:
             break;
@@ -1271,6 +1306,12 @@ void RS_FilterDXFRW::addHeader(const DRW_Header* data){
     codePage = graphic->getVariableString("$DWGCODEPAGE", "ANSI_1252");
     textStyle = graphic->getVariableString("$TEXTSTYLE", "Standard");
     dimStyle = graphic->getVariableString("$DIMSTYLE", "Standard");
+    //initialize units vars if not are present in dxf file
+    graphic->getVariableInt("$LUNITS", 2);
+    graphic->getVariableInt("$LUPREC", 4);
+    graphic->getVariableInt("$AUNITS", 0);
+    graphic->getVariableInt("$AUPREC", 4);
+
 
     QString acadver = versionStr = graphic->getVariableString("$ACADVER", "");
     acadver.replace(QRegExp("[a-zA-Z]"), "");
@@ -1404,7 +1445,7 @@ void RS_FilterDXFRW::prepareBlocks() {
     }
     //Add a name to each dimension, in dxfR12 also for hatches
     for (RS_Entity *e = graphic->firstEntity(RS2::ResolveNone);
-         e != NULL; e = graphic->nextEntity(RS2::ResolveNone)) {
+		 e ; e = graphic->nextEntity(RS2::ResolveNone)) {
         if ( !(e->getFlag(RS2::FlagUndone)) ) {
             switch (e->rtti()) {
             case RS2::EntityDimLinear:
@@ -1474,7 +1515,7 @@ void RS_FilterDXFRW::writeBlocks() {
         dxfW->writeBlock(&block);
         RS_EntityContainer *ct = (RS_EntityContainer *)it.key();
         for (RS_Entity* e=ct->firstEntity(RS2::ResolveNone);
-             e!=NULL; e=ct->nextEntity(RS2::ResolveNone)) {
+             e; e=ct->nextEntity(RS2::ResolveNone)) {
             if ( !(e->getFlag(RS2::FlagUndone)) ) {
                 writeEntity(e);
             }
@@ -1497,7 +1538,7 @@ void RS_FilterDXFRW::writeBlocks() {
 #endif
             dxfW->writeBlock(&block);
             for (RS_Entity* e=blk->firstEntity(RS2::ResolveNone);
-                 e!=NULL; e=blk->nextEntity(RS2::ResolveNone)) {
+                 e; e=blk->nextEntity(RS2::ResolveNone)) {
                 if ( !(e->getFlag(RS2::FlagUndone)) ) {
                     writeEntity(e);
                 }
@@ -1568,7 +1609,7 @@ void RS_FilterDXFRW::writeLTypes(){
     ltype.name = "DOT";
     ltype.desc = "Dot . . . . . . . . . . . . . . . . . . . . . .";
     ltype.size = 2;
-    ltype.length = 6.35;
+	ltype.length = 6.35;
     ltype.path.push_back(0.0);
     ltype.path.push_back(-6.35);
     dxfW->writeLineType(&ltype);
@@ -1859,7 +1900,7 @@ void RS_FilterDXFRW::writeTextstyles(){
     QString sty;
     //Find fonts used by text entities in drawing
     for (RS_Entity *e = graphic->firstEntity(RS2::ResolveNone);
-         e != NULL; e = graphic->nextEntity(RS2::ResolveNone)) {
+		 e ; e = graphic->nextEntity(RS2::ResolveNone)) {
         if ( !(e->getFlag(RS2::FlagUndone)) ) {
             switch (e->rtti()) {
             case RS2::EntityMText:
@@ -1881,7 +1922,7 @@ void RS_FilterDXFRW::writeTextstyles(){
     for (unsigned i = 0; i < graphic->countBlocks(); i++) {
         blk = graphic->blockAt(i);
         for (RS_Entity *e = blk->firstEntity(RS2::ResolveNone);
-             e != NULL; e = blk->nextEntity(RS2::ResolveNone)) {
+			 e ; e = blk->nextEntity(RS2::ResolveNone)) {
             if ( !(e->getFlag(RS2::FlagUndone)) ) {
                 switch (e->rtti()) {
                 case RS2::EntityMText:
@@ -1932,7 +1973,7 @@ void RS_FilterDXFRW::writeVports(){
         vp.gridSpacing.y = 10;
     }
     RS_GraphicView *gv = graphic->getGraphicView();
-    if (gv != NULL) {
+	if (gv ) {
         RS_Vector fac =gv->getFactor();
         vp.height = gv->getHeight()/fac.y;
         vp.ratio = (double)gv->getWidth() / (double)gv->getHeight();
@@ -1946,11 +1987,30 @@ void RS_FilterDXFRW::writeVports(){
 void RS_FilterDXFRW::writeDimstyles(){
     DRW_Dimstyle dsty;
     dsty.name = "Standard";
+    dsty.dimscale = graphic->getVariableDouble("$DIMSCALE", 1.0);
     dsty.dimasz = graphic->getVariableDouble("$DIMASZ", 2.5);
-    dsty.dimexe = graphic->getVariableDouble("$DIMEXE", 1.25);
     dsty.dimexo = graphic->getVariableDouble("$DIMEXO", 0.625);
-    dsty.dimgap = graphic->getVariableDouble("$DIMGAP", 0.625);
+    dsty.dimexe = graphic->getVariableDouble("$DIMEXE", 1.25);
+    dsty.dimfxl = graphic->getVariableDouble("$DIMFXL", 1.0);
     dsty.dimtxt = graphic->getVariableDouble("$DIMTXT", 2.5);
+    dsty.dimtsz = graphic->getVariableDouble("$DIMTSZ", 2.5);
+    dsty.dimlfac = graphic->getVariableDouble("$DIMLFAC", 1.0);
+    dsty.dimgap = graphic->getVariableDouble("$DIMGAP", 0.625);
+    dsty.dimtih = graphic->getVariableInt("$DIMTIH", 2);
+    dsty.dimzin = graphic->getVariableInt("$DIMZIN", 1);
+    dsty.dimazin = graphic->getVariableInt("$DIMAZIN", 0);
+    dsty.dimclrd = graphic->getVariableInt("$DIMCLRD", 0);
+    dsty.dimclre = graphic->getVariableInt("$DIMCLRE", 0);
+    dsty.dimclrt = graphic->getVariableInt("$DIMCLRT", 0);
+    dsty.dimadec = graphic->getVariableInt("$DIMADEC", 0);
+    dsty.dimdec = graphic->getVariableInt("$DIMDEC", 2);
+    dsty.dimaunit = graphic->getVariableInt("$DIMAUNIT", 0);
+    dsty.dimlunit = graphic->getVariableInt("$DIMLUNIT", 2);
+    dsty.dimdsep = graphic->getVariableInt("$DIMDSEP", 0);
+    dsty.dimfxlon = graphic->getVariableInt("$DIMFXLON", 0);
+    dsty.dimtxsty = graphic->getVariableString("$DIMTXSTY", "standard").toStdString();
+    dsty.dimlwd = graphic->getVariableInt("$DIMLWD", -2);
+    dsty.dimlwe = graphic->getVariableInt("$DIMLWE", -2);
     dxfW->writeDimstyle(&dsty);
 }
 
@@ -1962,7 +2022,7 @@ void RS_FilterDXFRW::writeAppId(){
 
 void RS_FilterDXFRW::writeEntities(){
     for (RS_Entity *e = graphic->firstEntity(RS2::ResolveNone);
-         e != NULL; e = graphic->nextEntity(RS2::ResolveNone)) {
+		 e ; e = graphic->nextEntity(RS2::ResolveNone)) {
         if ( !(e->getFlag(RS2::FlagUndone)) ) {
             writeEntity(e);
         }
@@ -2094,6 +2154,9 @@ void RS_FilterDXFRW::writeArc(RS_Arc* a) {
  * Writes the given polyline entity to the file as lwpolyline.
  */
 void RS_FilterDXFRW::writeLWPolyline(RS_Polyline* l) {
+    //skip if are empty polyline
+    if (l->isEmpty())
+            return;
     // version 12 are old style polyline
     if (version==1009) {
         writePolyline(l);
@@ -2102,11 +2165,11 @@ void RS_FilterDXFRW::writeLWPolyline(RS_Polyline* l) {
     DRW_LWPolyline pol;
     RS_Entity* currEntity = 0;
     RS_Entity* nextEntity = 0;
-    RS_AtomicEntity* ae = NULL;
+	RS_AtomicEntity* ae = nullptr;
     double bulge=0.0;
 
     for (RS_Entity* e=l->firstEntity(RS2::ResolveNone);
-         e!=NULL; e=nextEntity) {
+         e; e=nextEntity) {
 
         currEntity = e;
         nextEntity = l->nextEntity(RS2::ResolveNone);
@@ -2146,11 +2209,11 @@ void RS_FilterDXFRW::writePolyline(RS_Polyline* p) {
     DRW_Polyline pol;
     RS_Entity* currEntity = 0;
     RS_Entity* nextEntity = 0;
-    RS_AtomicEntity* ae = NULL;
+	RS_AtomicEntity* ae = nullptr;
     double bulge=0.0;
 
     for (RS_Entity* e=p->firstEntity(RS2::ResolveNone);
-         e!=NULL; e=nextEntity) {
+         e; e=nextEntity) {
 
         currEntity = e;
         nextEntity = p->nextEntity(RS2::ResolveNone);
@@ -2200,7 +2263,7 @@ void RS_FilterDXFRW::writeSpline(RS_Spline *s) {
         DRW_Polyline pol;
         RS_Entity* e;
         for (e=s->firstEntity(RS2::ResolveNone);
-             e!=NULL; e=s->nextEntity(RS2::ResolveNone)) {
+             e; e=s->nextEntity(RS2::ResolveNone)) {
             pol.addVertex( DRW_Vertex(e->getStartpoint().x,
                                       e->getStartpoint().y, 0.0, 0.0));
         }
@@ -2238,12 +2301,12 @@ void RS_FilterDXFRW::writeSpline(RS_Spline *s) {
     }
 
     // write spline control points:
-    QList<RS_Vector> cp = s->getControlPoints();
-    for (int i = 0; i < cp.size(); ++i) {
+	auto cp = s->getControlPoints();
+	for (const RS_Vector& v: cp) {
         DRW_Coord *controlpoint = new DRW_Coord();
         sp.controllist.push_back(controlpoint);
-        controlpoint->x = cp.at(i).x;
-        controlpoint->y = cp.at(i).y;
+		controlpoint->x = v.x;
+		controlpoint->y = v.y;
      }
     getEntityAttributes(&sp, s);
     dxfW->writeSpline(&sp);
@@ -2257,7 +2320,7 @@ void RS_FilterDXFRW::writeSpline(RS_Spline *s) {
 void RS_FilterDXFRW::writeSplinePoints(LC_SplinePoints *s)
 {
 	int nCtrls = s->getNumberOfControlPoints();
-	QList<RS_Vector> cp = s->getControlPoints();
+	auto const& cp = s->getControlPoints();
 
 	if(nCtrls < 3)
 	{
@@ -2278,9 +2341,9 @@ void RS_FilterDXFRW::writeSplinePoints(LC_SplinePoints *s)
 	if(version == 1009)
 	{
 		DRW_Polyline pol;
-		QList<RS_Vector> sp = s->getStrokePoints();
+		auto const& sp = s->getStrokePoints();
 
-		for(int i = 0; i < sp.count(); i++)
+		for(size_t i = 0; i < sp.size(); i++)
 		{
 			pol.addVertex(DRW_Vertex(sp.at(i).x, sp.at(i).y, 0.0, 0.0));
 		}
@@ -2319,7 +2382,7 @@ void RS_FilterDXFRW::writeSplinePoints(LC_SplinePoints *s)
 	}
 
 	// write spline control points:
-	for(int i = 0; i < cp.size(); ++i)
+	for(size_t i = 0; i < cp.size(); ++i)
 	{
 		DRW_Coord *controlpoint = new DRW_Coord();
 		sp.controllist.push_back(controlpoint);
@@ -2371,7 +2434,7 @@ void RS_FilterDXFRW::writeInsert(RS_Insert* i) {
 #ifndef  RS_VECTOR2D
     in.zscale = i->getScale().z;
 #endif
-    in.angle = RS_Math::rad2deg(i->getAngle());
+    in.angle = i->getAngle();
     in.colcount = i->getCols();
     in.rowcount = i->getRows();
     in.colspace = i->getSpacing().x;
@@ -2428,8 +2491,7 @@ void RS_FilterDXFRW::writeMText(RS_MText* t) {
         for (int i=0; i<txtList.size();++i){
             if (!txtList.at(i).isEmpty()) {
                 text->text = toDxfString(txtList.at(i)).toUtf8().data();
-                RS_Vector inc = t->getInsertionPoint();
-                inc.setPolar(dist*i, t->getAngle()+M_PI_2);
+				RS_Vector inc  = RS_Vector::polar(dist*i, t->getAngle()+M_PI_2);
                 if (setSec) {
                     text->secPoint.x += inc.x;
                     text->secPoint.y += inc.y;
@@ -2583,8 +2645,8 @@ void RS_FilterDXFRW::writeDimension(RS_Dimension* d) {
         dd->setLeaderLength(dr->getLeader());
         break; }
     case RS2::EntityDimAngular: {
-        RS_DimAngular* da = (RS_DimAngular*)d;
-        if (da->getDefinitionPoint3() == da->getData().definitionPoint) {
+		RS_DimAngular* da = static_cast<RS_DimAngular*>(d);
+		if (da->getDefinitionPoint3() == da->getData().definitionPoint) {
             DRW_DimAngular3p * dd = new DRW_DimAngular3p();
             dim = dd ;
             dim->type = 5+32;
@@ -2648,15 +2710,15 @@ void RS_FilterDXFRW::writeLeader(RS_Leader* l) {
     leader.textheight = 1;
     leader.textwidth = 10;
     leader.vertnum = l->count();
-    RS_Line* li =NULL;
+	RS_Line* li =nullptr;
     for (RS_Entity* v=l->firstEntity(RS2::ResolveNone);
-            v!=NULL;   v=l->nextEntity(RS2::ResolveNone)) {
+            v;   v=l->nextEntity(RS2::ResolveNone)) {
         if (v->rtti()==RS2::EntityLine) {
             li = (RS_Line*)v;
             leader.vertexlist.push_back(new DRW_Coord(li->getStartpoint().x, li->getStartpoint().y, 0.0));
         }
     }
-    if (li != NULL) {
+	if (li ) {
         leader.vertexlist.push_back(new DRW_Coord(li->getEndpoint().x, li->getEndpoint().y, 0.0));
     }
     dxfW->writeLeader(&leader);
@@ -2693,7 +2755,7 @@ void RS_FilterDXFRW::writeHatch(RS_Hatch * h) {
     if (h->countLoops()>0) {
         // check if all of the loops contain entities:
         for (RS_Entity* l=h->firstEntity(RS2::ResolveNone);
-                l!=NULL;
+                l;
                 l=h->nextEntity(RS2::ResolveNone)) {
 
             if (l->isContainer() && !l->getFlag(RS2::FlagTemp)) {
@@ -2724,7 +2786,7 @@ void RS_FilterDXFRW::writeHatch(RS_Hatch * h) {
     ha.loopsnum = h->countLoops();
 
     for (RS_Entity* l=h->firstEntity(RS2::ResolveNone);
-         l!=NULL;
+         l;
          l=h->nextEntity(RS2::ResolveNone)) {
 
         // Write hatch loops:
@@ -2733,7 +2795,7 @@ void RS_FilterDXFRW::writeHatch(RS_Hatch * h) {
             DRW_HatchLoop *lData = new DRW_HatchLoop(0);
 
             for (RS_Entity* ed=loop->firstEntity(RS2::ResolveNone);
-                 ed!=NULL;
+                 ed;
                  ed=loop->nextEntity(RS2::ResolveNone)) {
 
                 // Write hatch loop edges:
@@ -2835,8 +2897,8 @@ void RS_FilterDXFRW::writeImage(RS_Image * i) {
     image.basePoint.y = i->getInsertionPoint().y;
     image.secPoint.x = i->getUVector().x;
     image.secPoint.y = i->getUVector().y;
-    image.vx = i->getVVector().x;
-    image.vy = i->getVVector().y;
+    image.vVector.x = i->getVVector().x;
+    image.vVector.y = i->getVVector().y;
     image.sizeu = i->getWidth();
     image.sizev = i->getHeight();
     image.brightness = i->getBrightness();
@@ -2844,7 +2906,7 @@ void RS_FilterDXFRW::writeImage(RS_Image * i) {
     image.fade = i->getFade();
 
     DRW_ImageDef *imgDef = dxfW->writeImage(&image, i->getFile().toUtf8().data());
-    if (imgDef != NULL) {
+	if (imgDef ) {
         imgDef->loaded = 1;
         imgDef->u = i->getData().size.x;
         imgDef->v = i->getData().size.y;
@@ -2892,7 +2954,7 @@ void RS_FilterDXFRW::writeImage(RS_Image * i) {
 
     RS_Block* blk = new RS_Block(graphic, blkdata);
 
-    for (RS_Entity* e1 = con->firstEntity(); e1 != NULL;
+	for (RS_Entity* e1 = con->firstEntity(); e1 ;
             e1 = con->nextEntity() ) {
         blk->addEntity(e1);
     }
@@ -2910,7 +2972,7 @@ void RS_FilterDXFRW::writeImage(RS_Image * i) {
                                        RS2::ResolveLevel level) {
 
     for (RS_Entity* e=c->firstEntity(level);
-            e!=NULL;
+            e;
             e=c->nextEntity(level)) {
 
         writeEntity(dw, e, attrib);
@@ -2932,7 +2994,7 @@ void RS_FilterDXFRW::setEntityAttributes(RS_Entity* entity,
     QString layName = toNativeString(QString::fromUtf8(attrib->layer.c_str()));
 
     // Layer: add layer in case it doesn't exist:
-    if (graphic->findLayer(layName)==NULL) {
+	if (!graphic->findLayer(layName)) {
         DRW_Layer lay;
         lay.name = attrib->layer;
         addLayer(lay);
@@ -2968,7 +3030,7 @@ void RS_FilterDXFRW::getEntityAttributes(DRW_Entity* ent, const RS_Entity* entit
     // Layer:
     RS_Layer* layer = entity->getLayer();
     QString layerName;
-    if (layer!=NULL) {
+    if (layer) {
         layerName = layer->getName();
     } else {
         layerName = "0";
@@ -3610,25 +3672,24 @@ QString RS_FilterDXFRW::toNativeString(const QString& data) {
     int j = 0;
     for (int i=0; i<data.length(); ++i) {
         if (data.at(i).unicode() == 0x7B){ //is '{' ?
-            if (data.at(i+1).unicode() == 0x5c && data.at(i+2).unicode() == 0x66){ //is "\f" ?
-                //found font tag, append parsed part
-                res.append(data.mid(j,i-j));
-                //skip to ';'
-                for (int k=i+3; k<data.length(); ++k) {
-                    if (data.at(k).unicode() == 0x3B) {
-                        i = j = ++k;
-                        break;
-                    }
+            if (data.at(i+1).unicode() == 0x5c){ //and is "{\" ?
+                //check known codes
+                if ( (data.at(i+2).unicode() == 0x66) || //is "\f" ?
+                     (data.at(i+2).unicode() == 0x48) || //is "\H" ?
+                     (data.at(i+2).unicode() == 0x43)    //is "\C" ?
+                   ) {
+                    //found tag, append parsed part
+                    res.append(data.mid(j,i-j));
+                    int pos = data.indexOf(0x7D, i+3);//find '}'
+                    if (pos <0) break; //'}' not found
+                    QString tmp = data.mid(i+1, pos-i-1);
+                    do {
+                        tmp = tmp.remove(0,tmp.indexOf(0x3B, 0)+1 );//remove to ';'
+                    } while(tmp.startsWith("\\f") || tmp.startsWith("\\H") || tmp.startsWith("\\C"));
+                    res.append(tmp);
+                    i = j = pos;
+                    ++j;
                 }
-                //add to '}'
-                for (int k=i; k<data.length(); ++k) {
-                    if (data.at(k).unicode() == 0x7D) {
-                        res.append(data.mid(i,k-i));
-                        i = j = ++k;
-                        break;
-                    }
-                }
-
             }
         }
     }
@@ -3638,6 +3699,8 @@ QString RS_FilterDXFRW::toNativeString(const QString& data) {
     res = res.replace(QRegExp("\\\\P"), "\n");
     // Space:
     res = res.replace(QRegExp("\\\\~"), " ");
+    // Tab:
+    res = res.replace(QRegExp("\\^I"), "    ");//RLZ: change 4 spaces for \t when mtext have support for tab
     // diameter:
     res = res.replace(QRegExp("%%[cC]"), QChar(0x2300));//RLZ: Empty_set is 0x2205, diameter is 0x2300 need to add in all fonts
     // degree:
@@ -3905,6 +3968,8 @@ QString RS_FilterDXFRW::printDwgVersion(int v){
         return "dwg version 2007";
     case DRW::AC1024:
         return "dwg version 2010";
+    case DRW::AC1027:
+        return "dwg version 2013";
     default:
         return "unknown";
     }
@@ -3924,6 +3989,10 @@ void RS_FilterDXFRW::printDwgError(int le){
         RS_DIALOGFACTORY->commandMessage(QObject::tr("unsupported dwg version"));
         RS_DEBUG->print("RS_FilterDXFRW::printDwgError: DRW::BAD_VERSION");
         break;
+    case DRW::BAD_READ_METADATA:
+        RS_DIALOGFACTORY->commandMessage(QObject::tr("error reading file metadata in dwg file"));
+        RS_DEBUG->print("RS_FilterDXFRW::printDwgError: DRW::BAD_READ_FILE_HEADER");
+        break;
     case DRW::BAD_READ_FILE_HEADER:
         RS_DIALOGFACTORY->commandMessage(QObject::tr("error reading file header in dwg file"));
         RS_DEBUG->print("RS_FilterDXFRW::printDwgError: DRW::BAD_READ_FILE_HEADER");
@@ -3936,7 +4005,7 @@ void RS_FilterDXFRW::printDwgError(int le){
         RS_DIALOGFACTORY->commandMessage(QObject::tr("error reading classes in dwg file"));
         RS_DEBUG->print("RS_FilterDXFRW::printDwgError: DRW::BAD_READ_CLASSES");
         break;
-    case DRW::BAD_READ_OFFSETS:
+    case DRW::BAD_READ_HANDLES:
         RS_DIALOGFACTORY->commandMessage(QObject::tr("error reading offsets in dwg file"));
         RS_DEBUG->print("RS_FilterDXFRW::printDwgError: DRW::BAD_READ_OFFSETS");
         break;
@@ -3944,9 +4013,17 @@ void RS_FilterDXFRW::printDwgError(int le){
         RS_DIALOGFACTORY->commandMessage(QObject::tr("error reading tables in dwg file"));
         RS_DEBUG->print("RS_FilterDXFRW::printDwgError: DRW::BAD_READ_TABLES");
         break;
+    case DRW::BAD_READ_BLOCKS:
+        RS_DIALOGFACTORY->commandMessage(QObject::tr("error reading blocks in dwg file"));
+        RS_DEBUG->print("RS_FilterDXFRW::printDwgError: DRW::BAD_READ_OFFSETS");
+        break;
     case DRW::BAD_READ_ENTITIES:
         RS_DIALOGFACTORY->commandMessage(QObject::tr("error reading entities in dwg file"));
         RS_DEBUG->print("RS_FilterDXFRW::printDwgError: DRW::BAD_READ_ENTITIES");
+        break;
+    case DRW::BAD_READ_OBJECTS:
+        RS_DIALOGFACTORY->commandMessage(QObject::tr("error reading objects in dwg file"));
+        RS_DEBUG->print("RS_FilterDXFRW::printDwgError: DRW::BAD_READ_OBJECTS");
         break;
     default:
         break;

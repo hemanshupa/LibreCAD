@@ -27,6 +27,7 @@
 #include "rs_actionzoompan.h"
 
 #include <QAction>
+#include <QMouseEvent>
 #include "rs_graphicview.h"
 #include "rs_dialogfactory.h"
 #include "rs_graphicview.h"
@@ -36,17 +37,6 @@
 RS_ActionZoomPan::RS_ActionZoomPan(RS_EntityContainer& container,
                                    RS_GraphicView& graphicView)
         :RS_ActionInterface("Zoom Panning", container, graphicView) {}
-
-
-QAction* RS_ActionZoomPan::createGUIAction(RS2::ActionType /*type*/, QObject* /*parent*/) {
-        // tr("Pan Zoom")
-        QAction* action = new QAction(tr("Zoom &Panning"), NULL);
-        action->setIcon(QIcon(":/actions/zoompan.png"));
-        //action->zetStatusTip(tr("Realtime Panning"));
-
-    return action;
-}
-
 
 void RS_ActionZoomPan::init(int status) {
     RS_ActionInterface::init(status);
@@ -116,16 +106,14 @@ void RS_ActionZoomPan::updateMouseButtonHints()
     switch (getStatus()) {
             case SetPanStart:
         RS_DIALOGFACTORY->updateMouseWidget(tr("Click and drag to pan zoom"),
-                                            tr("Cancel"),
-                                            false);
+											tr("Cancel"));
                 break;
             case SetPanning:
         RS_DIALOGFACTORY->updateMouseWidget(tr("Zoom panning"),
-                                            tr("Cancel"),
-                                            false);
+											tr("Cancel"));
                 break;
            default:
-        RS_DIALOGFACTORY->restoreMouseWidget();//restore previous mouse button hints
+		RS_DIALOGFACTORY->updateMouseWidget();
     }
 }
 

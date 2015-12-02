@@ -39,7 +39,8 @@
 #include "emu_qt44.h"
 #endif
 
-void QG_FileDialog::getType(const QString filter) {
+void QG_FileDialog::getType(const QString filter)
+{
     if (filter== fLff) {
         ftype = RS2::FormatLFF;
     } else if (filter == fCxf) {
@@ -110,7 +111,7 @@ QG_FileDialog::QG_FileDialog(QWidget* parent, Qt::WindowFlags f, FileType type)
 QG_FileDialog::~QG_FileDialog(){
 }
 
-QString QG_FileDialog::getExtension (RS2::FormatType type){
+QString QG_FileDialog::getExtension (RS2::FormatType type) const{
     switch (type) {
     case RS2::FormatLFF:
         return QString(".lff");
@@ -172,7 +173,7 @@ QString QG_FileDialog::getOpenFile(RS2::FormatType* type){
         }
         fn = QDir::toNativeSeparators( QFileInfo(fn).absoluteFilePath() );
 
-        if (type!=NULL) {
+        if (type) {
 #if QT_VERSION < 0x040400
             getType( emu_qt44_QFileDialog_selectedNameFilter(this) );
 #else
@@ -250,7 +251,7 @@ QString QG_FileDialog::getSaveFile(RS2::FormatType* type){
 #endif
     selectNameFilter(fDxfrw2007);
     selectFile(fn);
-    auto&& ext=getExtension(ftype);
+	auto ext=getExtension(ftype);
     if(ext.size()==4){
         if(ext[0]=='.') ext.remove(0,1);
     }
@@ -273,11 +274,11 @@ QString QG_FileDialog::getSaveFile(RS2::FormatType* type){
 #else
     getType(selectedNameFilter());
 #endif
-    if (type!=NULL)
+    if (type)
         *type = ftype;
 
     // append default extension:
-    if (fi.fileName().endsWith(".dxf",Qt::CaseInsensitive)==-1)
+	if (!fi.fileName().endsWith(".dxf",Qt::CaseInsensitive))
         fn += getExtension(ftype);
 
     // store new default settings:
@@ -370,7 +371,7 @@ QString QG_FileDialog::getSaveFileName(QWidget* parent, RS2::FormatType* type) {
             }
 
             // set format:
-            if (type!=NULL) {
+            if (type) {
                 if (fileDlg->selectedNameFilter()=="LFF Font (*.lff)") {
                     *type = RS2::FormatLFF;
                 } else if (fileDlg->selectedNameFilter()=="Font (*.cxf)") {
@@ -511,7 +512,7 @@ QString QG_FileDialog::getOpenFileName(QWidget* parent, RS2::FormatType* type) {
         if (!fl.isEmpty())
             fn = fl[0];
         fn = QDir::toNativeSeparators( QFileInfo(fn).absoluteFilePath() );
-        if (type!=NULL) {
+        if (type) {
             if (fileDlg->selectedNameFilter()==fDxf1) {
                 *type = RS2::FormatDXF1;
             } else if (fileDlg->selectedNameFilter()==fDxfrw) {

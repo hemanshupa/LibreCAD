@@ -27,9 +27,11 @@
 #include "rs_actioneditcopy.h"
 
 #include <QAction>
+#include <QMouseEvent>
 #include "rs_dialogfactory.h"
 #include "rs_graphicview.h"
 #include "rs_modification.h"
+#include "rs_coordinateevent.h"
 
 /**
  * Constructor.
@@ -40,44 +42,15 @@ RS_ActionEditCopy::RS_ActionEditCopy(bool copy,
                                      RS_EntityContainer& container,
                                      RS_GraphicView& graphicView)
         :RS_ActionInterface("Edit Copy",
-                    container, graphicView) {
-
-    this->copy = copy;
+					container, graphicView)
+		, copy(copy)
+		, referencePoint(new RS_Vector{})
+{
 }
 
 
 
-RS_ActionEditCopy::~RS_ActionEditCopy() {}
-
-
-
-QAction* RS_ActionEditCopy::createGUIAction(RS2::ActionType type, QObject* parent) {
-    QAction* action;
-
-    if (type==RS2::ActionEditCopy) {
-                // tr("Copy")
-                action = new QAction(tr("&Copy"), parent);
-#if QT_VERSION >= 0x040600
-                action->setIcon(QIcon::fromTheme("edit-copy", QIcon(":/actions/editcopy2.png")));
-#else
-                action->setIcon(QIcon(":/actions/editcopy2.png"));
-#endif
-                action->setShortcut(QKeySequence::Copy);
-                //action->zetStatusTip(tr("Copies entities to the clipboard"));
-    } else {
-                // tr("Cut")
-                action = new QAction(tr("Cu&t"), parent);
-#if QT_VERSION >= 0x040600
-                action->setIcon(QIcon::fromTheme("edit-cut", QIcon(":/actions/editcut2.png")));
-#else
-                action->setIcon(QIcon(":/actions/editcut2.png"));
-#endif
-                action->setShortcut(QKeySequence::Cut);
-                //action->zetStatusTip(tr("Cuts entities to the clipboard"));
-    }
-    return action;
-}
-
+RS_ActionEditCopy::~RS_ActionEditCopy() = default;
 
 
 void RS_ActionEditCopy::init(int status) {
@@ -90,7 +63,7 @@ void RS_ActionEditCopy::init(int status) {
 void RS_ActionEditCopy::trigger() {
 
     RS_Modification m(*container, graphicView);
-    m.copy(referencePoint, !copy);
+	m.copy(*referencePoint, !copy);
 
     //graphicView->redraw();
     finish(false);
@@ -118,11 +91,11 @@ void RS_ActionEditCopy::mouseReleaseEvent(QMouseEvent* e) {
 
 
 void RS_ActionEditCopy::coordinateEvent(RS_CoordinateEvent* e) {
-    if (e==NULL) {
+    if (!e){
         return;
     }
 
-    referencePoint = e->getCoordinate();
+	*referencePoint = e->getCoordinate();
     trigger();
 }
 
@@ -135,7 +108,7 @@ void RS_ActionEditCopy::updateMouseButtonHints() {
                                             tr("Cancel"));
         break;
     default:
-        RS_DIALOGFACTORY->updateMouseWidget("", "");
+        RS_DIALOGFACTORY->updateMouseWidget();
         break;
     }
 }
@@ -145,18 +118,5 @@ void RS_ActionEditCopy::updateMouseButtonHints() {
 void RS_ActionEditCopy::updateMouseCursor() {
     graphicView->setMouseCursor(RS2::CadCursor);
 }
-
-
-
-void RS_ActionEditCopy::updateToolBar() {
-    //not needed any more with new snap
-    return;
-//    if (!isFinished()) {
-//        RS_DIALOGFACTORY->requestToolBar(RS2::ToolBarSnap);
-//    } else {
-//        RS_DIALOGFACTORY->requestToolBar(RS2::ToolBarMain);
-//    }
-}
-
 
 // EOF

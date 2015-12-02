@@ -37,15 +37,8 @@ RS_ActionModifyAttributes::RS_ActionModifyAttributes(
     RS_EntityContainer& container,
     RS_GraphicView& graphicView)
         :RS_ActionInterface("Change Attributes",
-                    container, graphicView) {}
-
-
-QAction* RS_ActionModifyAttributes::createGUIAction(RS2::ActionType /*type*/, QObject* /*parent*/) {
-        // tr("Attributes")
-    QAction* action = new QAction(tr("&Attributes"),  NULL);
-        action->setIcon(QIcon(":/extui/modifyattributes.png"));
-    //action->zetStatusTip(tr("Modify Entity Attributes"));
-    return action;
+					container, graphicView) {
+	actionType=RS2::ActionModifyAttributes;
 }
 
 
@@ -69,7 +62,7 @@ void RS_ActionModifyAttributes::trigger() {
     data.changeWidth = false;
     data.changeLayer = false;
 
-    if (graphic!=NULL) {
+    if (graphic) {
         if (RS_DIALOGFACTORY->requestAttributesDialog(data,
                 *graphic->getLayerList())) {
             RS_Modification m(*container, graphicView);
@@ -91,7 +84,7 @@ void RS_ActionModifyAttributes::updateMouseButtonHints() {
         //RS_DIALOGFACTORY->updateMouseWidget(tr("Acknowledge"), tr("Cancel"));
         //break;
     default:
-        RS_DIALOGFACTORY->updateMouseWidget("", "");
+        RS_DIALOGFACTORY->updateMouseWidget();
         break;
     }
 }
@@ -101,15 +94,5 @@ void RS_ActionModifyAttributes::updateMouseButtonHints() {
 void RS_ActionModifyAttributes::updateMouseCursor() {
     graphicView->setMouseCursor(RS2::DelCursor);
 }
-
-
-
-//void RS_ActionModifyAttributes::updateToolBar() {
-////    if (isFinished()) {
-////        RS_DIALOGFACTORY->requestToolBar(RS2::ToolBarModify);
-////    }
-////    return;
-//}
-
 
 // EOF

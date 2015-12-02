@@ -51,9 +51,7 @@ public:
                       RS_GraphicView& graphicView);
     ~RS_ActionEditCopy();
 
-	static QAction* createGUIAction(RS2::ActionType type, QObject* parent);
-
-    virtual void init(int status=0);
+	virtual void init(int status);
 
     virtual void trigger();
 	
@@ -64,13 +62,12 @@ public:
 	
     virtual void updateMouseButtonHints();
     virtual void updateMouseCursor();
-    virtual void updateToolBar();
 
 protected:
     /** Copy (true) or cut (false) */
     bool copy;
 
-	RS_Vector referencePoint;
+	std::unique_ptr<RS_Vector> referencePoint;
 };
 
 #endif

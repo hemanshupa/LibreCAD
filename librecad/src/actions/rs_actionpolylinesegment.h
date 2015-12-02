@@ -28,8 +28,10 @@
 
 #include "rs_previewactioninterface.h"
 
+class RS_Polyline;
+
 /**
- * This action class can handle user events to move entities.
+ * This action class can handle Create Polyline Existing from Segments
  *
  * @author Andrew Mustun
  */
@@ -46,12 +48,8 @@ public:
 public:
     RS_ActionPolylineSegment(RS_EntityContainer& container,
                         RS_GraphicView& graphicView);
-    ~RS_ActionPolylineSegment() {}
+	~RS_ActionPolylineSegment()=default;
 
-	static QAction* createGUIAction(RS2::ActionType /*type*/, QObject* /*parent*/);
-    virtual RS2::ActionType rtti(){
-        return RS2::ActionPolylineSegment;
-    }
     virtual void init(int status=0);
 	
     virtual void trigger();
@@ -61,7 +59,6 @@ public:
 	
     virtual void updateMouseButtonHints();
     virtual void updateMouseCursor();
-//    virtual void updateToolBar();
 	virtual bool convertPolyline(RS_Entity* selectedEntity);
 
 private:

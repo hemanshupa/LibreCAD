@@ -52,6 +52,8 @@ public:
         setFlags(c.getFlags());
     }
     RS_Color(unsigned int f) : QColor(), RS_Flags(f) {}
+    RS_Color(QString name) : QColor(name), RS_Flags() {}
+
 
     /** @return A copy of this color without flags. */
     RS_Color stripFlags() const {
@@ -73,6 +75,10 @@ public:
             c0.setRgb(red(),green(),blue());
             return c0;
     }
+
+    //These 2 metods is used for plugins
+    int toIntColor(void) const;
+    void fromIntColor(int co);
 
     RS_Color& operator = (const RS_Color& c) {
         setRgb(c.red(), c.green(), c.blue());

@@ -29,6 +29,19 @@
 
 #include "rs_graphic.h"
 
+RS_BlockData::RS_BlockData(const QString& _name,
+						   const RS_Vector& _basePoint,
+						   bool _frozen):
+	name(_name)
+  ,basePoint(_basePoint)
+  ,frozen(_frozen)
+{
+}
+
+bool RS_BlockData::isValid() const{
+	return (!name.isEmpty() && basePoint.valid);
+}
+
 /**
  * @param parent The graphic this block belongs to.
  * @param name The name of the block used as an identifier.
@@ -42,12 +55,7 @@ RS_Block::RS_Block(RS_EntityContainer* parent,
 }
 
 
-
-RS_Block::~RS_Block() {}
-
-
-
-RS_Entity* RS_Block::clone() {
+RS_Entity* RS_Block::clone() const {
     RS_Block* blk = new RS_Block(*this);
     blk->setOwner(isOwner());
     blk->detach();
@@ -59,7 +67,7 @@ RS_Entity* RS_Block::clone() {
 
 RS_LayerList* RS_Block::getLayerList() {
     RS_Graphic* g = getGraphic();
-    if (g!=NULL) {
+    if (g) {
         return g->getLayerList();
     } else {
         return NULL;
@@ -70,7 +78,7 @@ RS_LayerList* RS_Block::getLayerList() {
 
 RS_BlockList* RS_Block::getBlockList() {
     RS_Graphic* g = getGraphic();
-    if (g!=NULL) {
+    if (g) {
         return g->getBlockList();
     } else {
         return NULL;
@@ -80,7 +88,7 @@ RS_BlockList* RS_Block::getBlockList() {
 
 bool RS_Block::save(bool isAutoSave) {
     RS_Graphic* g = getGraphic();
-    if (g!=NULL) {
+    if (g) {
         return g->save(isAutoSave);
     } else {
         return false;
@@ -90,7 +98,7 @@ bool RS_Block::save(bool isAutoSave) {
 
 bool RS_Block::saveAs(const QString& filename, RS2::FormatType type, bool force) {
     RS_Graphic* g = getGraphic();
-    if (g!=NULL) {
+    if (g) {
         return g->saveAs(filename, type, force);
     } else {
         return false;

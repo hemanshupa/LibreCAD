@@ -24,8 +24,6 @@
 **
 **********************************************************************/
 
-#include "qg_blockwidget.h"
-
 #include <QScrollBar>
 #include <QTableView>
 #include <QHeaderView>
@@ -33,17 +31,15 @@
 #include <QMenu>
 #include <QBoxLayout>
 #include <QLabel>
+#include <QContextMenuEvent>
+
+#include "qg_blockwidget.h"
 #include "rs_blocklist.h"
 #include "qg_actionhandler.h"
-//#include <QtAlgorithms>
 
 QG_BlockModel::QG_BlockModel(QObject * parent) : QAbstractTableModel(parent) {
     blockVisible = QIcon(":/ui/visibleblock.png");
     blockHidden = QIcon(":/ui/hiddenblock.png");
-}
-
-QG_BlockModel::~QG_BlockModel() {
-
 }
 
 int QG_BlockModel::rowCount ( const QModelIndex & /*parent*/ ) const {
@@ -256,7 +252,7 @@ void QG_BlockWidget::update() {
     int yPos = blockView->verticalScrollBar()->value();
     RS_Block* activeBlock;
 
-    if (blockList!=NULL) {
+    if (blockList) {
         activeBlock = blockList->getActive();
     } else {
         activeBlock = NULL;

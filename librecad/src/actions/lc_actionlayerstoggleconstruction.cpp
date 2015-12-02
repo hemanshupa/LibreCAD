@@ -46,28 +46,20 @@ LC_ActionLayersToggleConstruction::LC_ActionLayersToggleConstruction(
                     container, graphicView) {}
 
 
-QAction* LC_ActionLayersToggleConstruction::createGUIAction(RS2::ActionType /*type*/, QObject* /*parent*/) {
-    QAction* action = new QAction(tr("Toggle &Construction Layer"), NULL);
-    action->setIcon(QIcon(":/ui/constructionlayer.png"));
-    return action;
-}
-
-
 void LC_ActionLayersToggleConstruction::trigger() {
     RS_DEBUG->print("toggle layer construction");
-    if (graphic!=NULL) {
+    if (graphic) {
         RS_Layer* layer = graphic->getActiveLayer();
-        if (layer!=NULL) {
+        if (layer) {
             graphic->toggleLayerConstruction( layer);
 
             // deselect entities on locked layer:
-            for (RS_Entity* e=container->firstEntity(); e!=NULL;
-                 e=container->nextEntity()) {
-                if (e!=NULL && e->isVisible() && e->getLayer()==layer) {
-                    if (graphicView!=NULL) {
+			for(auto e: *container){
+                if (e && e->isVisible() && e->getLayer()==layer) {
+                    if (graphicView) {
                         graphicView->deleteEntity(e);
                     }
-                    if (graphicView!=NULL) {
+                    if (graphicView) {
                         graphicView->drawEntity(e);
                     }
                 }

@@ -24,35 +24,36 @@
 **
 **********************************************************************/
 
+#include<cmath>
+#include <QAction>
+#include <QMouseEvent>
 #include "rs_actionpolylineequidistant.h"
 
-#include <QAction>
 #include "rs_dialogfactory.h"
 #include "rs_graphicview.h"
 #include "rs_polyline.h"
 #include "rs_information.h"
+#include "rs_arc.h"
+#include "rs_line.h"
 
 RS_ActionPolylineEquidistant::RS_ActionPolylineEquidistant(RS_EntityContainer& container,
-                RS_GraphicView& graphicView)
-                :RS_PreviewActionInterface("Create Equidistant Polylines",
-                                                   container, graphicView) {
-        dist = 1.0;
-        number = 1;
+														   RS_GraphicView& graphicView)
+	:RS_PreviewActionInterface("Create Equidistant Polylines",
+							   container, graphicView)
+	, targetPoint(new RS_Vector{})
+	,dist(1.)
+	,number(1)
+{
+	actionType=RS2::ActionPolylineEquidistant;
 }
 
+RS_ActionPolylineEquidistant::~RS_ActionPolylineEquidistant()=default;
 
-QAction* RS_ActionPolylineEquidistant::createGUIAction(RS2::ActionType /*type*/, QObject* /*parent*/) {
-        QAction* action = new QAction(tr("Create &Equidistant Polylines"), NULL);
-        action->setShortcut(QKeySequence());
-        action->setIcon(QIcon(":/extui/polylineequidstant.png"));
-        action->setStatusTip(tr("Create Equidistant Polylines"));
-        return action;
-}
 
 void RS_ActionPolylineEquidistant::init(int status) {
         RS_PreviewActionInterface::init(status);
-        originalEntity = NULL;
-        targetPoint = RS_Vector(false);
+		originalEntity = nullptr;
+		*targetPoint = {};
         bRightSide = false;
 }
 
@@ -61,7 +62,7 @@ void RS_ActionPolylineEquidistant::init(int status) {
  * Modify newEntity to parellel of orgEntity at distance dist
  * If dist is positive the offset is in left else in right
  * Bot newEntity and orgEntity are the same type of entity
- * if not return NULL pointer
+ * if not return nullptr pointer
  *
  * @retval RS_Entity* of parellel entity
  *
@@ -77,7 +78,7 @@ RS_Entity* RS_ActionPolylineEquidistant::calculateOffset(RS_Entity* newEntity,RS
         else
             r = r0 - dist;
         if(r < 0)
-            return NULL;
+			return nullptr;
         arc->setData(((RS_Arc*)orgEntity)->getData());
         arc->setRadius(r);
         arc->calculateEndpoints();
@@ -93,7 +94,7 @@ RS_Entity* RS_ActionPolylineEquidistant::calculateOffset(RS_Entity* newEntity,RS
         line1->rotate(v0, line0->getAngle1());
         return newEntity;
     }
-    return NULL;
+	return nullptr;
 }
 
 /**
@@ -120,7 +121,7 @@ RS_Vector RS_ActionPolylineEquidistant::calculateIntersection(RS_Entity* first,R
 }
 
 bool RS_ActionPolylineEquidistant::makeContour() {
-    if (container==NULL) {
+	if (!container) {
         RS_DEBUG->print(RS_Debug::D_WARNING,
                         "RS_ActionPolylineEquidistant::makeContour: no valid container");
         return false;
@@ -128,15 +129,15 @@ bool RS_ActionPolylineEquidistant::makeContour() {
 
     RS_Polyline* originalPolyline = (RS_Polyline*)originalEntity;
 //create a list of entities to offset without length = 0
-    QList<RS_Entity*> entities;
-    for (RS_Entity* en=originalPolyline->firstEntity(); en!=NULL; en=originalPolyline->nextEntity()) {
+	QList<RS_Entity*> entities;
+	for(auto en: *originalPolyline){
         if (en->getLength() > 1.0e-12)
             entities.append(en);
     }
     if (entities.isEmpty()) {
         return false;
     }
-    if (document!=NULL) {
+	if (document) {
         document->startUndoCycle();
     }
     double neg = 1.0;
@@ -144,10 +145,11 @@ bool RS_ActionPolylineEquidistant::makeContour() {
         neg = -1.0;
 
     // Create new helper entities
-    RS_Line line1(NULL, RS_LineData(RS_Vector(true), RS_Vector(true)));//current line
-    RS_Line lineFirst(NULL, RS_LineData(RS_Vector(true), RS_Vector(true)));//previous line
-    RS_Arc arc1(NULL, RS_ArcData(RS_Vector(true), 0,0,0,false));//current arc
-    RS_Arc arcFirst(NULL, RS_ArcData(RS_Vector(true), 0,0,0,false));//previous arc
+	RS_Vector const origin{0.,0.};
+	RS_Line line1{origin, origin};//current line
+	RS_Line lineFirst{origin, origin};//previous line
+	RS_Arc arc1(nullptr, RS_ArcData(origin, 0,0,0,false));//current arc
+	RS_Arc arcFirst(nullptr, RS_ArcData(origin, 0,0,0,false));//previous arc
 
     for (int num=1; num<=number || (number==0 && num<=1); num++) {
         RS_Polyline* newPolyline = new RS_Polyline(container);
@@ -159,10 +161,10 @@ bool RS_ActionPolylineEquidistant::makeContour() {
         double bulge = 0.0;
         RS_Entity* en;
         RS_Entity* prevEntity = entities.last();
-        RS_Entity* currEntity=NULL;
+		RS_Entity* currEntity=nullptr;
         for (int i = 0; i < entities.size(); ++i) {
             en = entities.at(i);
-            RS_Vector v(false);
+			RS_Vector v{false};
             if (en->rtti()==RS2::EntityArc) {
                 currEntity = &arc1;
                 calculateOffset(currEntity, en, dist*num*neg);
@@ -199,7 +201,7 @@ bool RS_ActionPolylineEquidistant::makeContour() {
                     double dess = currEntity->getStartpoint().distanceTo(prevEntity->getEndpoint());
                     if (dess > 1.0e-12) {
                         newPolyline->addVertex(v, bulge);
-                        prevEntity = NULL;
+						prevEntity = nullptr;
                         break;
                     }
                 }
@@ -262,11 +264,11 @@ bool RS_ActionPolylineEquidistant::makeContour() {
             document->addUndoable(newPolyline);
         }
     }
-    if (document!=NULL) {
+	if (document) {
         document->endUndoCycle();
     }
 
-    if (graphicView!=NULL) {
+	if (graphicView) {
         graphicView->redraw();
     }
 
@@ -277,15 +279,15 @@ void RS_ActionPolylineEquidistant::trigger() {
 
         RS_DEBUG->print("RS_ActionPolylineEquidistant::trigger()");
 
-        if (originalEntity!=NULL && targetPoint.valid ) {
+		if (originalEntity && targetPoint->valid ) {
 
                 originalEntity->setHighlighted(false);
                 graphicView->drawEntity(originalEntity);
 
                 makeContour();
 
-                originalEntity = NULL;
-                targetPoint = RS_Vector(false);
+				originalEntity = nullptr;
+				*targetPoint = {};
                 bRightSide = false;
                 setStatus(ChooseEntity);
 
@@ -298,47 +300,31 @@ void RS_ActionPolylineEquidistant::trigger() {
 
 
 
-//void RS_ActionPolylineEquidistant::mouseMoveEvent(QMouseEvent* e) {
-//        RS_DEBUG->print("RS_ActionPolylineEquidistant::mouseMoveEvent begin");
-
-//        switch (getStatus()) {
-//        case ChooseEntity:
-////                snapPoint(e);
-//                break;
-//        default:
-//                break;
-//        }
-
-//        RS_DEBUG->print("RS_ActionPolylineEquidistant::mouseMoveEvent end");
-//}
-
-
-
 void RS_ActionPolylineEquidistant::mouseReleaseEvent(QMouseEvent* e) {
         if (e->button()==Qt::LeftButton) {
                 switch (getStatus()) {
                 case ChooseEntity:
                         originalEntity = catchEntity(e);
-                        if (originalEntity==NULL) {
+						if (!originalEntity) {
                                 RS_DIALOGFACTORY->commandMessage(tr("No Entity found."));
                         } else if (originalEntity->rtti()!=RS2::EntityPolyline) {
 
                                 RS_DIALOGFACTORY->commandMessage(
                                         tr("Entity must be a polyline."));
                         } else {
-                                targetPoint = snapFree(e);
+								*targetPoint = snapFree(e);
                                 originalEntity->setHighlighted(true);
                                 graphicView->drawEntity(originalEntity);
                                 double d = graphicView->toGraphDX(snapRange)*0.9;
-                                RS_Entity* Segment =  ((RS_Polyline*)originalEntity)->getNearestEntity( targetPoint, &d, RS2::ResolveNone);
+								RS_Entity* Segment =  ((RS_Polyline*)originalEntity)->getNearestEntity( *targetPoint, &d, RS2::ResolveNone);
                                 if (Segment->rtti() == RS2::EntityLine) {
                                 double ang = ((RS_Line*)Segment)->getAngle1();
-                                double ang1 = ((RS_Line*)Segment)->getStartpoint().angleTo(RS_Vector(targetPoint));
+								double ang1 = ((RS_Line*)Segment)->getStartpoint().angleTo(*targetPoint);
                                 if( ang > ang1 || ang + M_PI < ang1 )
                                         bRightSide = true;
                                 } else {
                                     RS_Vector cen = ((RS_Arc*)Segment)->getCenter();
-                                    if (cen.distanceTo(targetPoint) > ((RS_Arc*)Segment)->getRadius() && ((RS_Arc*)Segment)->getBulge() > 0 )
+									if (cen.distanceTo(*targetPoint) > ((RS_Arc*)Segment)->getRadius() && ((RS_Arc*)Segment)->getBulge() > 0 )
                                         bRightSide = true;
                                 }
 ////////////////////////////////////////2006/06/15
@@ -352,7 +338,7 @@ void RS_ActionPolylineEquidistant::mouseReleaseEvent(QMouseEvent* e) {
                 }
         } else if (e->button()==Qt::RightButton) {
                 deleteSnapper();
-                if (originalEntity!=NULL) {
+				if (originalEntity) {
                         originalEntity->setHighlighted(false);
                         graphicView->drawEntity(originalEntity);
 ////////////////////////////////////////2006/06/15
@@ -388,16 +374,9 @@ void RS_ActionPolylineEquidistant::updateMouseButtonHints() {
                                                                                         tr("Cancel"));
                 break;
         default:
-                RS_DIALOGFACTORY->updateMouseWidget("", "");
+				RS_DIALOGFACTORY->updateMouseWidget();
                 break;
         }
 }
 
-//void RS_ActionPolylineEquidistant::updateToolBar() {
-//    if (RS_DIALOGFACTORY!=NULL) {
-//        if (isFinished()) {
-//            RS_DIALOGFACTORY->resetToolBar();
-//        }
-//    }
-//}
 // EOF

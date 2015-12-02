@@ -24,11 +24,14 @@
 **
 **********************************************************************/
 
+#include <QAction>
+#include <QMouseEvent>
 #include "rs_actionpolylinesegment.h"
 
-#include <QAction>
 #include "rs_dialogfactory.h"
 #include "rs_graphicview.h"
+#include "rs_arc.h"
+#include "rs_line.h"
 #include "rs_polyline.h"
 
 
@@ -36,15 +39,8 @@
 RS_ActionPolylineSegment::RS_ActionPolylineSegment(RS_EntityContainer& container,
         RS_GraphicView& graphicView)
         :RS_PreviewActionInterface("Create Polyline Existing from Segments",
-                           container, graphicView) {}
-
-
-QAction* RS_ActionPolylineSegment::createGUIAction(RS2::ActionType /*type*/, QObject* /*parent*/) {
-    QAction* action = new QAction(tr("Create Polyline from Existing &Segments"), NULL);
-    action->setShortcut(QKeySequence());
-    action->setIcon(QIcon(":/extui/polylinesegment.png"));
-    action->setStatusTip(tr("Create Polyline from Existing Segments"));
-    return action;
+						   container, graphicView) {
+	actionType=RS2::ActionPolylineSegment;
 }
 
 void RS_ActionPolylineSegment::init(int status) {
@@ -64,7 +60,8 @@ void RS_ActionPolylineSegment::init(int status) {
 RS_Vector RS_ActionPolylineSegment::appendPol(RS_Polyline *current, RS_Polyline *toAdd, bool reversed) {
 
     QList<RS_Entity*> entities;
-    for (RS_Entity*v=toAdd->firstEntity(RS2::ResolveNone); v!=NULL; v=toAdd->nextEntity(RS2::ResolveNone)) {
+
+	for(auto v: *toAdd){
         if (reversed)
             entities.prepend(v);
         else
@@ -172,7 +169,7 @@ bool RS_ActionPolylineSegment::convertPolyline(RS_Entity* selectedEntity) {
     remaining.clear();
 
     bool closed = false;
-    if (document!=NULL) {
+    if (document) {
         document->startUndoCycle();
 
         bool revert = false;
@@ -220,7 +217,7 @@ bool RS_ActionPolylineSegment::convertPolyline(RS_Entity* selectedEntity) {
         newPolyline->endPolyline();
         container->addEntity(newPolyline);
 
-        if (graphicView!=NULL) {
+        if (graphicView) {
                 graphicView->drawEntity(newPolyline);
         }
 
@@ -235,7 +232,7 @@ void RS_ActionPolylineSegment::trigger() {
 
     RS_DEBUG->print("RS_ActionPolylineSegment::trigger()");
 
-        if (targetEntity!=NULL /*&& selectedSegment!=NULL && targetPoint.valid */) {
+        if (targetEntity /*&& selectedSegment && targetPoint.valid */) {
         targetEntity->setHighlighted(false);
         graphicView->drawEntity(targetEntity);
 //RLZ: do not use container->optimizeContours(); because it invalidate targetEntity
@@ -300,7 +297,7 @@ void RS_ActionPolylineSegment::mouseReleaseEvent(QMouseEvent* e) {
         }
     } else if (e->button()==Qt::RightButton) {
         deleteSnapper();
-        if (targetEntity!=NULL) {
+        if (targetEntity) {
             targetEntity->setHighlighted(false);
             graphicView->drawEntity(targetEntity);
 ////////////////////////////////////////2006/06/15
@@ -327,7 +324,7 @@ void RS_ActionPolylineSegment::updateMouseButtonHints() {
                                             tr("Cancel"));
         break;
     default:
-        RS_DIALOGFACTORY->updateMouseWidget("", "");
+		RS_DIALOGFACTORY->updateMouseWidget();
         break;
     }
 }
@@ -337,16 +334,5 @@ void RS_ActionPolylineSegment::updateMouseButtonHints() {
 void RS_ActionPolylineSegment::updateMouseCursor() {
     graphicView->setMouseCursor(RS2::CadCursor);
 }
-
-
-
-//void RS_ActionPolylineSegment::updateToolBar() {
-//    if (RS_DIALOGFACTORY!=NULL) {
-//        if (isFinished()) {
-//            RS_DIALOGFACTORY->resetToolBar();
-//        }
-//    }
-//}
-
 
 // EOF

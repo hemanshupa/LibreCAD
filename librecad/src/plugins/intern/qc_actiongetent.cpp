@@ -24,8 +24,9 @@
 **
 **********************************************************************/
 
-#include "doc_plugin_interface.h"
 #include "qc_actiongetent.h"
+#include <QMouseEvent>
+#include "doc_plugin_interface.h"
 #include "rs_dialogfactory.h"
 #include "rs_selection.h"
 #include "rs_snapper.h"
@@ -44,7 +45,7 @@ void QC_ActionGetEnt::updateMouseButtonHints() {
     if (!completed)
         RS_DIALOGFACTORY->updateMouseWidget(mesage, tr("Cancel"));
     else
-        RS_DIALOGFACTORY->updateMouseWidget("", "");
+        RS_DIALOGFACTORY->updateMouseWidget();
 }
 
 
@@ -57,7 +58,7 @@ void QC_ActionGetEnt::setMesage(QString msg){
 }
 
 void QC_ActionGetEnt::trigger() {
-    if (en!=NULL) {
+    if (en) {
         RS_Selection s(*container, graphicView);
         s.selectSingle(en);
         completed = true;

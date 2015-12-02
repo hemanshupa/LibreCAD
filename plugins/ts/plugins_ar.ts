@@ -24,27 +24,27 @@
         <location filename="../align/align.cpp" line="20"/>
         <location filename="../align/align.cpp" line="27"/>
         <source>Align</source>
-        <translation type="unfinished"></translation>
+        <translation>محاذاة</translation>
     </message>
     <message>
         <location filename="../align/align.cpp" line="40"/>
         <source>first base point:</source>
-        <translation type="unfinished"></translation>
+        <translation>أول نقطة أساس:</translation>
     </message>
     <message>
         <location filename="../align/align.cpp" line="42"/>
         <source>first target point:</source>
-        <translation type="unfinished"></translation>
+        <translation>أول نقطة هدف:</translation>
     </message>
     <message>
         <location filename="../align/align.cpp" line="44"/>
         <source>second base point:</source>
-        <translation type="unfinished"></translation>
+        <translation>ثاني نقطة أساس:</translation>
     </message>
     <message>
         <location filename="../align/align.cpp" line="46"/>
         <source>second target point:</source>
-        <translation type="unfinished"></translation>
+        <translation>ثاني نقطة هدف:</translation>
     </message>
 </context>
 <context>
@@ -53,7 +53,7 @@
         <location filename="../list/list.cpp" line="23"/>
         <location filename="../list/list.cpp" line="30"/>
         <source>List entities</source>
-        <translation type="unfinished"></translation>
+        <translation>قائمة الكيانات</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="46"/>
@@ -63,37 +63,37 @@
     <message>
         <location filename="../list/list.cpp" line="60"/>
         <source>Empty Entity</source>
-        <translation type="unfinished"></translation>
+        <translation>كيان فارغ</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="67"/>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation>س</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="67"/>
         <source>Y</source>
-        <translation type="unfinished"></translation>
+        <translation>ص</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="73"/>
         <source>Layer</source>
-        <translation type="unfinished"></translation>
+        <translation>طبقة</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="75"/>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>لون</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="76"/>
         <source>Line type</source>
-        <translation type="unfinished"></translation>
+        <translation>نوع الخط</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="77"/>
         <source>Line thickness</source>
-        <translation type="unfinished"></translation>
+        <translation>سمك الخط</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="78"/>
@@ -103,39 +103,39 @@
     <message>
         <location filename="../list/list.cpp" line="84"/>
         <source>POINT</source>
-        <translation type="unfinished"></translation>
+        <translation>نقطة</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="85"/>
         <location filename="../list/list.cpp" line="195"/>
         <source>in point</source>
-        <translation type="unfinished"></translation>
+        <translation>في نقطة</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="90"/>
         <source>LINE</source>
-        <translation type="unfinished"></translation>
+        <translation>خط</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="95"/>
         <source>from point</source>
-        <translation type="unfinished"></translation>
+        <translation>من نقطة</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="98"/>
         <source>to point</source>
-        <translation type="unfinished"></translation>
+        <translation>إلى نقطة</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="103"/>
         <location filename="../list/list.cpp" line="127"/>
         <source>length</source>
-        <translation type="unfinished"></translation>
+        <translation>طول</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="108"/>
         <source>Angle in XY plane</source>
-        <translation type="unfinished"></translation>
+        <translation>زاوية في مستوى س ص</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="109"/>
@@ -145,41 +145,41 @@
     <message>
         <location filename="../list/list.cpp" line="114"/>
         <source>ARC</source>
-        <translation type="unfinished"></translation>
+        <translation>قوس</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="115"/>
         <location filename="../list/list.cpp" line="131"/>
         <location filename="../list/list.cpp" line="141"/>
         <source>center point</source>
-        <translation type="unfinished"></translation>
+        <translation>نقطة المركز</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="121"/>
         <location filename="../list/list.cpp" line="135"/>
         <location filename="../list/list.cpp" line="199"/>
         <source>radius</source>
-        <translation type="unfinished"></translation>
+        <translation>نصف القطر</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="122"/>
         <source>initial angle</source>
-        <translation type="unfinished"></translation>
+        <translation>زاوية مبدئية</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="123"/>
         <source>final angle</source>
-        <translation type="unfinished"></translation>
+        <translation>زاوية نهائية</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="130"/>
         <source>CIRCLE</source>
-        <translation type="unfinished"></translation>
+        <translation>دائرة</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="136"/>
         <source>circumference</source>
-        <translation type="unfinished"></translation>
+        <translation>محيط</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="137"/>
@@ -189,17 +189,17 @@
     <message>
         <location filename="../list/list.cpp" line="140"/>
         <source>ELLIPSE</source>
-        <translation type="unfinished"></translation>
+        <translation>قطْع ناقص</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="144"/>
         <source>major axis</source>
-        <translation type="unfinished"></translation>
+        <translation>المحور الرئيسي</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="162"/>
         <source>CONSTRUCTIONLINE</source>
-        <translation type="unfinished"></translation>
+        <translation>خط اﻹنشاء</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="165"/>
@@ -209,7 +209,7 @@
     <message>
         <location filename="../list/list.cpp" line="168"/>
         <source>SOLID</source>
-        <translation type="unfinished"></translation>
+        <translation>مجسّم</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="172"/>
@@ -224,22 +224,22 @@
     <message>
         <location filename="../list/list.cpp" line="178"/>
         <source>INSERT</source>
-        <translation type="unfinished"></translation>
+        <translation>أدخل</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="181"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>اسم</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="182"/>
         <source>Insertion point</source>
-        <translation type="unfinished"></translation>
+        <translation>نقطة الإدخال</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="187"/>
         <source>POLYLINE</source>
-        <translation type="unfinished"></translation>
+        <translation>متعدّد خطوط</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="188"/>
@@ -254,7 +254,7 @@
     <message>
         <location filename="../list/list.cpp" line="189"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>نعم</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="190"/>
@@ -264,52 +264,57 @@
     <message>
         <location filename="../list/list.cpp" line="204"/>
         <source>IMAGE</source>
-        <translation type="unfinished"></translation>
+        <translation>صورة</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="207"/>
         <source>SPLINE</source>
-        <translation type="unfinished"></translation>
+        <translation>شريحة</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="210"/>
-        <source>HATCH</source>
+        <source>SPLINEPOINTS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="213"/>
-        <source>DIMLEADER</source>
-        <translation type="unfinished"></translation>
+        <source>HATCH</source>
+        <translation>تظليل</translation>
     </message>
     <message>
         <location filename="../list/list.cpp" line="216"/>
+        <source>DIMLEADER</source>
+        <translation>قطر</translation>
+    </message>
+    <message>
+        <location filename="../list/list.cpp" line="219"/>
         <source>DIMALIGNED</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../list/list.cpp" line="219"/>
+        <location filename="../list/list.cpp" line="222"/>
         <source>DIMLINEAR</source>
-        <translation type="unfinished"></translation>
+        <translation>بُعد خطي</translation>
     </message>
     <message>
-        <location filename="../list/list.cpp" line="222"/>
+        <location filename="../list/list.cpp" line="225"/>
         <source>DIMRADIAL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../list/list.cpp" line="225"/>
+        <location filename="../list/list.cpp" line="228"/>
         <source>DIMDIAMETRIC</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../list/list.cpp" line="228"/>
+        <location filename="../list/list.cpp" line="231"/>
         <source>DIMANGULAR</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../list/list.cpp" line="231"/>
+        <location filename="../list/list.cpp" line="234"/>
         <source>UNKNOWN</source>
-        <translation type="unfinished"></translation>
+        <translation>مجهول</translation>
     </message>
 </context>
 <context>
@@ -318,12 +323,12 @@
         <location filename="../sameprop/sameprop.cpp" line="21"/>
         <location filename="../sameprop/sameprop.cpp" line="28"/>
         <source>Same properties</source>
-        <translation type="unfinished"></translation>
+        <translation>نفس الخصائص</translation>
     </message>
     <message>
         <location filename="../sameprop/sameprop.cpp" line="41"/>
         <source>select original entity:</source>
-        <translation type="unfinished"></translation>
+        <translation>حدد الكيان الأصلي:</translation>
     </message>
     <message>
         <location filename="../sameprop/sameprop.cpp" line="43"/>
@@ -341,6 +346,19 @@
     </message>
 </context>
 <context>
+    <name>PicFile</name>
+    <message>
+        <location filename="../picfile/picfile.cpp" line="38"/>
+        <source>Read PIC file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../picfile/picfile.cpp" line="44"/>
+        <source>import PIC file</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>dibPunto</name>
     <message>
         <location filename="../asciifile/asciifile.cpp" line="235"/>
@@ -350,7 +368,7 @@
     <message>
         <location filename="../asciifile/asciifile.cpp" line="241"/>
         <source>File...</source>
-        <translation type="unfinished"></translation>
+        <translation>ملف...</translation>
     </message>
     <message>
         <location filename="../asciifile/asciifile.cpp" line="248"/>
@@ -385,87 +403,87 @@
     <message>
         <location filename="../asciifile/asciifile.cpp" line="252"/>
         <source>Connect points</source>
-        <translation type="unfinished"></translation>
+        <translation>نقاط الاتصال</translation>
     </message>
     <message>
         <location filename="../asciifile/asciifile.cpp" line="260"/>
         <source>2D Point</source>
-        <translation type="unfinished"></translation>
+        <translation>نقطة ثنائية اﻷبعاد</translation>
     </message>
     <message>
         <location filename="../asciifile/asciifile.cpp" line="260"/>
         <source>Draw 2D Point</source>
-        <translation type="unfinished"></translation>
+        <translation>ارسم نقطة ثنائية اﻷبعاد</translation>
     </message>
     <message>
         <location filename="../asciifile/asciifile.cpp" line="261"/>
         <source>3D Point</source>
-        <translation type="unfinished"></translation>
+        <translation>نقطة ثلاثية اﻷبعاد</translation>
     </message>
     <message>
         <location filename="../asciifile/asciifile.cpp" line="261"/>
         <source>Draw 3D Point</source>
-        <translation type="unfinished"></translation>
+        <translation>ارسم نقطة ثلاثية اﻷبعاد</translation>
     </message>
     <message>
         <location filename="../asciifile/asciifile.cpp" line="262"/>
         <source>Point Number</source>
-        <translation type="unfinished"></translation>
+        <translation>رقم النقطة</translation>
     </message>
     <message>
         <location filename="../asciifile/asciifile.cpp" line="262"/>
         <source>Draw point number</source>
-        <translation type="unfinished"></translation>
+        <translation>رسم رقم النقطة</translation>
     </message>
     <message>
         <location filename="../asciifile/asciifile.cpp" line="263"/>
         <source>Point Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>علو النقطة</translation>
     </message>
     <message>
         <location filename="../asciifile/asciifile.cpp" line="263"/>
         <source>Draw point elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>أرسم علو النقطة</translation>
     </message>
     <message>
         <location filename="../asciifile/asciifile.cpp" line="264"/>
         <source>Point Code</source>
-        <translation type="unfinished"></translation>
+        <translation>رمز نقطة</translation>
     </message>
     <message>
         <location filename="../asciifile/asciifile.cpp" line="264"/>
         <source>Draw point code</source>
-        <translation type="unfinished"></translation>
+        <translation>ارسم رمز نقطة</translation>
     </message>
     <message>
         <location filename="../asciifile/asciifile.cpp" line="278"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../asciifile/asciifile.cpp" line="283"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>إلغاء</translation>
     </message>
     <message>
         <location filename="../asciifile/asciifile.cpp" line="313"/>
         <source>Select file</source>
-        <translation type="unfinished"></translation>
+        <translation>اِخْتار ملف</translation>
     </message>
     <message>
         <location filename="../asciifile/asciifile.cpp" line="320"/>
         <source>Point 2D layer is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>طبقة نقطة ثنائية اﻷبعاد خالية</translation>
     </message>
     <message>
         <location filename="../asciifile/asciifile.cpp" line="323"/>
         <source>Point 3D layer is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>طبقة نقطة ثلاثية اﻷبعاد خالية</translation>
     </message>
     <message>
         <location filename="../asciifile/asciifile.cpp" line="326"/>
         <source>Point elevation layer is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>طبقة علو النقطة فارغة</translation>
     </message>
     <message>
         <location filename="../asciifile/asciifile.cpp" line="327"/>
@@ -475,47 +493,47 @@
     <message>
         <location filename="../asciifile/asciifile.cpp" line="328"/>
         <source>Point elevation separation is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>فاصل ارتفاع النقطة فارغ</translation>
     </message>
     <message>
         <location filename="../asciifile/asciifile.cpp" line="331"/>
         <source>Point number layer is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>طبقة رقم النقطة فارغة</translation>
     </message>
     <message>
         <location filename="../asciifile/asciifile.cpp" line="332"/>
         <source>Point number height is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>ارتفاع رقم النقطة فارغ</translation>
     </message>
     <message>
         <location filename="../asciifile/asciifile.cpp" line="333"/>
         <source>Point number separation is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>فاصل رقم النقطة فارغ</translation>
     </message>
     <message>
         <location filename="../asciifile/asciifile.cpp" line="336"/>
         <source>Point code layer is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>طبقة رمز النقطة فارغة</translation>
     </message>
     <message>
         <location filename="../asciifile/asciifile.cpp" line="337"/>
         <source>Point code height is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>ارتفاع رمز النقطة فارغ</translation>
     </message>
     <message>
         <location filename="../asciifile/asciifile.cpp" line="338"/>
         <source>Point code separation is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>فاصل رمز النقطة فارغ</translation>
     </message>
     <message>
         <location filename="../asciifile/asciifile.cpp" line="366"/>
         <source>The file %1 not exist</source>
-        <translation type="unfinished"></translation>
+        <translation>الملف 1٪ غير موجود</translation>
     </message>
     <message>
         <location filename="../asciifile/asciifile.cpp" line="371"/>
         <source>Can&apos;t open the file %1</source>
-        <translation type="unfinished"></translation>
+        <translation>لا يمكن فتح الملف 1٪ </translation>
     </message>
 </context>
 <context>
@@ -523,17 +541,17 @@
     <message>
         <location filename="../importshp/importshp.cpp" line="59"/>
         <source>File...</source>
-        <translation type="unfinished"></translation>
+        <translation>ملف...</translation>
     </message>
     <message>
         <location filename="../importshp/importshp.cpp" line="67"/>
         <source>File type:</source>
-        <translation type="unfinished"></translation>
+        <translation>نوع الملف:</translation>
     </message>
     <message>
         <location filename="../importshp/importshp.cpp" line="75"/>
         <source>Layer</source>
-        <translation type="unfinished"></translation>
+        <translation>طبقة</translation>
     </message>
     <message>
         <location filename="../importshp/importshp.cpp" line="56"/>
@@ -565,28 +583,28 @@
     <message>
         <location filename="../importshp/importshp.cpp" line="88"/>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>لون</translation>
     </message>
     <message>
         <location filename="../importshp/importshp.cpp" line="101"/>
         <source>Line type</source>
-        <translation type="unfinished"></translation>
+        <translation>نوع الخط</translation>
     </message>
     <message>
         <location filename="../importshp/importshp.cpp" line="114"/>
         <source>Width</source>
-        <translation type="unfinished"></translation>
+        <translation>عرض</translation>
     </message>
     <message>
         <location filename="../importshp/importshp.cpp" line="127"/>
         <location filename="../importshp/importshp.cpp" line="213"/>
         <source>Point</source>
-        <translation type="unfinished"></translation>
+        <translation>نقطة</translation>
     </message>
     <message>
         <location filename="../importshp/importshp.cpp" line="128"/>
         <source>as Point</source>
-        <translation type="unfinished"></translation>
+        <translation>كنقطة</translation>
     </message>
     <message>
         <location filename="../importshp/importshp.cpp" line="129"/>
@@ -596,72 +614,72 @@
     <message>
         <location filename="../importshp/importshp.cpp" line="141"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>أوافق</translation>
     </message>
     <message>
         <location filename="../importshp/importshp.cpp" line="142"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>إلغاء</translation>
     </message>
     <message>
         <location filename="../importshp/importshp.cpp" line="167"/>
         <source>Select file</source>
-        <translation type="unfinished"></translation>
+        <translation>اِخْتار ملف</translation>
     </message>
     <message>
         <location filename="../importshp/importshp.cpp" line="217"/>
         <source>Point+Measure</source>
-        <translation type="unfinished"></translation>
+        <translation>نقطة + قياس</translation>
     </message>
     <message>
         <location filename="../importshp/importshp.cpp" line="221"/>
         <source>3D Point</source>
-        <translation type="unfinished"></translation>
+        <translation>نقطة ثلاثية اﻷبعاد</translation>
     </message>
     <message>
         <location filename="../importshp/importshp.cpp" line="225"/>
         <source>Multi Point</source>
-        <translation type="unfinished"></translation>
+        <translation>نقاط متعددة</translation>
     </message>
     <message>
         <location filename="../importshp/importshp.cpp" line="229"/>
         <source>Multi Point+Measure</source>
-        <translation type="unfinished"></translation>
+        <translation>نقاط متعددة + قياس</translation>
     </message>
     <message>
         <location filename="../importshp/importshp.cpp" line="233"/>
         <source>3D Multi Point</source>
-        <translation type="unfinished"></translation>
+        <translation>نقاط متعددة ثلاثية اﻷبعاد</translation>
     </message>
     <message>
         <location filename="../importshp/importshp.cpp" line="237"/>
         <source>Arc</source>
-        <translation type="unfinished"></translation>
+        <translation>قوس</translation>
     </message>
     <message>
         <location filename="../importshp/importshp.cpp" line="241"/>
         <source>Arc+Measure</source>
-        <translation type="unfinished"></translation>
+        <translation>قوس+قياس</translation>
     </message>
     <message>
         <location filename="../importshp/importshp.cpp" line="245"/>
         <source>3D Arc</source>
-        <translation type="unfinished"></translation>
+        <translation>قوس ثلاثي اﻷبعاد</translation>
     </message>
     <message>
         <location filename="../importshp/importshp.cpp" line="249"/>
         <source>Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>مضلع</translation>
     </message>
     <message>
         <location filename="../importshp/importshp.cpp" line="253"/>
         <source>Polygon+Measure</source>
-        <translation type="unfinished"></translation>
+        <translation>مضلع + قياس</translation>
     </message>
     <message>
         <location filename="../importshp/importshp.cpp" line="257"/>
         <source>3D Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>مضلع ثلاثي اﻷبعاد</translation>
     </message>
     <message>
         <location filename="../importshp/importshp.cpp" line="261"/>
@@ -671,20 +689,20 @@
     <message>
         <location filename="../importshp/importshp.cpp" line="281"/>
         <source>The file %1 not have extension .shp</source>
-        <translation type="unfinished"></translation>
+        <translation>الملف 1% ليس لديه امتداد .shp</translation>
     </message>
     <message>
         <location filename="../importshp/importshp.cpp" line="286"/>
         <source>The file %1 not exist</source>
-        <translation type="unfinished"></translation>
+        <translation>الملف 1٪ غير موجود</translation>
     </message>
 </context>
 <context>
     <name>lc_Listdlg</name>
     <message>
-        <location filename="../list/list.cpp" line="248"/>
+        <location filename="../list/list.cpp" line="251"/>
         <source>List entities</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">قائمة الكيانات</translation>
     </message>
 </context>
 <context>
@@ -692,7 +710,7 @@
     <message>
         <location filename="../sample/sample.cpp" line="54"/>
         <source>Draw line</source>
-        <translation type="unfinished"></translation>
+        <translation>خط الرسم</translation>
     </message>
     <message>
         <location filename="../sample/sample.cpp" line="60"/>
@@ -717,12 +735,12 @@
     <message>
         <location filename="../sample/sample.cpp" line="86"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>أوافق</translation>
     </message>
     <message>
         <location filename="../sample/sample.cpp" line="91"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>إلغاء</translation>
     </message>
     <message>
         <location filename="../sample/sample.cpp" line="107"/>
@@ -751,28 +769,92 @@
     </message>
 </context>
 <context>
+    <name>picPunto</name>
+    <message>
+        <location filename="../picfile/picfile.cpp" line="67"/>
+        <source>File...</source>
+        <translation type="unfinished">ملف...</translation>
+    </message>
+    <message>
+        <location filename="../picfile/picfile.cpp" line="77"/>
+        <source>Scale:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../picfile/picfile.cpp" line="81"/>
+        <source>Accept</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../picfile/picfile.cpp" line="85"/>
+        <source>Cancel</source>
+        <translation type="unfinished">إلغاء</translation>
+    </message>
+    <message>
+        <location filename="../picfile/picfile.cpp" line="113"/>
+        <source>Select file</source>
+        <translation type="unfinished">اِخْتار ملف</translation>
+    </message>
+    <message>
+        <location filename="../picfile/picfile.cpp" line="121"/>
+        <source>Scale Factor is empty or invalid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../picfile/picfile.cpp" line="134"/>
+        <source>The file %1 not exist</source>
+        <translation type="unfinished">الملف 1٪ غير موجود</translation>
+    </message>
+    <message>
+        <location filename="../picfile/picfile.cpp" line="139"/>
+        <source>Can&apos;t open the file %1</source>
+        <translation type="unfinished">لا يمكن فتح الملف 1٪ </translation>
+    </message>
+    <message>
+        <location filename="../picfile/picfile.cpp" line="146"/>
+        <source>%1 objects imported</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../picfile/picfile.cpp" line="168"/>
+        <source>picPunto drawLine: first point is empty %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../picfile/picfile.cpp" line="181"/>
+        <source>picPunto drawLine: next point is empty %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../picfile/picfile.cpp" line="260"/>
+        <location filename="../picfile/picfile.cpp" line="269"/>
+        <source>format error in %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>plot</name>
     <message>
-        <location filename="../plotequation/plot.cpp" line="20"/>
-        <location filename="../plotequation/plot.cpp" line="27"/>
+        <location filename="../plotequation/plot.cpp" line="21"/>
+        <location filename="../plotequation/plot.cpp" line="28"/>
         <source>Plot plugin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../plotequation/plot.cpp" line="27"/>
+        <location filename="../plotequation/plot.cpp" line="28"/>
         <source>Draw</source>
-        <translation type="unfinished"></translation>
+        <translation>رسم</translation>
     </message>
 </context>
 <context>
     <name>plotDialog</name>
     <message>
-        <location filename="../plotequation/plotdialog.cpp" line="6"/>
+        <location filename="../plotequation/plotdialog.cpp" line="15"/>
         <source>Plot equation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../plotequation/plotdialog.cpp" line="9"/>
+        <location filename="../plotequation/plotdialog.cpp" line="18"/>
         <source>This plugin allows you to plot mathematical equations.
 If you don&apos;t want to use the parametric form, just leave out &quot;Equation2&quot;.
 You can use pi when you need the value of pi (i.e. (3*pi)).
@@ -781,38 +863,56 @@ Use t or x in your equation as a variable/parameter.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../plotequation/plotdialog.cpp" line="13"/>
+        <location filename="../plotequation/plotdialog.cpp" line="22"/>
         <source>Equation 1:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../plotequation/plotdialog.cpp" line="14"/>
-        <source>Equation 2:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../plotequation/plotdialog.cpp" line="17"/>
-        <source>start value:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../plotequation/plotdialog.cpp" line="18"/>
-        <source>end value:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../plotequation/plotdialog.cpp" line="19"/>
-        <source>step size:</source>
-        <translation type="unfinished"></translation>
+        <translation>معادلة 1:</translation>
     </message>
     <message>
         <location filename="../plotequation/plotdialog.cpp" line="23"/>
+        <source>Equation 2:</source>
+        <translation>معادلة 2:</translation>
+    </message>
+    <message>
+        <location filename="../plotequation/plotdialog.cpp" line="26"/>
+        <source>start value:</source>
+        <translation>قيمة البداية:</translation>
+    </message>
+    <message>
+        <location filename="../plotequation/plotdialog.cpp" line="27"/>
+        <source>end value:</source>
+        <translation>القيمة النهائية:</translation>
+    </message>
+    <message>
+        <location filename="../plotequation/plotdialog.cpp" line="28"/>
+        <source>step size:</source>
+        <translation>حجم الخطوة:</translation>
+    </message>
+    <message>
+        <location filename="../plotequation/plotdialog.cpp" line="32"/>
         <source>Draw</source>
+        <translation>رسم</translation>
+    </message>
+    <message>
+        <location filename="../plotequation/plotdialog.cpp" line="33"/>
+        <source>Cancel</source>
+        <translation>إلغاء</translation>
+    </message>
+    <message>
+        <location filename="../plotequation/plotdialog.cpp" line="59"/>
+        <source>Line Segments</source>
+        <comment>Plot Equation to generate RS_Line segments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../plotequation/plotdialog.cpp" line="24"/>
-        <source>Cancel</source>
+        <location filename="../plotequation/plotdialog.cpp" line="60"/>
+        <source>Polyline</source>
+        <comment>Plot Equation to generate RS_Polyline</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../plotequation/plotdialog.cpp" line="61"/>
+        <source>SplinePoints</source>
+        <comment>Plot Equation to generate 2nd spline by LC_SplinePoints</comment>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -821,7 +921,7 @@ Use t or x in your equation as a variable/parameter.
     <message>
         <location filename="../asciifile/asciifile.cpp" line="177"/>
         <source>Layer:</source>
-        <translation type="unfinished"></translation>
+        <translation>طبقة:</translation>
     </message>
 </context>
 <context>
@@ -834,12 +934,12 @@ Use t or x in your equation as a variable/parameter.
     <message>
         <location filename="../asciifile/asciifile.cpp" line="211"/>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>ارتفاع:</translation>
     </message>
     <message>
         <location filename="../asciifile/asciifile.cpp" line="212"/>
         <source>Separation</source>
-        <translation type="unfinished"></translation>
+        <translation>فاصل</translation>
     </message>
 </context>
 </TS>

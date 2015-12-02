@@ -34,15 +34,12 @@
 /**
  * Default constructor.
  */
-RS_Undo::RS_Undo() {
-    undoPointer = -1;
-    currentCycle = NULL;
+RS_Undo::RS_Undo():
+	undoPointer(-1)
+{
 }
 
 RS_Undo::~RS_Undo() {
-//clear undolist
-while (!undoList.isEmpty())
-     delete undoList.takeFirst();
 }
 
 
@@ -73,7 +70,7 @@ int RS_Undo::countRedoCycles() {
  * All Cycles after the new one are removed and the Undoabels
  * on them deleted.
  */
-void RS_Undo::addUndoCycle(RS_UndoCycle* i) {
+void RS_Undo::addUndoCycle(std::shared_ptr<RS_UndoCycle> const& i) {
     RS_DEBUG->print("RS_Undo::addUndoCycle");
 
     undoList.insert(++undoPointer, i);
@@ -88,44 +85,29 @@ void RS_Undo::addUndoCycle(RS_UndoCycle* i) {
  * added after calling this method goes into this cycle.
  */
 void RS_Undo::startUndoCycle() {
-    RS_DEBUG->print("RS_Undo::startUndoCycle");
-
+	RS_DEBUG->print("RS_Undo::startUndoCycle");
     // definitely delete Undo Cycles and all Undoables in them
-    //   that cannot be redone now:
-    while (undoList.size()>undoPointer+1 && undoList.size()>0) {
+	//   that cannot be redone now:
+	while (undoList.size()>undoPointer+1) {
+		std::shared_ptr<RS_UndoCycle> l = undoList.back();
+		undoList.pop_back();
+		if(!l) continue;
+		//remove the undoable in the current cyle
+		for(auto u: l->undoables){
+			if(!u) continue;
+			// Remove the pointer from _all_ other cycles:
+			for(auto& cycle: undoList){
+				if (cycle)
+					cycle->removeUndoable(u);
+			}
+			// Delete the Undoable for good:
+			if (u->isUndone()) {
+				removeUndoable(u);
+			}
+		}
+	}
 
-        RS_UndoCycle* l = NULL;
-        if (!( undoList.isEmpty()) )
-            l = undoList.last();
-        if (l!=NULL) {
-            RS_Undoable* u=NULL;
-            bool done = false;
-            do {
-                if (!( l->undoables.isEmpty()) )
-                    u = l->undoables.first();
-                else
-                   u = NULL;
-                if (u!=NULL) {
-                    // Remove the pointer from _all_ cycles:
-                                        for (int i = 0; i < undoList.size(); ++i) {
-                                            (undoList.at(i))->removeUndoable(u);
-                                        }
-
-                    // Delete the Undoable for good:
-                    if (u->isUndone()) {
-                        removeUndoable(u);
-                    }
-                } else {
-                    done = true;
-                }
-            } while(!done);
-        }
-
-        // Remove obsolete undo cycles:
-        delete undoList.takeLast();
-    }
-
-    currentCycle = new RS_UndoCycle();
+	currentCycle.reset(new RS_UndoCycle());
 }
 
 
@@ -136,7 +118,7 @@ void RS_Undo::startUndoCycle() {
 void RS_Undo::addUndoable(RS_Undoable* u) {
     RS_DEBUG->print("RS_Undo::addUndoable");
 
-    if (currentCycle!=NULL) {
+    if (currentCycle) {
         currentCycle->addUndoable(u);
     } else {
         RS_DEBUG->print(RS_Debug::D_WARNING,
@@ -166,20 +148,20 @@ bool RS_Undo::undo() {
 
     if (undoPointer>=0) {
 
-        RS_UndoCycle* uc=NULL;
+		std::shared_ptr<RS_UndoCycle> uc;
         while( undoPointer>=0 && undoPointer < undoList.size() ) {
             uc = undoList[undoPointer--];
 
-            if (uc == NULL )  continue;
+			if (!uc)  continue;
             break;
         }
         if(undoPointer==-1) {
             QC_ApplicationWindow::getAppWindow()->setUndoEnable(false);
        }
-        if (uc != NULL) {
-            for (int i = 0; i < uc->undoables.size(); ++i) {
-                (uc->undoables.at(i))->changeUndoState();
-            }
+		if (uc) {
+			for(RS_Undoable* p: uc->undoables){
+				p->changeUndoState();
+			}
              QC_ApplicationWindow::getAppWindow()->setRedoEnable(true);
             return true;
         }
@@ -196,16 +178,16 @@ bool RS_Undo::redo() {
 
     if (undoPointer+1 < undoList.size()) {
 
-        RS_UndoCycle* uc = NULL;
+		std::shared_ptr<RS_UndoCycle> uc;
         while( ++undoPointer < undoList.size()) {
             uc = undoList[undoPointer];
-            if (uc == NULL ) continue;
+			if (!uc) continue;
             break;
         }
-        if (uc != NULL) {
-            for (int i = 0; i < uc->undoables.size(); ++i) {
-                (uc->undoables.at(i))->changeUndoState();
-            }
+		if (uc) {
+			for(RS_Undoable* p: uc->undoables){
+				p->changeUndoState();
+			}
             if(undoPointer+1==undoList.size()) {
                 QC_ApplicationWindow::getAppWindow()->setRedoEnable(false);
             }
@@ -221,8 +203,8 @@ bool RS_Undo::redo() {
  * @return The undo item that is next if we're about to undo
  * or NULL.
  */
-RS_UndoCycle* RS_Undo::getUndoCycle() {
-        RS_UndoCycle* ret = NULL;
+std::shared_ptr<RS_UndoCycle> RS_Undo::getUndoCycle() {
+		std::shared_ptr<RS_UndoCycle> ret;
 
     RS_DEBUG->print("RS_Undo::getUndoCycle");
 
@@ -240,14 +222,14 @@ RS_UndoCycle* RS_Undo::getUndoCycle() {
  * @return The redo item that is next if we're about to redo
  * or NULL.
  */
-RS_UndoCycle* RS_Undo::getRedoCycle() {
+std::shared_ptr<RS_UndoCycle> RS_Undo::getRedoCycle() {
     RS_DEBUG->print("RS_Undo::getRedoCycle");
 
     if ( (undoPointer+1>=0) && (undoPointer+1 < undoList.size()) ) {
         return undoList.at(undoPointer+1);
     }
 
-    return NULL;
+	return std::shared_ptr<RS_UndoCycle>();
 }
 
 /**
@@ -256,7 +238,7 @@ RS_UndoCycle* RS_Undo::getRedoCycle() {
   **/
 void RS_Undo::setGUIButtons()
 {
-    if(QC_ApplicationWindow::getAppWindow() != NULL){
+	if(QC_ApplicationWindow::getAppWindow()){
         QC_ApplicationWindow::getAppWindow()->setRedoEnable(undoList.size()>0  && undoPointer+1< undoList.size());
         QC_ApplicationWindow::getAppWindow()->setUndoEnable(undoList.size()>0 && undoPointer>=0 );
     }

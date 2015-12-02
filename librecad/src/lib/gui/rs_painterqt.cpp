@@ -26,6 +26,57 @@
 
 
 #include "rs_painterqt.h"
+#include "rs_math.h"
+
+namespace {
+/**
+ * Wrapper for Qt
+ * convert RS2::LineType to Qt::PenStyle
+ */
+Qt::PenStyle rsToQtLineType(RS2::LineType t) {
+	switch (t) {
+	case RS2::NoPen:
+		return Qt::NoPen;
+	case RS2::SolidLine:
+		return Qt::SolidLine;
+	case RS2::DotLine:
+	case RS2::DotLineTiny:
+	case RS2::DotLine2:
+	case RS2::DotLineX2:
+		return Qt::DotLine;
+	case RS2::DashLine:
+	case RS2::DashLineTiny:
+	case RS2::DashLine2:
+	case RS2::DashLineX2:
+		return Qt::DashLine;
+	case RS2::DashDotLine:
+	case RS2::DashDotLineTiny:
+	case RS2::DashDotLine2:
+	case RS2::DashDotLineX2:
+		return Qt::DashDotLine;
+	case RS2::DivideLine:
+	case RS2::DivideLineTiny:
+	case RS2::DivideLine2:
+	case RS2::DivideLineX2:
+		return Qt::DashDotDotLine;
+	case RS2::CenterLine:
+	case RS2::CenterLineTiny:
+	case RS2::CenterLine2:
+	case RS2::CenterLineX2:
+		return Qt::DashDotLine;
+	case RS2::BorderLine:
+	case RS2::BorderLineTiny:
+	case RS2::BorderLine2:
+	case RS2::BorderLineX2:
+		return Qt::DashDotLine;
+	case RS2::LineByLayer:
+	case RS2::LineByBlock:
+	default:
+		return Qt::SolidLine;
+	}
+	return Qt::SolidLine;
+}
+}
 
 /**
  * Constructor.
@@ -33,14 +84,6 @@
 // RVT_PORT changed from RS_PainterQt::RS_PainterQt( const QPaintDevice* pd)
 RS_PainterQt::RS_PainterQt( QPaintDevice* pd)
         : QPainter(pd), RS_Painter() {}
-
-
-/**
- * Destructor
- */
-RS_PainterQt::~RS_PainterQt() {}
-
-
 
 void RS_PainterQt::moveTo(int x, int y) {
         //RVT_PORT changed from QPainter::moveTo(x,y);
@@ -468,21 +511,21 @@ void RS_PainterQt::erase() {
 }
 
 
-int RS_PainterQt::getWidth() {
+int RS_PainterQt::getWidth() const{
     return device()->width();
 }
 
 /** get Density per millimeter on screen/print device
   *@return density per millimeter in pixel/mm
   */
-double RS_PainterQt::getDpmm() {
+double RS_PainterQt::getDpmm() const{
     int mm(device()->widthMM());
     if(mm==0) mm=400;
     return double(device()->width())/mm;
 }
 
 
-int RS_PainterQt::getHeight() {
+int RS_PainterQt::getHeight() const{
     return device()->height();
 }
 
@@ -506,7 +549,7 @@ void RS_PainterQt::setPen(const RS_Pen& pen) {
         lpen.setColor(RS_Color(0,0,0));
     }
     QPen p(lpen.getColor(), RS_Math::round(lpen.getScreenWidth()),
-           RS2::rsToQtLineType(lpen.getLineType()));
+		   rsToQtLineType(lpen.getLineType()));
     p.setJoinStyle(Qt::RoundJoin);
     p.setCapStyle(Qt::RoundCap);
     QPainter::setPen(p);

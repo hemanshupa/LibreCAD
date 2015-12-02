@@ -26,7 +26,10 @@
 **********************************************************************/
 
 #include "qg_layerwidget.h"
+#include "qg_actionhandler.h"
+#include "qc_applicationwindow.h"
 
+#include <QBitmap>
 #include <QScrollBar>
 #include <QTableView>
 #include <QHeaderView>
@@ -35,8 +38,8 @@
 #include <QBoxLayout>
 #include <QLabel>
 #include <QLineEdit>
-#include "qg_actionhandler.h"
-#include "qc_applicationwindow.h"
+#include <QContextMenuEvent>
+#include <QKeyEvent>
 
 QG_LayerModel::QG_LayerModel(QObject * parent) : QAbstractTableModel(parent) {
     layerVisible = QIcon(":/ui/visibleblock.png");
@@ -47,9 +50,6 @@ QG_LayerModel::QG_LayerModel(QObject * parent) : QAbstractTableModel(parent) {
     layerConstruction = QIcon(":/ui/constructionlayer.png");
 }
 
-QG_LayerModel::~QG_LayerModel() {
-
-}
 
 int QG_LayerModel::rowCount ( const QModelIndex & /*parent*/ ) const {
     return listLayer.size();
@@ -109,6 +109,16 @@ QModelIndex QG_LayerModel::getIndex (RS_Layer * lay){
     return createIndex ( row, NAME);
 }
 
+QPixmap createColorSampleForLayer(RS_Layer* layer)
+{
+	QPixmap pixmap(QSize(20,20));
+	{
+		pixmap.fill(layer->getPen().getColor().toQColor());
+	}
+
+	return pixmap;
+}
+
 QVariant QG_LayerModel::data ( const QModelIndex & index, int role ) const {
     if (!index.isValid() || index.row() >= listLayer.size())
         return QVariant();
@@ -135,6 +145,12 @@ QVariant QG_LayerModel::data ( const QModelIndex & index, int role ) const {
             return layerConstruction.pixmap(QSize(14,14),
                                             lay->isConstruction() ? QIcon::Normal : QIcon::Disabled,
                                             QIcon::On);
+
+		case COLOR_SAMPLE:
+		{
+			return createColorSampleForLayer(lay);
+		}
+
         default:
             break;
 
@@ -157,9 +173,9 @@ QG_LayerWidget::QG_LayerWidget(QG_ActionHandler* ah, QWidget* parent,
 
     setObjectName(name);
     actionHandler = ah;
-    layerList = NULL;
+	layerList = nullptr;
     showByBlock = false;
-    lastLayer = NULL;
+	lastLayer = nullptr;
 
     layerModel = new QG_LayerModel(this);
     layerView = new QTableView(this);
@@ -173,20 +189,22 @@ QG_LayerWidget::QG_LayerWidget(QG_ActionHandler* ah, QWidget* parent,
     layerView->setColumnWidth(QG_LayerModel::LOCKED, 18);
     layerView->setColumnWidth(QG_LayerModel::PRINT, 24);
     layerView->setColumnWidth(QG_LayerModel::CONSTRUCTION, 18);
+	layerView->setColumnWidth(QG_LayerModel::COLOR_SAMPLE, 24);
     layerView->verticalHeader()->hide();
     layerView->horizontalHeader()->setStretchLastSection(true);
     layerView->horizontalHeader()->hide();
 
-    QVBoxLayout* lay = new QVBoxLayout(this);
+	QVBoxLayout* lay = new QVBoxLayout(this);
     lay->setSpacing ( 0 );
     lay->setContentsMargins(2, 2, 2, 2);
 
-    QHBoxLayout* layButtons = new QHBoxLayout(this);
+	QHBoxLayout* layButtons = new QHBoxLayout;
     QToolButton* but;
+	const QSize minButSize(22,22);
     // show all layer:
     but = new QToolButton(this);
     but->setIcon(QIcon(":ui/visiblelayer.png"));
-    but->setMinimumSize(QSize(22,22));
+	but->setMinimumSize(minButSize);
     but->setToolTip(tr("Show all layers"));
     connect(but, SIGNAL(clicked()),
             actionHandler, SLOT(slotLayersDefreezeAll()));
@@ -194,7 +212,7 @@ QG_LayerWidget::QG_LayerWidget(QG_ActionHandler* ah, QWidget* parent,
     // hide all layer:
     but = new QToolButton(this);
     but->setIcon(QIcon(":ui/hiddenlayer.png"));
-    but->setMinimumSize(QSize(22,22));
+	but->setMinimumSize(minButSize);
     but->setToolTip(tr("Hide all layers"));
     connect(but, SIGNAL(clicked()),
             actionHandler, SLOT(slotLayersFreezeAll()));
@@ -202,7 +220,7 @@ QG_LayerWidget::QG_LayerWidget(QG_ActionHandler* ah, QWidget* parent,
     // add layer:
     but = new QToolButton(this);
     but->setIcon(QIcon(":ui/layeradd.png"));
-    but->setMinimumSize(QSize(22,22));
+	but->setMinimumSize(minButSize);
     but->setToolTip(tr("Add a layer"));
     connect(but, SIGNAL(clicked()),
             actionHandler, SLOT(slotLayersAdd()));
@@ -210,7 +228,7 @@ QG_LayerWidget::QG_LayerWidget(QG_ActionHandler* ah, QWidget* parent,
     // remove layer:
     but = new QToolButton(this);
     but->setIcon(QIcon(":ui/layerremove.png"));
-    but->setMinimumSize(QSize(22,22));
+	but->setMinimumSize(minButSize);
     but->setToolTip(tr("Remove the current layer"));
     connect(but, SIGNAL(clicked()),
             actionHandler, SLOT(slotLayersRemove()));
@@ -218,7 +236,7 @@ QG_LayerWidget::QG_LayerWidget(QG_ActionHandler* ah, QWidget* parent,
     // rename layer:
     but = new QToolButton(this);
     but->setIcon(QIcon(":ui/layeredit.png"));
-    but->setMinimumSize(QSize(22,22));
+	but->setMinimumSize(minButSize);
     but->setToolTip(tr("Modify layer attributes / rename"));
     connect(but, SIGNAL(clicked()),
             actionHandler, SLOT(slotLayersEdit()));
@@ -235,19 +253,10 @@ QG_LayerWidget::QG_LayerWidget(QG_ActionHandler* ah, QWidget* parent,
     lay->addWidget(matchLayerName);
     lay->addLayout(layButtons);
     lay->addWidget(layerView);
+	this->setLayout(lay);
 
     connect(layerView, SIGNAL(pressed(QModelIndex)), this, SLOT(slotActivated(QModelIndex)));
 }
-
-
-
-/**
- * Destructor
- */
-QG_LayerWidget::~QG_LayerWidget() {
-//    delete layerView;
-}
-
 
 
 /**
@@ -290,7 +299,7 @@ void QG_LayerWidget::update() {
     int yPos = layerView->verticalScrollBar()->value();
 
     RS_Layer* activeLayer;
-    if (layerList!=NULL) {
+    if (layerList) {
         activeLayer = layerList->getActive();
     } else {
         activeLayer = NULL;
@@ -334,7 +343,7 @@ void QG_LayerWidget::activateLayer(RS_Layer* layer, bool updateScroll) {
     QModelIndex idx = layerModel->getIndex (layer);
 
     layerView->setCurrentIndex ( idx );
-    if(updateScroll==false)
+	if (!updateScroll)
         layerView->verticalScrollBar()->setValue(yPos);
 
     //update active layer name in mainwindow status bar
@@ -390,7 +399,7 @@ void QG_LayerWidget::slotActivated(QModelIndex layerIdx /*const QString& layerNa
  */
 void QG_LayerWidget::slotUpdateLayerList() {
     QRegExp rx("");
-    int pos=0, f;
+	int pos=0;
     QString  s, n;
 
     n=matchLayerName->text();
@@ -403,8 +412,8 @@ void QG_LayerWidget::slotUpdateLayerList() {
 
     for (unsigned int i=0; i<layerList->count() ; i++) {
         s=layerModel->getLayer(i)->getName();
-        f=rx.indexIn(s, pos);
-        if ( f == 0 ) {
+		int f=rx.indexIn(s, pos);
+		if ( !f ) {
             layerView->showRow(i);
             layerModel->getLayer(i)->visibleInLayerList(true);
         } else {
@@ -421,7 +430,7 @@ void QG_LayerWidget::slotUpdateLayerList() {
  */
 void QG_LayerWidget::contextMenuEvent(QContextMenuEvent *e) {
 
-    if (actionHandler!=NULL) {
+    if (actionHandler) {
         QMenu* contextMenu = new QMenu(this);
         QLabel* caption = new QLabel(tr("Layer Menu"), this);
         QPalette palette;

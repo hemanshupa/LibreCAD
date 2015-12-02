@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>643</width>
-    <height>565</height>
+    <width>707</width>
+    <height>621</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -39,7 +39,7 @@
        <string>&amp;Appearance</string>
       </attribute>
       <layout class="QGridLayout">
-       <item row="0" column="0">
+       <item row="8" column="0" colspan="2">
         <widget class="QGroupBox" name="bgLanguage">
          <property name="title">
           <string>Language</string>
@@ -77,23 +77,41 @@
           <item row="0" column="1">
            <widget class="QComboBox" name="cbLanguage"/>
           </item>
-          <item row="2" column="0">
-           <spacer name="verticalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
+         </layout>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QGroupBox" name="gbSplash">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="title">
+          <string>Splash Window</string>
+         </property>
+         <layout class="QGridLayout" name="splashGridLayout">
+          <item row="0" column="0">
+           <widget class="QCheckBox" name="cbSplash">
+            <property name="text">
+             <string>Display Splash</string>
             </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
+            <property name="checked">
+             <bool>false</bool>
             </property>
-           </spacer>
+           </widget>
           </item>
          </layout>
         </widget>
        </item>
-       <item row="3" column="1">
+       <item row="4" column="0">
         <widget class="QGroupBox" name="buttonGroup5_2">
          <property name="title">
           <string>Fontsize</string>
@@ -144,44 +162,7 @@
               <string notr="true">12</string>
              </property>
             </item>
-            <item>
-             <property name="text">
-              <string notr="true">14</string>
-             </property>
-            </item>
            </widget>
-          </item>
-          <item row="1" column="0">
-           <spacer name="spacer11_3">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Expanding</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="1" column="1">
-           <spacer name="spacer12">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Expanding</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
           </item>
           <item row="0" column="0">
            <widget class="QLabel" name="lSizeStatus">
@@ -196,78 +177,1123 @@
          </layout>
         </widget>
        </item>
-       <item row="2" column="0" rowspan="2">
-        <widget class="QGroupBox" name="bgGraphicView">
-         <property name="title">
-          <string>Graphic View</string>
+       <item row="0" column="1" rowspan="4">
+        <widget class="QGroupBox" name="bgGraphicColors">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
          </property>
-         <layout class="QGridLayout">
-          <item row="0" column="0" colspan="2">
-           <widget class="QCheckBox" name="cbShowCrosshairs">
-            <property name="text">
-             <string>&amp;Show large crosshairs</string>
-            </property>
-            <property name="shortcut">
-             <string>Alt+S</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0" colspan="2">
-           <widget class="QCheckBox" name="cbScaleGrid">
-            <property name="text">
-             <string>A&amp;utomatically scale grid</string>
-            </property>
-            <property name="shortcut">
-             <string>Alt+U</string>
-            </property>
-           </widget>
-          </item>
+         <property name="title">
+          <string>Graphic Colors</string>
+         </property>
+         <property name="flat">
+          <bool>false</bool>
+         </property>
+         <layout class="QGridLayout" name="graphicColGridLayout">
           <item row="4" column="0">
-           <spacer name="spacer29">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Expanding</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>21</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="4" column="1">
-           <spacer name="spacer29_2">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Expanding</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>21</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="3" column="0">
-           <widget class="QLabel" name="lMaxPreview">
+           <widget class="QLabel" name="lHighlightedColor">
             <property name="text">
-             <string>Number of p&amp;review entities:</string>
+             <string>&amp;Highlighted Color:</string>
             </property>
             <property name="wordWrap">
              <bool>false</bool>
             </property>
             <property name="buddy">
-             <cstring>cbMaxPreview</cstring>
+             <cstring>cbMetaGridColor</cstring>
             </property>
            </widget>
           </item>
-          <item row="3" column="1">
+          <item row="4" column="2">
+           <widget class="QComboBox" name="cbHighlightedColor">
+            <property name="editable">
+             <bool>true</bool>
+            </property>
+            <item>
+             <property name="text">
+              <string>Aquamarine</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Azure</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">Black</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DeepSkyBlue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DodgerBlue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Gray</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>HoneyDew</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Lavender</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LightGrey</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Navy</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>PaleGreen</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Pink</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Salmon</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Silver</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Violet</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Wheat</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>White</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="lMetaGridColor">
+            <property name="text">
+             <string>&amp;Meta Grid Color:</string>
+            </property>
+            <property name="wordWrap">
+             <bool>false</bool>
+            </property>
+            <property name="buddy">
+             <cstring>cbMetaGridColor</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="2">
+           <widget class="QComboBox" name="cbSelectedColor">
+            <property name="editable">
+             <bool>true</bool>
+            </property>
+            <item>
+             <property name="text">
+              <string>Aquamarine</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Azure</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">Black</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DeepSkyBlue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DodgerBlue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Gray</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>HoneyDew</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Lavender</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LightGrey</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Navy</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>PaleGreen</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Pink</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Salmon</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Silver</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Violet</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Wheat</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>White</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="lSelectedColor">
+            <property name="text">
+             <string>S&amp;elected Color:</string>
+            </property>
+            <property name="wordWrap">
+             <bool>false</bool>
+            </property>
+            <property name="buddy">
+             <cstring>cbMetaGridColor</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QComboBox" name="cbGridColor">
+            <property name="editable">
+             <bool>true</bool>
+            </property>
+            <item>
+             <property name="text">
+              <string>Aquamarine</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Azure</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">Black</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DeepSkyBlue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DodgerBlue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Gray</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>HoneyDew</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Lavender</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LightGrey</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Navy</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>PaleGreen</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Pink</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Salmon</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Silver</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Violet</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Wheat</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>White</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="lStartHandleColor">
+            <property name="text">
+             <string>St&amp;art Handle Color:</string>
+            </property>
+            <property name="buddy">
+             <cstring>cbStartHandleColor</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="lBackground">
+            <property name="text">
+             <string>Backgr&amp;ound:</string>
+            </property>
+            <property name="wordWrap">
+             <bool>false</bool>
+            </property>
+            <property name="buddy">
+             <cstring>cbBackgroundColor</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QComboBox" name="cbBackgroundColor">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="editable">
+             <bool>true</bool>
+            </property>
+            <item>
+             <property name="text">
+              <string>Aquamarine</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Azure</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">Black</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DeepSkyBlue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DodgerBlue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Gray</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>HoneyDew</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Lavender</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LightGrey</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Navy</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>PaleGreen</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Pink</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Salmon</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Silver</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Violet</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Wheat</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>White</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QComboBox" name="cbMetaGridColor">
+            <property name="editable">
+             <bool>true</bool>
+            </property>
+            <item>
+             <property name="text">
+              <string>Aquamarine</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Azure</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">Black</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DeepSkyBlue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DodgerBlue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Gray</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>HoneyDew</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Lavender</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LightGrey</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Navy</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>PaleGreen</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Pink</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Salmon</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Silver</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Violet</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Wheat</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>White</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="5" column="2">
+           <widget class="QComboBox" name="cbStartHandleColor">
+            <property name="editable">
+             <bool>true</bool>
+            </property>
+            <item>
+             <property name="text">
+              <string>Aquamarine</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Azure</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">Black</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DeepSkyBlue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DodgerBlue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Gray</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>HoneyDew</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Lavender</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LightGrey</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Navy</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>PaleGreen</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Pink</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Salmon</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Silver</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Violet</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Wheat</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>White</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="6" column="0">
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>&amp;Handle Color:</string>
+            </property>
+            <property name="buddy">
+             <cstring>cbHandleColor</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="2">
+           <widget class="QComboBox" name="cbHandleColor">
+            <property name="editable">
+             <bool>true</bool>
+            </property>
+            <item>
+             <property name="text">
+              <string>Aquamarine</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Azure</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">Black</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DeepSkyBlue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DodgerBlue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Gray</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>HoneyDew</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Lavender</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LightGrey</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Navy</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>PaleGreen</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Pink</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Salmon</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Silver</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Violet</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Wheat</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>White</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="7" column="0">
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>&amp;End Handle Color:</string>
+            </property>
+            <property name="buddy">
+             <cstring>cbEndHandleColor</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="lGridColor">
+            <property name="text">
+             <string>G&amp;rid Color:</string>
+            </property>
+            <property name="wordWrap">
+             <bool>false</bool>
+            </property>
+            <property name="buddy">
+             <cstring>cbGridColor</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="2">
+           <widget class="QComboBox" name="cbEndHandleColor">
+            <property name="editable">
+             <bool>true</bool>
+            </property>
+            <item>
+             <property name="text">
+              <string>Aquamarine</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Azure</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">Black</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DeepSkyBlue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DodgerBlue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Gray</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>HoneyDew</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Lavender</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LightGrey</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Navy</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>PaleGreen</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Pink</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Salmon</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Silver</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Violet</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Wheat</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>White</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="8" column="0">
+           <widget class="QLabel" name="label_6">
+            <property name="text">
+             <string>Snap indicator:</string>
+            </property>
+            <property name="buddy">
+             <cstring>cbEndHandleColor</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="2">
+           <widget class="QComboBox" name="cb_snap_color">
+            <property name="editable">
+             <bool>true</bool>
+            </property>
+            <item>
+             <property name="text">
+              <string>Aquamarine</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Azure</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">Black</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DeepSkyBlue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DodgerBlue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Gray</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>HoneyDew</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Lavender</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LightGrey</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Navy</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>PaleGreen</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Pink</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Salmon</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Silver</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Violet</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Wheat</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>White</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QPushButton" name="pb_background">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="../../../res/ui/ui.qrc">
+              <normaloff>:/ui/colorxx.png</normaloff>:/ui/colorxx.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="QPushButton" name="pb_grid">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="../../../res/ui/ui.qrc">
+              <normaloff>:/ui/colorxx.png</normaloff>:/ui/colorxx.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="3">
+           <widget class="QPushButton" name="pb_meta">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="../../../res/ui/ui.qrc">
+              <normaloff>:/ui/colorxx.png</normaloff>:/ui/colorxx.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="3">
+           <widget class="QPushButton" name="pb_selected">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="../../../res/ui/ui.qrc">
+              <normaloff>:/ui/colorxx.png</normaloff>:/ui/colorxx.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="3">
+           <widget class="QPushButton" name="pb_highlighted">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="../../../res/ui/ui.qrc">
+              <normaloff>:/ui/colorxx.png</normaloff>:/ui/colorxx.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="3">
+           <widget class="QPushButton" name="pb_start">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="../../../res/ui/ui.qrc">
+              <normaloff>:/ui/colorxx.png</normaloff>:/ui/colorxx.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="3">
+           <widget class="QPushButton" name="pb_handle">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="../../../res/ui/ui.qrc">
+              <normaloff>:/ui/colorxx.png</normaloff>:/ui/colorxx.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="3">
+           <widget class="QPushButton" name="pb_end">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="../../../res/ui/ui.qrc">
+              <normaloff>:/ui/colorxx.png</normaloff>:/ui/colorxx.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="3">
+           <widget class="QPushButton" name="pb_snap_color">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="../../../res/ui/ui.qrc">
+              <normaloff>:/ui/colorxx.png</normaloff>:/ui/colorxx.png</iconset>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="0" rowspan="2">
+        <widget class="QGroupBox" name="bgGraphicView">
+         <property name="title">
+          <string>Graphic View</string>
+         </property>
+         <layout class="QGridLayout">
+          <item row="9" column="1">
            <widget class="QComboBox" name="cbMaxPreview">
             <property name="editable">
              <bool>true</bool>
@@ -304,7 +1330,30 @@
             </item>
            </widget>
           </item>
-          <item row="2" column="0">
+          <item row="9" column="0">
+           <widget class="QLabel" name="lMaxPreview">
+            <property name="text">
+             <string>Number of p&amp;review entities:</string>
+            </property>
+            <property name="wordWrap">
+             <bool>false</bool>
+            </property>
+            <property name="buddy">
+             <cstring>cbMaxPreview</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0" colspan="2">
+           <widget class="QCheckBox" name="cbScaleGrid">
+            <property name="text">
+             <string>A&amp;utomatically scale grid</string>
+            </property>
+            <property name="shortcut">
+             <string>Alt+U</string>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="0">
            <widget class="QLabel" name="lMinGridSpacing">
             <property name="text">
              <string>Minimal Grid Spacing (px):</string>
@@ -317,7 +1366,7 @@
             </property>
            </widget>
           </item>
-          <item row="2" column="1">
+          <item row="8" column="1">
            <widget class="QComboBox" name="cbMinGridSpacing">
             <property name="editable">
              <bool>true</bool>
@@ -364,346 +1413,238 @@
             </item>
            </widget>
           </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="4" column="1">
-        <spacer name="spacer9">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Expanding</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>31</width>
-           <height>16</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="4" column="0">
-        <spacer name="spacer4">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Expanding</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>31</width>
-           <height>16</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="0" column="1" rowspan="3">
-        <widget class="QGroupBox" name="bgColors">
-         <property name="title">
-          <string>Colors</string>
-         </property>
-         <layout class="QGridLayout">
-          <item row="3" column="1">
-           <widget class="QComboBox" name="cbSelectedColor">
-            <property name="editable">
-             <bool>true</bool>
-            </property>
-            <item>
-             <property name="text">
-              <string notr="true">#A54747</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="5" column="1">
-           <widget class="QComboBox" name="cbStartHandleColor">
-            <property name="editable">
-             <bool>true</bool>
-            </property>
-            <item>
-             <property name="text">
-              <string notr="true">#00FFFF</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>#0000FF</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>#FFFF00</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>#FF00FF</string>
-             </property>
-            </item>
-           </widget>
-          </item>
           <item row="5" column="0">
-           <widget class="QLabel" name="lStartHandleColor">
+           <widget class="QCheckBox" name="cb_antialiasing">
             <property name="text">
-             <string>St&amp;art Handle Color:</string>
-            </property>
-            <property name="buddy">
-             <cstring>cbStartHandleColor</cstring>
+             <string>Anti-aliasing</string>
             </property>
            </widget>
           </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="lGridColor">
+          <item row="6" column="0">
+           <widget class="QCheckBox" name="scrollbars_check_box">
             <property name="text">
-             <string>G&amp;rid Color:</string>
-            </property>
-            <property name="wordWrap">
-             <bool>false</bool>
-            </property>
-            <property name="buddy">
-             <cstring>cbGridColor</cstring>
+             <string>Scrollbars</string>
             </property>
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QComboBox" name="cbGridColor">
-            <property name="editable">
-             <bool>true</bool>
-            </property>
+           <widget class="QComboBox" name="indicator_lines_combobox">
             <item>
              <property name="text">
-              <string notr="true">#C0C0C0</string>
+              <string>Crosshair</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>#FFFFFF</string>
+              <string>Crosshair2</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>#000000</string>
+              <string>Isometric</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>#808080</string>
+              <string>Spiderweb</string>
              </property>
             </item>
            </widget>
           </item>
-          <item row="0" column="1">
-           <widget class="QComboBox" name="cbBackgroundColor">
-            <property name="editable">
-             <bool>true</bool>
+          <item row="1" column="0">
+           <widget class="QCheckBox" name="indicator_lines_checkbox">
+            <property name="text">
+             <string>Snap indicator lines</string>
             </property>
-            <item>
-             <property name="text">
-              <string notr="true">#000000</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>#FFFFFF</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>#C0C0C0</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>#808080</string>
-             </property>
-            </item>
+            <property name="shortcut">
+             <string>Alt+S</string>
+            </property>
            </widget>
           </item>
           <item row="2" column="0">
-           <widget class="QLabel" name="lMetaGridColor">
+           <widget class="QCheckBox" name="indicator_shape_checkbox">
             <property name="text">
-             <string>&amp;Meta Grid Color:</string>
-            </property>
-            <property name="wordWrap">
-             <bool>false</bool>
-            </property>
-            <property name="buddy">
-             <cstring>cbMetaGridColor</cstring>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="0">
-           <widget class="QLabel" name="lSelectedColor">
-            <property name="text">
-             <string>S&amp;elected Color:</string>
-            </property>
-            <property name="wordWrap">
-             <bool>false</bool>
-            </property>
-            <property name="buddy">
-             <cstring>cbMetaGridColor</cstring>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="0">
-           <widget class="QLabel" name="lHighlightedColor">
-            <property name="text">
-             <string>&amp;Highlighted Color:</string>
-            </property>
-            <property name="wordWrap">
-             <bool>false</bool>
-            </property>
-            <property name="buddy">
-             <cstring>cbMetaGridColor</cstring>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="1">
-           <widget class="QComboBox" name="cbHighlightedColor">
-            <property name="editable">
-             <bool>true</bool>
-            </property>
-            <item>
-             <property name="text">
-              <string notr="true">#739373</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="QLabel" name="lBackground">
-            <property name="text">
-             <string>Backgr&amp;ound:</string>
-            </property>
-            <property name="wordWrap">
-             <bool>false</bool>
-            </property>
-            <property name="buddy">
-             <cstring>cbBackgroundColor</cstring>
+             <string>Snap indicator shape</string>
             </property>
            </widget>
           </item>
           <item row="2" column="1">
-           <widget class="QComboBox" name="cbMetaGridColor">
-            <property name="editable">
-             <bool>true</bool>
-            </property>
+           <widget class="QComboBox" name="indicator_shape_combobox">
             <item>
              <property name="text">
-              <string notr="true">#404040</string>
+              <string>Circle</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>#000000</string>
+              <string>Point</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>#FFFFFF</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>#C0C0C0</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>#808080</string>
+              <string>Square</string>
              </property>
             </item>
            </widget>
           </item>
-          <item row="6" column="1">
-           <widget class="QComboBox" name="cbHandleColor">
-            <property name="editable">
-             <bool>true</bool>
-            </property>
-            <item>
-             <property name="text">
-              <string notr="true">#0000FF</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="7" column="1">
-           <widget class="QComboBox" name="cbEndHandleColor">
-            <property name="editable">
-             <bool>true</bool>
-            </property>
-            <item>
-             <property name="text">
-              <string notr="true">#0000FF</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>#FFFF00</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>#00FFFF</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>#FF00FF</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="6" column="0">
-           <widget class="QLabel" name="label_2">
+          <item row="3" column="0">
+           <widget class="QCheckBox" name="cursor_hiding_checkbox">
             <property name="text">
-             <string>&amp;Handle Color:</string>
-            </property>
-            <property name="buddy">
-             <cstring>cbHandleColor</cstring>
-            </property>
-           </widget>
-          </item>
-          <item row="7" column="0">
-           <widget class="QLabel" name="label_3">
-            <property name="text">
-             <string>&amp;End Handle Color:</string>
-            </property>
-            <property name="buddy">
-             <cstring>cbEndHandleColor</cstring>
+             <string>Hide cursor when snapping</string>
             </property>
            </widget>
           </item>
          </layout>
         </widget>
        </item>
-       <item row="1" column="0">
-        <widget class="QGroupBox" name="gbSplash">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
+       <item row="2" column="0">
+        <widget class="QGroupBox" name="groupBox_2">
          <property name="title">
-          <string>Splash Window</string>
+          <string>Icons</string>
          </property>
-         <layout class="QGridLayout" name="splashGridLayout">
-          <item row="0" column="0">
-           <widget class="QCheckBox" name="cbSplash">
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QCheckBox" name="cb_icon_size">
             <property name="text">
-             <string>Display Splash</string>
+             <string>Custom size</string>
             </property>
-            <property name="checked">
-             <bool>false</bool>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="sb_icon_size">
+            <property name="minimum">
+             <number>8</number>
+            </property>
+            <property name="maximum">
+             <number>150</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QGroupBox" name="bgGuiColors">
+         <property name="title">
+          <string>GUI Colors</string>
+         </property>
+         <property name="flat">
+          <bool>false</bool>
+         </property>
+         <layout class="QGridLayout" name="guiColGridLayout">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>Layer/ Block Selection:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QComboBox" name="cb_layerselection">
+            <property name="editable">
+             <bool>true</bool>
+            </property>
+            <item>
+             <property name="text">
+              <string>Aquamarine</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Azure</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">Black</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DeepSkyBlue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DodgerBlue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Gray</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>HoneyDew</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Lavender</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LightGrey</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Navy</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>PaleGreen</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Pink</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Salmon</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Silver</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Violet</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Wheat</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>White</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QPushButton" name="pb_layerselection">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="../../../res/ui/ui.qrc">
+              <normaloff>:/ui/colorxx.png</normaloff>:/ui/colorxx.png</iconset>
             </property>
            </widget>
           </item>
@@ -717,6 +1658,16 @@
        <string>&amp;Paths</string>
       </attribute>
       <layout class="QGridLayout">
+       <item row="6" column="0">
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>Custom Toolbar:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QLineEdit" name="le_custom_toolbar"/>
+       </item>
        <item row="0" column="0">
         <widget class="QLabel" name="textLabel2">
          <property name="text">
@@ -803,7 +1754,7 @@
          </property>
         </widget>
        </item>
-       <item row="6" column="0">
+       <item row="7" column="0">
         <spacer name="spacer5">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -819,7 +1770,7 @@
          </property>
         </spacer>
        </item>
-       <item row="6" column="1">
+       <item row="7" column="1">
         <spacer name="spacer5_2">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -834,6 +1785,14 @@
           </size>
          </property>
         </spacer>
+       </item>
+       <item row="6" column="2">
+        <widget class="QToolButton" name="bt_custom_toolbar">
+         <property name="icon">
+          <iconset resource="../../../res/extui/extui.qrc">
+           <normaloff>:/extui/fileopen.png</normaloff>:/extui/fileopen.png</iconset>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -889,35 +1848,6 @@
          </layout>
         </widget>
        </item>
-       <item row="0" column="1">
-        <spacer name="spacer11_2">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Expanding</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>211</width>
-           <height>21</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="3" column="0">
-        <spacer name="verticalSpacer">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
        <item row="1" column="0">
         <widget class="QGroupBox" name="groupBox">
          <property name="sizePolicy">
@@ -970,6 +1900,93 @@
             </property>
            </widget>
           </item>
+          <item>
+           <widget class="QCheckBox" name="cbToActiveLayer">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When enabled, activation a layer would modify all selected entities to that new layer. To change layer of multiple entities: first select needed entities; activate a layer in the layer widget. This makes all selected entities are modified to belong to the new layer.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="text">
+             <string>Modify layer of selected entities, at  layer activation</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="tab_mode_check_box">
+            <property name="text">
+             <string>Start in tab mode</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <spacer name="spacer11_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Expanding</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>211</width>
+           <height>21</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="4" column="0">
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="2" column="0">
+        <widget class="QGroupBox" name="groupBox_3">
+         <property name="title">
+          <string>Clear Settings</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QPushButton" name="pb_clear_geometry">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="toolTip">
+             <string>restores program geometry/layout to original state</string>
+            </property>
+            <property name="text">
+             <string>Layout</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pb_clear_all">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="toolTip">
+             <string>restores the program to its original state</string>
+            </property>
+            <property name="text">
+             <string>All</string>
+            </property>
+           </widget>
+          </item>
          </layout>
         </widget>
        </item>
@@ -988,10 +2005,9 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
-  <tabstop>tabWidget</tabstop>
   <tabstop>cbLanguage</tabstop>
   <tabstop>cbLanguageCmd</tabstop>
-  <tabstop>cbShowCrosshairs</tabstop>
+  <tabstop>indicator_lines_checkbox</tabstop>
   <tabstop>cbScaleGrid</tabstop>
   <tabstop>cbMinGridSpacing</tabstop>
   <tabstop>cbMaxPreview</tabstop>
@@ -1018,6 +2034,7 @@
  </tabstops>
  <resources>
   <include location="../../../res/extui/extui.qrc"/>
+  <include location="../../../res/ui/ui.qrc"/>
  </resources>
  <connections>
   <connection>
@@ -1027,8 +2044,8 @@
    <slot>ok()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>322</x>
-     <y>380</y>
+     <x>333</x>
+     <y>588</y>
     </hint>
     <hint type="destinationlabel">
      <x>20</x>
@@ -1043,8 +2060,8 @@
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>322</x>
-     <y>380</y>
+     <x>333</x>
+     <y>588</y>
     </hint>
     <hint type="destinationlabel">
      <x>20</x>
@@ -1059,8 +2076,8 @@
    <slot>setRestartNeeded()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>20</x>
-     <y>20</y>
+     <x>200</x>
+     <y>417</y>
     </hint>
     <hint type="destinationlabel">
      <x>20</x>
@@ -1075,8 +2092,8 @@
    <slot>setRestartNeeded()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>20</x>
-     <y>20</y>
+     <x>367</x>
+     <y>516</y>
     </hint>
     <hint type="destinationlabel">
      <x>20</x>
@@ -1091,8 +2108,8 @@
    <slot>setRestartNeeded()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>20</x>
-     <y>20</y>
+     <x>367</x>
+     <y>490</y>
     </hint>
     <hint type="destinationlabel">
      <x>20</x>
@@ -1107,8 +2124,8 @@
    <slot>setTemplateFile()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>609</x>
-     <y>182</y>
+     <x>682</x>
+     <y>193</y>
     </hint>
     <hint type="destinationlabel">
      <x>322</x>
@@ -1116,5 +2133,24 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>bt_custom_toolbar</sender>
+   <signal>clicked()</signal>
+   <receiver>QG_DlgOptionsGeneral</receiver>
+   <slot>set_toolbar_file()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>678</x>
+     <y>213</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>248</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
+ <slots>
+  <slot>set_toolbar_file()</slot>
+ </slots>
 </ui>

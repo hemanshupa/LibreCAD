@@ -25,6 +25,7 @@ unix/
 # Win/MSVC generated files and binaries
 windows/
 release/
+debug/
 *.ncb
 *.suo
 *.idb
@@ -37,6 +38,7 @@ release/
 *.rc
 *.bak
 object_script.LibreCAD.*
+object_script.libdxfrw.*
 # Win/qmake generated project files
 #*.vcproj
 #*.sln
